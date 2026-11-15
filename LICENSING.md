@@ -13,7 +13,7 @@ Every file in this tree that carries an `SPDX-License-Identifier: GPL-3.0-only` 
 
 - the firmware: `firmware/` (app, update loader, `firmware/hal/`; not `firmware/engines/`, MIT, nor `firmware/bsp/`, MPL-2.0: below)
 - the build script and tools: `build.sh`, `tools/` (not `tools/gen_waves.py`, the Hügelton Sample Pack: CC0 1.0, below)
-- the web installer, editor and their tests: `web/` (not the Fukiai font, below)
+- the web installer, editor and their tests: `web/` (not the Fukiai font, nor the browser emulator, below)
 - the host tests: `tests/`
 
 Four source files are ports and keep the licence of their originals:
@@ -100,6 +100,24 @@ files may be distributed together with GPL-3.0 code; Felucca itself stays GPL-3.
 Every distribution of a package carries the licence texts with it: the release folder
 (`tools/build.py --release`) and the site (`web/make_site.py`, next to the package in
 `firmware/` and linked from the installer page).
+
+## The browser emulator
+
+The FM-1 emulator published as the web site (`web/index.html`, `web/engine.js`,
+`web/backup.js`, `web/assets/`, `web/firmwares/`) is the work of
+Ninjathune-Human (<https://github.com/Ninjathune-Human/Fm1>), included here with
+only the changes listed in `web/EMULATOR_CHANGES.md`:
+
+- `web/index.html` and `web/backup.js`: GPL-3.0-only, like this repository
+  (the GPL text in `LICENSE`), © 2026 Ninjathune-Human — the panel comes from the
+  GPL-3.0 [DUB-1 emulator](https://github.com/sbegueria/fm1-dub) it credits;
+- `web/engine.js` and the assets: MIT (`LICENSES/MIT-Ninjathune-Fm1.txt`);
+- the emulated firmwares run on the fm1-emu core by Joakim Eriksson, MIT
+  (`LICENSES/MIT-fm1-emu.txt`; the same text ships next to the files in
+  `web/runtime/LICENSE-fm1-emu.txt`).
+
+Each firmware listed in `web/firmwares/catalogue.json` keeps its own licence;
+the only one shipped here is MT-40X itself.
 
 ## No vendor material
 

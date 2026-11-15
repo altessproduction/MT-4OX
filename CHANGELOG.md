@@ -3,6 +3,17 @@
 Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/) et le
 versionnage sémantique.
 
+## [Unreleased]
+
+### Ajouté
+- **L'émulateur web** : le site (<https://altessproduction.github.io/MT-4OX/>)
+  embarque l'émulateur FM-1+VA de Ninjathune-Human avec MT-40X préchargé — le
+  firmware y tourne tel quel sur la puce émulée par fm1-emu (Joakim Eriksson,
+  MIT), sans installation ; « Ouvrir un .fwsc… » charge n'importe quel paquet.
+  Les fichiers sont dans `web/` (les seuls changements faits à l'émulateur sont
+  listés dans `web/EMULATOR_CHANGES.md`), et l'action GitHub `Site`
+  (`.github/workflows/pages.yml`) publie le dossier.
+
 ## [0.1.0-alpha] - 2026-11-15
 
 ### Ajouté

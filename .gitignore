@@ -2,3 +2,5 @@ build/
 .DS_Store
 __pycache__/
 *.fwsc
+# the browser emulator fetches the released package (firmwares/catalogue.json)
+!web/firmwares/*.fwsc

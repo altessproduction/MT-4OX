@@ -1,0 +1,35 @@
+# Publie web/ sur GitHub Pages : l'émulateur MT-40X (index.html, le firmware
+# tourne sur la puce émulée par fm1-emu), l'éditeur web de Felucca
+# (editor.html) et l'installateur (index_pkg.html). Aucune compilation : le
+# site est servi tel quel.
+name: Site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web
+      - id: deployment
+        uses: actions/deploy-pages@v4

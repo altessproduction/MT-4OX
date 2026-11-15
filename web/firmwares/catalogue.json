@@ -1,0 +1,25 @@
+{
+ "genere_le": "2026-11-15",
+ "defaut": "mt40x",
+ "firmwares": [
+  {
+   "id": "mt40x",
+   "nom": "MT-40X",
+   "version": "0.1.0-alpha",
+   "auteur": "Altess Production",
+   "categories": [
+    "Boîte à rythmes"
+   ],
+   "licence": "GPL-3.0",
+   "beta": true,
+   "fichier": "firmwares/MT-40X-v0.1.0-FM-1_23456.fwsc",
+   "sha256": "05b1c8ab9ff9baddb311f4775313f3a535f077a2557006a60ac675bcf37fff5c",
+   "taille": 612147,
+   "depot": "https://github.com/altessproduction/MT-4OX",
+   "description": "The 1981 Casio MT-40 inside the FM-1: its six auto-accompaniment rhythms, including ROCK — the preset that became the Sleng Teng riddim (Wayne Smith, 1985, 82 BPM). Four drum lanes, a bass line that transposes with the one-key chord you hold, a FILL button, A/B variation and MPC swing. The keyboard keeps playing Felucca's own engines on top.",
+   "emulateur_fm1emu": "fonctionne selon fm1-emu",
+   "horloge_midi": true,
+   "tempo_lie": false
+  }
+ ]
+}

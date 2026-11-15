@@ -1,0 +1,74 @@
+{
+ "id": "mt40x",
+ "resume": "MT-40X replace le Casio MT-40 de 1981 dans le FM-1 : les six rythmes d'accompagnement d'origine — Waltz, Samba, Swing, Slow Rock, Pops et Rock — avec batterie à quatre pistes, ligne de basse et nappe d'accord sur deux mesures. Le preset ROCK est celui qu'a programmé Hiroko Okuda chez Casio : en janvier 1985, Wayne Smith enregistre « Under Mi Sleng Teng » dessus au tempo 82 et le dancehall numérique naît. La basse transpose avec l'accord joué à une touche, comme sur le mini-clavier du MT-40, et le bouton FILL reprend celui de la machine. Le clavier reste un FM-1 : les moteurs de Felucca jouent par-dessus.",
+ "commandes": [
+  {
+   "commande": "PLAY",
+   "role": "Lance et arrête l'accompagnement."
+  },
+  {
+   "commande": "OCT-",
+   "role": "Dans l'écran du MT-40X : le rythme précédent (Waltz…Rock)."
+  },
+  {
+   "commande": "OCT+",
+   "role": "Le rythme suivant."
+  },
+  {
+   "commande": "FX",
+   "role": "La couche d'où part le FILL : FX tenue, la 5e touche noire joue le fill de batterie jusqu'au prochain temps fort."
+  },
+  {
+   "commande": "PRESETS",
+   "role": "La molette choisit aussi les six rythmes."
+  },
+  {
+   "commande": "VAR",
+   "role": "La variation A/B du pattern, comme sur la machine."
+  },
+  {
+   "commande": "SAVE",
+   "role": "Garde le rythme et les réglages dans le projet."
+  },
+  {
+   "commande": "SEL",
+   "role": "Le tempo : tournez un encodeur pour l'ajuster (82 pour le ROCK)."
+  },
+  {
+   "commande": "SEQ",
+   "role": "Le séquenceur multipiste de Felucca, au-dessus de l'accompagnement."
+  },
+  {
+   "commande": "GLO",
+   "role": "Les réglages globaux de Felucca (lumières, MIDI…)."
+  }
+ ],
+ "gestes": [
+  "Tenir FX et toucher la 5e touche noire : le fill de batterie prend le relais jusqu'au prochain temps fort.",
+  "Jouer une touche noire en mode accord (SCL > CHORD) : la fondamentale transpose le motif de basse — c'est ainsi qu'on joue un riddim.",
+  "Tenir un accord et jouer le clavier blanc : la nappe d'accord suit, les moteurs de synthèse de Felucca sonnent par-dessus."
+ ],
+ "modes": [
+  {
+   "nom": "Les six rythmes",
+   "texte": "Waltz (3/4), Samba, Swing, Slow Rock, Pops et Rock. ROCK est le pattern du Sleng Teng, vérifié sur deux tablatures croisées et calé à 82 BPM."
+  },
+  {
+   "nom": "Variation A/B",
+   "texte": "Chaque rythme a deux passes : VAR bascule entre elles, FILL enchaîne vers la suivante."
+  },
+  {
+   "nom": "Swing",
+   "texte": "Le swing façon MPC, de 0.5 (droit) à 0.75, appliqué à la batterie comme à la basse."
+  }
+ ],
+ "a_savoir": [
+  "Sans échantillons du MT-40 embarqués, la batterie est une synthèse dédiée (kick, snare, hats fermée et ouverte) ; les pistes PCM restent libres pour un pack de samples.",
+  "Le pattern ROCK est vérifié à l'oreille ; les cinq autres rythmes sont des brouillons éditables dans data/mt40_patterns.json.",
+  "Sur un vrai FM-1, le paquet s'installe comme tout firmware Felucca ; ici, il tourne sur la puce émulée par fm1-emu."
+ ],
+ "source": {
+  "url": "https://github.com/altessproduction/MT-4OX"
+ },
+ "d_apres_le_code": true
+}

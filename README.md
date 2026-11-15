@@ -20,6 +20,7 @@ basse transposée par les accords, bouton FILL et variation A/B.
 [![Base](https://img.shields.io/badge/bas%C3%A9%20sur-Felucca%201.8-7A5CFF.svg)](docs/FELUCCA_UPSTREAM.md)
 [![Version](https://img.shields.io/badge/version-0.1.0--alpha-yellow.svg)](CHANGELOG.md)
 [![Statut](https://img.shields.io/badge/Sleng%20Teng-v%C3%A9rifi%C3%A9%20%C3%A0%20l%27oreille-informational.svg)](docs/MT-40X_dossier_technique.pdf)
+[![Émulateur](https://img.shields.io/badge/%C3%A9mulateur-jouer%20dans%20le%20navigateur-2EA88B.svg)](https://altessproduction.github.io/MT-4OX/)
 
 **Soumission The Firmware Hub : identifiant `FM-1_23456`** — voir [docs/SUBMISSION.md](docs/SUBMISSION.md).
 
@@ -48,6 +49,25 @@ MT-40X reconstruit cette machine dans le firmware du FM-1 :
   de Felucca (ANALOG, FM6, PHYS…), MT-40X ajoute l'accompagnement par-dessus.
 - **Un vrai firmware complet** : séquenceur multipiste, projets en flash, éditeur
   web, USB audio + MIDI — tout l'héritage Felucca est conservé.
+
+## Jouer dans le navigateur
+
+Le dépôt embarque un émulateur complet du FM-1 : MT-40X y tourne **tel quel**,
+sur la puce émulée, sans rien installer — à l'adresse
+**<https://altessproduction.github.io/MT-4OX/>**. Allumez, PLAY, et le ROCK
+joue. Le clavier de l'ordinateur fait piano (la rangée du milieu), les boutons
+sont sur les chiffres, Espace fait PLAY, les flèches tournent les encodeurs.
+« Ouvrir un .fwsc… » charge n'importe quel paquet à soi.
+
+![L'émulateur MT-40X dans le navigateur](docs/emulator.png)
+
+L'émulateur est celui de [FM-1+VA](https://github.com/Ninjathune-Human/Fm1)
+(Ninjathune-Human), adapté pour ce dépôt — les seuls changements sont listés
+dans [`web/EMULATOR_CHANGES.md`](web/EMULATOR_CHANGES.md) ; les firmwares émulés
+tournent sur le cœur [fm1-emu](https://github.com/joakimeriksson/fm1-emu) de
+Joakim Eriksson (MIT). L'éditeur web et l'installateur de Felucca restent
+accessibles sous [`web/editor.html`](web/editor.html) et
+[`web/index_pkg.html`](web/index_pkg.html).
 
 ## Les six rythmes
 

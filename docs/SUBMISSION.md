@@ -39,10 +39,18 @@ sur un vrai FM-1 :
 | Your name | `Altess Production` |
 | Your address (privé) | *votre adresse* |
 | Installed on a real FM-1, leaving works | *cocher après le test ci-dessus* |
-| How you tested it | *ex. : « Installed v0.1.0-alpha from Felucca 1.8.2 over USB (Web MIDI installer), verified the accompaniment, chords, FILL and rhythm switching, then reinstalled Felucca 1.8.2 to leave. »* |
+| How you tested it | *ex. : « Installed v0.1.0-alpha from Felucca 1.8.2 over USB (Web MIDI installer), verified the accompaniment, chords, FILL and rhythm switching, then reinstalled Felucca 1.8.2 to leave. Same package verified to boot in the online browser emulator: https://altessproduction.github.io/MT-4OX/ »* |
 | Anything Sven should know | « Built on Felucca 1.8 (GPL-3.0, engines MIT, BSP MPL-2.0, vendorised). The ROCK pattern is the Casio MT-40 preset by Hiroko Okuda, source of the Sleng Teng riddim (Wayne Smith / Noel Davey / King Jammy, 1985) - credited in code and README. Drums: synth fallback (no samples shipped yet); PCM lanes can take the free MusicRadar SampleRadar MT-40 pack. Package identity FM-1_23456, contains the Felucca update loader (ota.bin). » |
 
-## 4. Après l'envoi
+## 4. Tester aussi dans le navigateur (sans matériel)
+
+Le paquet `.fwsc` tourne tel quel dans l'émulateur en ligne du dépôt
+(<https://altessproduction.github.io/MT-4OX/>) : la page démarre sur MT-40X, la
+puce AC791N est émulée par fm1-emu (Joakim Eriksson, MIT), et « Ouvrir un
+.fwsc… » charge n'importe quel paquet local. C'est le test de boot et
+d'interface sans FM-1 — il ne remplace pas le test sur matériel exigé au-dessus.
+
+## 5. Après l'envoi
 
 - Le Hub vérifie le dépôt et la release (site de test d'abord, puis public).
 - Chaque release suivante de ce dépôt, avec son `.fwsc` attaché, apparaît

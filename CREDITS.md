@@ -8,6 +8,12 @@ thanks the work below; each keeps its own licence (see [LICENSE](LICENSE), [LICE
   Pack (the drum samples, CC0 1.0); the [Fukiai](https://github.com/hugelton/Fukiai) icon
   font ([MIT](LICENSES/MIT-Fukiai.txt)); the ANALOG, LOFI, TRIO, WHEEL, NOISE and PHASE engines
   ([Felucca-Engines](https://github.com/hugelton/Felucca-Engines), [MIT](LICENSES/MIT-Felucca-Engines.txt))
+- Browser emulator: [FM-1+VA](https://github.com/Ninjathune-Human/Fm1) by Ninjathune-Human
+  ([MIT](LICENSES/MIT-Ninjathune-Fm1.txt) for the engine and assets, GPL-3.0-only for the page and
+  backup, as this repository — adapted for MT-40X, changes listed in `web/EMULATOR_CHANGES.md`);
+  emulated firmwares run on the [fm1-emu](https://github.com/joakimeriksson/fm1-emu) core by
+  Joakim Eriksson ([MIT](LICENSES/MIT-fm1-emu.txt)); the panel comes from the GPL-3.0
+  [DUB-1 emulator](https://github.com/sbegueria/fm1-dub)
 - Font: [Inter Tight](https://github.com/rsms/inter-tight) by The Inter Project Authors, [SIL OFL 1.1](LICENSES/OFL-InterTight.txt)
 - Samples: [Versilian Studios](https://versilian-studios.com/) [VSCO-2 Community Edition](https://github.com/sgossner/VSCO-2-CE) and [VCSL](https://github.com/sgossner/VCSL), CC0 1.0: the SAMPLE sets, also SLICE's PIANO and PIANO HD ([attribution](assets/samples-cc0/ATTRIBUTION.txt))
 - VOICE engine: after [klattsch](https://github.com/tgies/klattsch) by Tony Gies (MIT); formant data from Klatt (1980) and Hillenbrand et al. (1995)
