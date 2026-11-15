@@ -45,8 +45,8 @@ static void mt40_seq_chord(int *root, uint16_t *mask, uint32_t *gen);
 
 /* the engine, its voices and its drums (one instance each, no heap) */
 static mt40_engine_t mt40;
-static mt40_synth_t mt40_syn;                 /* mt40_voice.c static instance */
-static mt40_drums_t mt40_drm;                 /* mt40_drums.c static instance */
+static mt40_synth_t *mt40_syn;                /* the instance mt40_synth_new returns */
+static mt40_drums_t *mt40_drm;                /* the instance mt40_drums_new returns */
 static uint8_t mt40_inited;
 static uint8_t mt40_rhythm;                   /* index into mt40_patterns, 0 = ROCK */
 static uint32_t mt40_chord_gen = 0xFFFFFFFFu; /* the chord generation seen last */
@@ -70,13 +70,13 @@ static float mt40_dbuf[CTL];                  /* the drums' render scratch */
 static void mt40_cb_drum(void *user, int lane, float vel)
 {
     (void)user;
-    mt40_drums_hit(&mt40_drm, lane, vel);
+    mt40_drums_hit(mt40_drm, lane, vel);
 }
 
 static void mt40_cb_bass(void *user, int note, int len_steps)
 {
     (void)user;
-    mt40_synth_note_on(&mt40_syn, MT40_BASS_VOICE, note, &mt40_timbres[MT40_BASS_TIMBRE]);
+    mt40_synth_note_on(mt40_syn, MT40_BASS_VOICE, note, &mt40_timbres[MT40_BASS_TIMBRE]);
     mt40_bass_left = (int)(mt40.step_samples * (float)(len_steps > 0 ? len_steps : 1));
 }
 
@@ -92,9 +92,9 @@ static void mt40_cb_chord(void *user, int root, const int8_t *iv, int n)
             int note = mt40_stab_root + iv[k];
             if (note < 0) note = 0;
             if (note > 127) note = 127;
-            mt40_synth_note_on(&mt40_syn, k, note, &mt40_timbres[MT40_CHORD_TIMBRE]);
+            mt40_synth_note_on(mt40_syn, k, note, &mt40_timbres[MT40_CHORD_TIMBRE]);
         } else
-            mt40_synth_note_off(&mt40_syn, k);
+            mt40_synth_note_off(mt40_syn, k);
     }
 }
 
@@ -122,8 +122,12 @@ static void mt40_chord_apply(int root, uint16_t mask)
 static void mt40_init(void)
 {
     mt40_engine_init(&mt40, mt40_patterns[mt40_rhythm], 120.0f, (float)FS);
-    mt40_synth_all_off(mt40_synth_new((float)FS));
-    mt40_drums_new((float)FS);
+    /* keep the instances the constructors return: the synth's sample rate and
+     * the drums' gains live there. The 0.1.1 package threw them away and left
+     * these two structs zeroed, so the accompaniment played silently. */
+    mt40_syn = mt40_synth_new((float)FS);
+    mt40_synth_all_off(mt40_syn);
+    mt40_drm = mt40_drums_new((float)FS);
     mt40.on_drum = mt40_cb_drum;
     mt40.on_bass = mt40_cb_bass;
     mt40.on_chord = mt40_cb_chord;
@@ -147,7 +151,7 @@ static void mt40_perf_key(int idx)
     }
 }
 
-/* the editor's riddim-bank commands (0x50 set, 0x51 info): the web page loads
+/* the editor's riddim-bank commands (0x52 set, 0x53 info): the web page loads
  * a riddim as the accompaniment motif, like the OCT+/OCT- black keys do */
 int mt40_ridb_count(void)
 {
@@ -169,6 +173,8 @@ static void mt40_block(int32_t *mix_l, int32_t *mix_r, uint32_t n)
     uint32_t i;
     if (!mt40_inited)
         mt40_init();
+    if (!mt40_syn || !mt40_drm)
+        return;
     if (mt40_seq_playing()) {
         if (!mt40.running) {
             mt40.fill_pending = 0;
@@ -176,7 +182,7 @@ static void mt40_block(int32_t *mix_l, int32_t *mix_r, uint32_t n)
         }
     } else if (mt40.running) {
         mt40_engine_stop(&mt40);
-        mt40_synth_all_off(&mt40_syn);
+        mt40_synth_all_off(mt40_syn);
         mt40_bass_left = 0;
     }
     if (!mt40.running)
@@ -198,10 +204,10 @@ static void mt40_block(int32_t *mix_l, int32_t *mix_r, uint32_t n)
     if (mt40_bass_left > 0) {
         mt40_bass_left -= (int)n;
         if (mt40_bass_left <= 0)
-            mt40_synth_note_off(&mt40_syn, MT40_BASS_VOICE);
+            mt40_synth_note_off(mt40_syn, MT40_BASS_VOICE);
     }
-    mt40_synth_render(&mt40_syn, mt40_buf, (int)CTL);
-    mt40_drums_render(&mt40_drm, mt40_dbuf, (int)CTL);
+    mt40_synth_render(mt40_syn, mt40_buf, (int)CTL);
+    mt40_drums_render(mt40_drm, mt40_dbuf, (int)CTL);
     for (i = 0; i < n && i < CTL; i++) {
         int32_t s = (int32_t)(mt40_buf[i] * (MT40_VOICE_LEVEL * 32767.0f));
         int32_t d = (int32_t)(mt40_dbuf[i] * (MT40_DRUM_LEVEL * 32767.0f));

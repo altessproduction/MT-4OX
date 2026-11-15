@@ -3,6 +3,30 @@
 Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/) et le
 versionnage sémantique.
 
+## [0.1.2] - 2026-11-15
+### Corrigé
+- **L'accompagnement (PLAY) restait muet** : `mt40_init()` appelait
+  `mt40_synth_new()` et `mt40_drums_new()` sans garder les instances
+  qu'ils retournent — sur le FM-1, ces constructeurs construisent en place
+  une instance statique *interne* (pas de tas) : le taux d'échantillonnage du
+  synthé et les gains des quatre voies de batterie restaient à zéro dans les
+  struct locales `mt40_syn` / `mt40_drm`, et l'accompagnement jouait des
+  motifs parfaits… dans le silence (les voix rendaient du NaN, la batterie
+  un niveau nul). Les tests hôtes passaient parce qu'ils utilisent les
+  pointeurs retournés. `mt40_init()` garde désormais les instances
+  (`mt40_syn = mt40_synth_new(FS)`, `mt40_drm = mt40_drums_new(FS)`) et
+  `mt40_block()` ne rend plus rien si elles manquent.
+  Vérifié dans l'émulateur avec mesure audio réelle (analyseur Web Audio) :
+  clavier 0.018 RMS, accompagnement ROCK 0.046 RMS, riddim Stalag chargé par
+  la page Riddims (commande 0x52) 0.027 RMS — avant le correctif, PLAY
+  mesurait 0.000 RMS depuis le premier paquet.
+
+### Note
+- Le paquet « v0.1.1 » publié ne contenait pas la banque riddim (binaire du
+  build précédent, la commande 0x53 ne répondait pas) ; la v0.1.2 la
+  embarque réellement (banque 44 : les six rythmes du MT-40 + 38 riddims du
+  *Riddim Real Book*), réponse 0x53 = 44 vérifiée dans l'émulateur.
+
 ## [Non publié]
 ### Corrigé
 - **Le silence au démarrage du paquet émulé** : le BSP vendu (felucca-bsp

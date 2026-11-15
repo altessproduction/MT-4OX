@@ -5,15 +5,15 @@
   {
    "id": "mt40x",
    "nom": "MT-40X",
-   "version": "0.1.1",
+   "version": "0.1.2",
    "auteur": "Altess Production",
    "categories": [
     "Boîte à rythmes"
    ],
    "licence": "GPL-3.0",
    "beta": true,
-   "fichier": "firmwares/MT-40X-v0.1.1-FM-1_23456.fwsc",
-   "sha256": "c45ea872c660121546a24036de841a3d17d9fc0e9771e62ff04096a065caa4f5",
+   "fichier": "firmwares/MT-40X-v0.1.2-FM-1_23456.fwsc",
+   "sha256": "70daf196d1057145ee855715cc91bd45c384895d9a425ef0d51d7ae707b362a7",
    "taille": 612147,
    "depot": "https://github.com/altessproduction/MT-4OX",
    "description": "The 1981 Casio MT-40 inside the FM-1: its six auto-accompaniment rhythms plus a 38-riddim bank from The Riddim Real Book, including ROCK — the preset that became the Sleng Teng riddim (Wayne Smith, 1985, 82 BPM). Four drum lanes, a bass line that transposes with the one-key chord you hold, a FILL button, A/B variation and MPC swing. The keyboard keeps playing Felucca's own engines on top.",
