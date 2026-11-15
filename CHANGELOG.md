@@ -29,6 +29,16 @@ versionnage sémantique.
 
 ## [Non publié]
 ### Corrigé
+- **La page Riddims : l'« Écouter » ne jouait que la batterie** — le
+  destructuring de l'ordonnanceur de l'écoute sautait le premier champ des
+  événements `[pas, note MIDI, durée]` : `[, s, m, l]` mettait la note dans
+  `s`, comparée au pas courant (jamais égal, MIDI 28–51 contre 0–15), donc
+  `bassNote()` n'était jamais appelée — batterie seule, comme constaté à
+  l'oreille. Le destructuring est désormais `[s, m, l]` (le chemin
+  « Séquenceur », lui, utilisait déjà `s[0]` et écrivait bien la basse dans
+  la piste 3). Régression couverte par `web/test_riddims.mjs`
+  (`node web/test_riddims.mjs`) : bassNote appelée, mesure 0 de Stalag dans
+  l'ordre des pas, hauteurs des 2 mesures présentes, batterie intacte.
 - **Le silence au démarrage du paquet émulé** : le BSP vendu (felucca-bsp
   récent, contrat « checked start » de Kerem Kilic) refuse de démarrer l'ALNK0
   quand le PLL audio n'a pas les valeurs stock exactes — et la chaîne de boot

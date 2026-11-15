@@ -238,7 +238,7 @@
             else if (lane === "hc") hat(t, false); else if (lane === "ho") hat(t, true); else rim(t);
           }
         }
-        for (const [, s, m, l] of r.bars[bar]) {
+        for (const [s, m, l] of r.bars[bar]) {          // événement [pas, note MIDI, durée en pas]
           if (s === st) bassNote(Math.max(r.next, ac.currentTime), m, l * sd * 0.92);
         }
         r.next += sd; r.step = (r.step + 1) % (r.bars.length * 16);
