@@ -1,0 +1,6151 @@
+[
+ {
+  "id": "african-beat",
+  "name": "African Beat",
+  "aka": "",
+  "label": "Studio One",
+  "year": 1968,
+  "style": "reggae",
+  "bpm": [
+   70,
+   78
+  ],
+  "page": 2,
+  "sys": 0,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     },
+     {
+      "step": 1,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     },
+     {
+      "step": 2,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     },
+     {
+      "step": 3,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     },
+     {
+      "step": 9,
+      "midi": 42,
+      "name": "F#2",
+      "len": 1
+     },
+     {
+      "step": 10,
+      "midi": 42,
+      "name": "F#2",
+      "len": 1
+     },
+     {
+      "step": 11,
+      "midi": 42,
+      "name": "F#2",
+      "len": 1
+     },
+     {
+      "step": 12,
+      "midi": 42,
+      "name": "F#2",
+      "len": 1
+     },
+     {
+      "step": 13,
+      "midi": 42,
+      "name": "F#2",
+      "len": 1
+     },
+     {
+      "step": 14,
+      "midi": 42,
+      "name": "F#2",
+      "len": 2
+     }
+    ],
+    "used": 16.0
+   },
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     },
+     {
+      "step": 1,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     },
+     {
+      "step": 2,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     },
+     {
+      "step": 3,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     },
+     {
+      "step": 9,
+      "midi": 42,
+      "name": "F#2",
+      "len": 1
+     },
+     {
+      "step": 10,
+      "midi": 42,
+      "name": "F#2",
+      "len": 1
+     },
+     {
+      "step": 11,
+      "midi": 42,
+      "name": "F#2",
+      "len": 1
+     },
+     {
+      "step": 12,
+      "midi": 42,
+      "name": "F#2",
+      "len": 1
+     },
+     {
+      "step": 13,
+      "midi": 42,
+      "name": "F#2",
+      "len": 1
+     },
+     {
+      "step": 14,
+      "midi": 42,
+      "name": "F#2",
+      "len": 2
+     }
+    ],
+    "used": 16.0
+   }
+  ],
+  "chords": [],
+  "ok": true,
+  "notes_seq": [
+   35,
+   35,
+   35,
+   35,
+   35,
+   42,
+   42,
+   42,
+   42,
+   42,
+   42,
+   35,
+   35,
+   35,
+   35,
+   35,
+   42,
+   42,
+   42,
+   42,
+   42,
+   42
+  ]
+ },
+ {
+  "id": "all-we-need",
+  "name": "All We Need Is Love",
+  "aka": "",
+  "label": "Keith Hudson",
+  "year": 1972,
+  "style": "reggae",
+  "bpm": [
+   70,
+   70
+  ],
+  "page": 3,
+  "sys": 0,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 43,
+      "name": "G2",
+      "len": 3
+     },
+     {
+      "step": 3,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 43,
+      "name": "G2",
+      "len": 1
+     },
+     {
+      "step": 5,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 6,
+      "midi": 43,
+      "name": "G2",
+      "len": 2
+     },
+     {
+      "step": 11,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 12,
+      "midi": 40,
+      "name": "E2",
+      "len": 1
+     },
+     {
+      "step": 13,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 14,
+      "midi": 40,
+      "name": "E2",
+      "len": 2
+     }
+    ],
+    "used": 16.0
+   },
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 43,
+      "name": "G2",
+      "len": 3
+     },
+     {
+      "step": 3,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 43,
+      "name": "G2",
+      "len": 1
+     },
+     {
+      "step": 5,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 6,
+      "midi": 43,
+      "name": "G2",
+      "len": 2
+     },
+     {
+      "step": 11,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 12,
+      "midi": 40,
+      "name": "E2",
+      "len": 1
+     },
+     {
+      "step": 13,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 14,
+      "midi": 40,
+      "name": "E2",
+      "len": 2
+     }
+    ],
+    "used": 16.0
+   }
+  ],
+  "chords": [
+   {
+    "x": 99.5,
+    "name": "G"
+   },
+   {
+    "x": 211.4,
+    "name": "F#"
+   },
+   {
+    "x": 221.7,
+    "name": "-"
+   },
+   {
+    "x": 264.4,
+    "name": "E-"
+   },
+   {
+    "x": 333.0,
+    "name": "G"
+   },
+   {
+    "x": 439.1,
+    "name": "F"
+   },
+   {
+    "x": 451.1,
+    "name": "#-"
+   },
+   {
+    "x": 492.2,
+    "name": "E"
+   },
+   {
+    "x": 501.1,
+    "name": "-"
+   }
+  ],
+  "ok": true,
+  "notes_seq": [
+   43,
+   38,
+   43,
+   38,
+   43,
+   38,
+   40,
+   38,
+   40,
+   43,
+   38,
+   43,
+   38,
+   43,
+   38,
+   40,
+   38,
+   40
+  ]
+ },
+ {
+  "id": "answer",
+  "name": "Answer",
+  "aka": "Never Let You Go",
+  "label": "Studio One",
+  "year": 1967,
+  "style": "reggae",
+  "bpm": [
+   75,
+   86
+  ],
+  "page": 4,
+  "sys": 0,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     },
+     {
+      "step": 1,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     },
+     {
+      "step": 5,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     },
+     {
+      "step": 7,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 39,
+      "name": "D#2",
+      "len": 1
+     },
+     {
+      "step": 9,
+      "midi": 39,
+      "name": "D#2",
+      "len": 1
+     },
+     {
+      "step": 10,
+      "midi": 38,
+      "name": "D2",
+      "len": 2
+     },
+     {
+      "step": 12,
+      "midi": 39,
+      "name": "D#2",
+      "len": 2
+     },
+     {
+      "step": 14,
+      "midi": 41,
+      "name": "F2",
+      "len": 2
+     }
+    ],
+    "used": 16.0
+   },
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     },
+     {
+      "step": 1,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     },
+     {
+      "step": 5,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     },
+     {
+      "step": 7,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 39,
+      "name": "D#2",
+      "len": 1
+     },
+     {
+      "step": 9,
+      "midi": 39,
+      "name": "D#2",
+      "len": 1
+     },
+     {
+      "step": 10,
+      "midi": 38,
+      "name": "D2",
+      "len": 2
+     },
+     {
+      "step": 12,
+      "midi": 39,
+      "name": "D#2",
+      "len": 2
+     },
+     {
+      "step": 14,
+      "midi": 41,
+      "name": "F2",
+      "len": 2
+     }
+    ],
+    "used": 16.0
+   }
+  ],
+  "chords": [
+   {
+    "x": 118.2,
+    "name": "B"
+   },
+   {
+    "x": 127.2,
+    "name": "b"
+   },
+   {
+    "x": 229.6,
+    "name": "E"
+   },
+   {
+    "x": 238.2,
+    "name": "b"
+   },
+   {
+    "x": 337.7,
+    "name": "Bb"
+   },
+   {
+    "x": 448.9,
+    "name": "Eb"
+   }
+  ],
+  "ok": true,
+  "notes_seq": [
+   34,
+   34,
+   34,
+   34,
+   38,
+   39,
+   39,
+   38,
+   39,
+   41,
+   34,
+   34,
+   34,
+   34,
+   38,
+   39,
+   39,
+   38,
+   39,
+   41
+  ]
+ },
+ {
+  "id": "artibella",
+  "name": "Artibella",
+  "aka": "",
+  "label": "Phill Pratt",
+  "year": 0,
+  "style": "reggae",
+  "bpm": [
+   65,
+   83
+  ],
+  "page": 5,
+  "sys": 0,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 38,
+      "name": "D2",
+      "len": 2
+     },
+     {
+      "step": 4,
+      "midi": 45,
+      "name": "A2",
+      "len": 2
+     },
+     {
+      "step": 9,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 10,
+      "midi": 41,
+      "name": "F2",
+      "len": 1
+     },
+     {
+      "step": 11,
+      "midi": 43,
+      "name": "G2",
+      "len": 1
+     },
+     {
+      "step": 12,
+      "midi": 45,
+      "name": "A2",
+      "len": 2
+     }
+    ],
+    "used": 16.0
+   },
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 33,
+      "name": "A1",
+      "len": 2
+     },
+     {
+      "step": 4,
+      "midi": 36,
+      "name": "C2",
+      "len": 2
+     },
+     {
+      "step": 9,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 10,
+      "midi": 41,
+      "name": "F2",
+      "len": 1
+     },
+     {
+      "step": 11,
+      "midi": 43,
+      "name": "G2",
+      "len": 1
+     },
+     {
+      "step": 12,
+      "midi": 45,
+      "name": "A2",
+      "len": 2
+     }
+    ],
+    "used": 16.0
+   }
+  ],
+  "chords": [
+   {
+    "x": 100.9,
+    "name": "D"
+   },
+   {
+    "x": 111.2,
+    "name": "-"
+   },
+   {
+    "x": 321.6,
+    "name": "A"
+   },
+   {
+    "x": 329.9,
+    "name": "-"
+   },
+   {
+    "x": 419.5,
+    "name": "D-"
+   }
+  ],
+  "ok": true,
+  "notes_seq": [
+   38,
+   45,
+   38,
+   41,
+   43,
+   45,
+   33,
+   36,
+   38,
+   41,
+   43,
+   45
+  ]
+ },
+ {
+  "id": "baby-i-love-you",
+  "name": "Baby I Love You So",
+  "aka": "",
+  "label": "",
+  "year": 0,
+  "style": "reggae",
+  "bpm": [
+   58,
+   68
+  ],
+  "page": 6,
+  "sys": 2,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 39,
+      "name": "D#2",
+      "len": 1
+     },
+     {
+      "step": 1,
+      "midi": 46,
+      "name": "A#2",
+      "len": 1
+     },
+     {
+      "step": 2,
+      "midi": 51,
+      "name": "D#3",
+      "len": 2
+     },
+     {
+      "step": 4,
+      "midi": 39,
+      "name": "D#2",
+      "len": 1
+     },
+     {
+      "step": 5,
+      "midi": 39,
+      "name": "D#2",
+      "len": 1
+     },
+     {
+      "step": 6,
+      "midi": 46,
+      "name": "A#2",
+      "len": 1
+     },
+     {
+      "step": 7,
+      "midi": 46,
+      "name": "A#2",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 37,
+      "name": "C#2",
+      "len": 1
+     },
+     {
+      "step": 9,
+      "midi": 37,
+      "name": "C#2",
+      "len": 1
+     },
+     {
+      "step": 15,
+      "midi": 39,
+      "name": "D#2",
+      "len": 1
+     }
+    ],
+    "used": 16.0
+   },
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 39,
+      "name": "D#2",
+      "len": 1
+     },
+     {
+      "step": 1,
+      "midi": 46,
+      "name": "A#2",
+      "len": 1
+     },
+     {
+      "step": 2,
+      "midi": 51,
+      "name": "D#3",
+      "len": 2
+     },
+     {
+      "step": 4,
+      "midi": 39,
+      "name": "D#2",
+      "len": 1
+     },
+     {
+      "step": 5,
+      "midi": 39,
+      "name": "D#2",
+      "len": 1
+     },
+     {
+      "step": 6,
+      "midi": 46,
+      "name": "A#2",
+      "len": 1
+     },
+     {
+      "step": 7,
+      "midi": 46,
+      "name": "A#2",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 37,
+      "name": "C#2",
+      "len": 1
+     },
+     {
+      "step": 9,
+      "midi": 37,
+      "name": "C#2",
+      "len": 1
+     },
+     {
+      "step": 15,
+      "midi": 39,
+      "name": "D#2",
+      "len": 1
+     }
+    ],
+    "used": 16.0
+   }
+  ],
+  "chords": [
+   {
+    "x": 131.7,
+    "name": "D"
+   },
+   {
+    "x": 142.3,
+    "name": "#"
+   },
+   {
+    "x": 148.2,
+    "name": "-"
+   },
+   {
+    "x": 250.6,
+    "name": "C#"
+   },
+   {
+    "x": 261.1,
+    "name": "-"
+   },
+   {
+    "x": 350.7,
+    "name": "D#"
+   },
+   {
+    "x": 361.8,
+    "name": "-"
+   },
+   {
+    "x": 464.3,
+    "name": "C#"
+   },
+   {
+    "x": 474.7,
+    "name": "-"
+   }
+  ],
+  "ok": true,
+  "notes_seq": [
+   39,
+   46,
+   51,
+   39,
+   39,
+   46,
+   46,
+   37,
+   37,
+   39,
+   39,
+   46,
+   51,
+   39,
+   39,
+   46,
+   46,
+   37,
+   37,
+   39
+  ]
+ },
+ {
+  "id": "ballistic",
+  "name": "Ballistic Affair",
+  "aka": "",
+  "label": "",
+  "year": 0,
+  "style": "reggae",
+  "bpm": [
+   66,
+   82
+  ],
+  "page": 7,
+  "sys": 2,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 33,
+      "name": "A1",
+      "len": 3
+     },
+     {
+      "step": 3,
+      "midi": 33,
+      "name": "A1",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 37,
+      "name": "C#2",
+      "len": 2
+     },
+     {
+      "step": 6,
+      "midi": 40,
+      "name": "E2",
+      "len": 2
+     },
+     {
+      "step": 8,
+      "midi": 35,
+      "name": "B1",
+      "len": 3
+     },
+     {
+      "step": 11,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     },
+     {
+      "step": 12,
+      "midi": 39,
+      "name": "D#2",
+      "len": 1
+     },
+     {
+      "step": 13,
+      "midi": 40,
+      "name": "E2",
+      "len": 2
+     },
+     {
+      "step": 15,
+      "midi": 39,
+      "name": "D#2",
+      "len": 2
+     },
+     {
+      "step": 17,
+      "midi": 40,
+      "name": "E2",
+      "len": 1
+     }
+    ],
+    "used": 16
+   },
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 33,
+      "name": "A1",
+      "len": 3
+     },
+     {
+      "step": 3,
+      "midi": 33,
+      "name": "A1",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 37,
+      "name": "C#2",
+      "len": 2
+     },
+     {
+      "step": 6,
+      "midi": 40,
+      "name": "E2",
+      "len": 2
+     },
+     {
+      "step": 8,
+      "midi": 35,
+      "name": "B1",
+      "len": 3
+     },
+     {
+      "step": 11,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     },
+     {
+      "step": 12,
+      "midi": 39,
+      "name": "D#2",
+      "len": 1
+     },
+     {
+      "step": 13,
+      "midi": 40,
+      "name": "E2",
+      "len": 2
+     },
+     {
+      "step": 15,
+      "midi": 39,
+      "name": "D#2",
+      "len": 2
+     },
+     {
+      "step": 17,
+      "midi": 40,
+      "name": "E2",
+      "len": 1
+     }
+    ],
+    "used": 16
+   }
+  ],
+  "chords": [
+   {
+    "x": 116.8,
+    "name": "A"
+   },
+   {
+    "x": 224.7,
+    "name": "B-"
+   },
+   {
+    "x": 337.0,
+    "name": "A"
+   },
+   {
+    "x": 440.0,
+    "name": "B"
+   },
+   {
+    "x": 449.3,
+    "name": "-"
+   }
+  ],
+  "ok": true,
+  "notes_seq": [
+   33,
+   33,
+   37,
+   40,
+   35,
+   35,
+   39,
+   40,
+   39,
+   40,
+   33,
+   33,
+   37,
+   40,
+   35,
+   35,
+   39,
+   40,
+   39,
+   40
+  ]
+ },
+ {
+  "id": "bam-bam",
+  "name": "Bam Bam",
+  "aka": "",
+  "label": "",
+  "year": 0,
+  "style": "dancehall",
+  "bpm": [
+   96,
+   96
+  ],
+  "page": 8,
+  "sys": 0,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 50,
+      "name": "D3",
+      "len": 4
+     },
+     {
+      "step": 4,
+      "midi": 50,
+      "name": "D3",
+      "len": 4
+     },
+     {
+      "step": 8,
+      "midi": 45,
+      "name": "A2",
+      "len": 4
+     },
+     {
+      "step": 12,
+      "midi": 48,
+      "name": "C3",
+      "len": 4
+     },
+     {
+      "step": 16,
+      "midi": 45,
+      "name": "A2",
+      "len": 4
+     },
+     {
+      "step": 20,
+      "midi": 48,
+      "name": "C3",
+      "len": 4
+     }
+    ],
+    "used": 24.0
+   }
+  ],
+  "chords": [],
+  "ok": false,
+  "notes_seq": [
+   50,
+   50,
+   45,
+   48,
+   45,
+   48
+  ]
+ },
+ {
+  "id": "beat-down-babylon",
+  "name": "Beat Down Babylon",
+  "aka": "",
+  "label": "",
+  "year": 0,
+  "style": "reggae",
+  "bpm": [
+   70,
+   70
+  ],
+  "page": 9,
+  "sys": 1,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 40,
+      "name": "E2",
+      "len": 1
+     },
+     {
+      "step": 1,
+      "midi": 45,
+      "name": "A2",
+      "len": 1
+     },
+     {
+      "step": 2,
+      "midi": 45,
+      "name": "A2",
+      "len": 1
+     },
+     {
+      "step": 3,
+      "midi": 45,
+      "name": "A2",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 45,
+      "name": "A2",
+      "len": 2
+     },
+     {
+      "step": 8,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 9,
+      "midi": 43,
+      "name": "G2",
+      "len": 1
+     },
+     {
+      "step": 10,
+      "midi": 43,
+      "name": "G2",
+      "len": 1
+     },
+     {
+      "step": 11,
+      "midi": 43,
+      "name": "G2",
+      "len": 1
+     },
+     {
+      "step": 12,
+      "midi": 43,
+      "name": "G2",
+      "len": 2
+     }
+    ],
+    "used": 16.0
+   },
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 40,
+      "name": "E2",
+      "len": 1
+     },
+     {
+      "step": 1,
+      "midi": 45,
+      "name": "A2",
+      "len": 1
+     },
+     {
+      "step": 2,
+      "midi": 45,
+      "name": "A2",
+      "len": 1
+     },
+     {
+      "step": 3,
+      "midi": 45,
+      "name": "A2",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 45,
+      "name": "A2",
+      "len": 2
+     },
+     {
+      "step": 8,
+      "midi": 40,
+      "name": "E2",
+      "len": 4
+     }
+    ],
+    "used": 12.0
+   }
+  ],
+  "chords": [],
+  "ok": false,
+  "notes_seq": [
+   40,
+   45,
+   45,
+   45,
+   45,
+   38,
+   43,
+   43,
+   43,
+   43,
+   40,
+   45,
+   45,
+   45,
+   45,
+   40
+  ]
+ },
+ {
+  "id": "better-must-come",
+  "name": "Better Must Come",
+  "aka": "",
+  "label": "Bunny Lee",
+  "year": 0,
+  "style": "reggae",
+  "bpm": [
+   67,
+   80
+  ],
+  "page": 10,
+  "sys": 0,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 45,
+      "name": "A2",
+      "len": 1
+     },
+     {
+      "step": 1,
+      "midi": 45,
+      "name": "A2",
+      "len": 1
+     },
+     {
+      "step": 2,
+      "midi": 40,
+      "name": "E2",
+      "len": 1
+     },
+     {
+      "step": 3,
+      "midi": 37,
+      "name": "C#2",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 33,
+      "name": "A1",
+      "len": 2
+     },
+     {
+      "step": 6,
+      "midi": 38,
+      "name": "D2",
+      "len": 2
+     },
+     {
+      "step": 10,
+      "midi": 38,
+      "name": "D2",
+      "len": 2
+     },
+     {
+      "step": 12,
+      "midi": 42,
+      "name": "F#2",
+      "len": 1
+     },
+     {
+      "step": 13,
+      "midi": 44,
+      "name": "G#2",
+      "len": 3.0
+     }
+    ],
+    "used": 16
+   },
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 45,
+      "name": "A2",
+      "len": 1
+     },
+     {
+      "step": 1,
+      "midi": 45,
+      "name": "A2",
+      "len": 1
+     },
+     {
+      "step": 2,
+      "midi": 40,
+      "name": "E2",
+      "len": 1
+     },
+     {
+      "step": 3,
+      "midi": 37,
+      "name": "C#2",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 33,
+      "name": "A1",
+      "len": 2
+     },
+     {
+      "step": 12,
+      "midi": 42,
+      "name": "F#2",
+      "len": 1
+     },
+     {
+      "step": 13,
+      "midi": 44,
+      "name": "G#2",
+      "len": 3.0
+     }
+    ],
+    "used": 16
+   }
+  ],
+  "chords": [
+   {
+    "x": 166.4,
+    "name": "A"
+   },
+   {
+    "x": 271.3,
+    "name": "D"
+   },
+   {
+    "x": 365.3,
+    "name": "A"
+   },
+   {
+    "x": 470.2,
+    "name": "D"
+   }
+  ],
+  "ok": true,
+  "notes_seq": [
+   45,
+   45,
+   40,
+   37,
+   33,
+   38,
+   38,
+   42,
+   44,
+   45,
+   45,
+   40,
+   37,
+   33,
+   42,
+   44
+  ]
+ },
+ {
+  "id": "billie-jean",
+  "name": "Billie Jean",
+  "aka": "",
+  "label": "",
+  "year": 0,
+  "style": "rockers",
+  "bpm": [
+   72,
+   86
+  ],
+  "page": 11,
+  "sys": 0,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 31,
+      "name": "G1",
+      "len": 1
+     },
+     {
+      "step": 1,
+      "midi": 31,
+      "name": "G1",
+      "len": 1
+     },
+     {
+      "step": 2,
+      "midi": 31,
+      "name": "G1",
+      "len": 1
+     },
+     {
+      "step": 3,
+      "midi": 31,
+      "name": "G1",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     },
+     {
+      "step": 5,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     },
+     {
+      "step": 6,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     },
+     {
+      "step": 7,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 36,
+      "name": "C2",
+      "len": 1
+     },
+     {
+      "step": 9,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 10,
+      "midi": 36,
+      "name": "C2",
+      "len": 2
+     },
+     {
+      "step": 12,
+      "midi": 36,
+      "name": "C2",
+      "len": 2
+     },
+     {
+      "step": 14,
+      "midi": 36,
+      "name": "C2",
+      "len": 2
+     }
+    ],
+    "used": 16.0
+   },
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 31,
+      "name": "G1",
+      "len": 1
+     },
+     {
+      "step": 1,
+      "midi": 31,
+      "name": "G1",
+      "len": 1
+     },
+     {
+      "step": 2,
+      "midi": 31,
+      "name": "G1",
+      "len": 1
+     },
+     {
+      "step": 3,
+      "midi": 31,
+      "name": "G1",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     },
+     {
+      "step": 5,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     },
+     {
+      "step": 6,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     },
+     {
+      "step": 7,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 36,
+      "name": "C2",
+      "len": 1
+     },
+     {
+      "step": 9,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 10,
+      "midi": 36,
+      "name": "C2",
+      "len": 2
+     },
+     {
+      "step": 12,
+      "midi": 36,
+      "name": "C2",
+      "len": 2
+     },
+     {
+      "step": 14,
+      "midi": 36,
+      "name": "C2",
+      "len": 2
+     }
+    ],
+    "used": 16.0
+   }
+  ],
+  "chords": [
+   {
+    "x": 101.2,
+    "name": "G"
+   },
+   {
+    "x": 110.9,
+    "name": "-"
+   },
+   {
+    "x": 227.9,
+    "name": "C"
+   },
+   {
+    "x": 323.1,
+    "name": "G"
+   },
+   {
+    "x": 332.8,
+    "name": "-"
+   },
+   {
+    "x": 449.8,
+    "name": "C"
+   }
+  ],
+  "ok": true,
+  "notes_seq": [
+   31,
+   31,
+   31,
+   31,
+   34,
+   34,
+   34,
+   34,
+   36,
+   38,
+   36,
+   36,
+   36,
+   31,
+   31,
+   31,
+   31,
+   34,
+   34,
+   34,
+   34,
+   36,
+   38,
+   36,
+   36,
+   36
+  ]
+ },
+ {
+  "id": "created-by-father",
+  "name": "Created By The Father",
+  "aka": "",
+  "label": "Studio One",
+  "year": 1970,
+  "style": "reggae",
+  "bpm": [
+   80,
+   80
+  ],
+  "page": 12,
+  "sys": 0,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 38,
+      "name": "D2",
+      "len": 2
+     },
+     {
+      "step": 2,
+      "midi": 38,
+      "name": "D2",
+      "len": 2
+     },
+     {
+      "step": 4,
+      "midi": 33,
+      "name": "A1",
+      "len": 2
+     },
+     {
+      "step": 6,
+      "midi": 38,
+      "name": "D2",
+      "len": 2
+     },
+     {
+      "step": 11,
+      "midi": 45,
+      "name": "A2",
+      "len": 1
+     },
+     {
+      "step": 12,
+      "midi": 48,
+      "name": "C3",
+      "len": 1
+     },
+     {
+      "step": 13,
+      "midi": 45,
+      "name": "A2",
+      "len": 1
+     },
+     {
+      "step": 14,
+      "midi": 48,
+      "name": "C3",
+      "len": 2.0
+     }
+    ],
+    "used": 16
+   },
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 36,
+      "name": "C2",
+      "len": 2
+     },
+     {
+      "step": 2,
+      "midi": 36,
+      "name": "C2",
+      "len": 2
+     },
+     {
+      "step": 4,
+      "midi": 33,
+      "name": "A1",
+      "len": 2
+     },
+     {
+      "step": 6,
+      "midi": 36,
+      "name": "C2",
+      "len": 2
+     },
+     {
+      "step": 11,
+      "midi": 45,
+      "name": "A2",
+      "len": 1
+     },
+     {
+      "step": 12,
+      "midi": 48,
+      "name": "C3",
+      "len": 1
+     },
+     {
+      "step": 13,
+      "midi": 45,
+      "name": "A2",
+      "len": 1
+     },
+     {
+      "step": 14,
+      "midi": 48,
+      "name": "C3",
+      "len": 2.0
+     }
+    ],
+    "used": 16
+   }
+  ],
+  "chords": [],
+  "ok": true,
+  "notes_seq": [
+   38,
+   38,
+   33,
+   38,
+   45,
+   48,
+   45,
+   48,
+   36,
+   36,
+   33,
+   36,
+   45,
+   48,
+   45,
+   48
+  ]
+ },
+ {
+  "id": "cuss-cuss",
+  "name": "Cuss Cuss",
+  "aka": "",
+  "label": "Harry J",
+  "year": 1968,
+  "style": "rockers",
+  "bpm": [
+   70,
+   74
+  ],
+  "page": 13,
+  "sys": 0,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 1,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 2,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 3,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 41,
+      "name": "F2",
+      "len": 1
+     },
+     {
+      "step": 5,
+      "midi": 41,
+      "name": "F2",
+      "len": 1
+     },
+     {
+      "step": 6,
+      "midi": 45,
+      "name": "A2",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 9,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 10,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 12,
+      "midi": 45,
+      "name": "A2",
+      "len": 1
+     },
+     {
+      "step": 13,
+      "midi": 45,
+      "name": "A2",
+      "len": 1
+     },
+     {
+      "step": 14,
+      "midi": 45,
+      "name": "A2",
+      "len": 1
+     }
+    ],
+    "used": 16.0
+   },
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 1,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 2,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 3,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 41,
+      "name": "F2",
+      "len": 1
+     },
+     {
+      "step": 5,
+      "midi": 41,
+      "name": "F2",
+      "len": 1
+     },
+     {
+      "step": 6,
+      "midi": 45,
+      "name": "A2",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 9,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 10,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 12,
+      "midi": 33,
+      "name": "A1",
+      "len": 1
+     },
+     {
+      "step": 13,
+      "midi": 33,
+      "name": "A1",
+      "len": 1
+     },
+     {
+      "step": 14,
+      "midi": 33,
+      "name": "A1",
+      "len": 1
+     }
+    ],
+    "used": 16.0
+   }
+  ],
+  "chords": [],
+  "ok": true,
+  "notes_seq": [
+   38,
+   38,
+   38,
+   38,
+   41,
+   41,
+   45,
+   38,
+   38,
+   38,
+   45,
+   45,
+   45,
+   38,
+   38,
+   38,
+   38,
+   41,
+   41,
+   45,
+   38,
+   38,
+   38,
+   33,
+   33,
+   33
+  ]
+ },
+ {
+  "id": "death-in-arena",
+  "name": "Death In The Arena",
+  "aka": "",
+  "label": "Studio One",
+  "year": 1968,
+  "style": "steppers",
+  "bpm": [
+   70,
+   74
+  ],
+  "page": 14,
+  "sys": 0,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 39,
+      "name": "D#2",
+      "len": 2
+     },
+     {
+      "step": 2,
+      "midi": 39,
+      "name": "D#2",
+      "len": 2
+     },
+     {
+      "step": 4,
+      "midi": 39,
+      "name": "D#2",
+      "len": 2
+     },
+     {
+      "step": 7,
+      "midi": 39,
+      "name": "D#2",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 31,
+      "name": "G1",
+      "len": 1
+     },
+     {
+      "step": 9,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     },
+     {
+      "step": 11,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     },
+     {
+      "step": 12,
+      "midi": 36,
+      "name": "C2",
+      "len": 1
+     },
+     {
+      "step": 13,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     },
+     {
+      "step": 14,
+      "midi": 36,
+      "name": "C2",
+      "len": 1
+     },
+     {
+      "step": 15,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     }
+    ],
+    "used": 16.0
+   }
+  ],
+  "chords": [],
+  "ok": true,
+  "notes_seq": [
+   39,
+   39,
+   39,
+   39,
+   31,
+   34,
+   34,
+   36,
+   34,
+   36,
+   34
+  ]
+ },
+ {
+  "id": "dirty-harry",
+  "name": "Dirty Harry",
+  "aka": "",
+  "label": "Glen Brown",
+  "year": 1972,
+  "style": "reggae",
+  "bpm": [
+   65,
+   80
+  ],
+  "page": 15,
+  "sys": 2,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 33,
+      "name": "A1",
+      "len": 2
+     },
+     {
+      "step": 2,
+      "midi": 35,
+      "name": "B1",
+      "len": 2
+     },
+     {
+      "step": 4,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     },
+     {
+      "step": 5,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     },
+     {
+      "step": 6,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     },
+     {
+      "step": 7,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     },
+     {
+      "step": 9,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     },
+     {
+      "step": 10,
+      "midi": 30,
+      "name": "F#1",
+      "len": 2
+     },
+     {
+      "step": 12,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     }
+    ],
+    "used": 16
+   },
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 33,
+      "name": "A1",
+      "len": 2
+     },
+     {
+      "step": 2,
+      "midi": 35,
+      "name": "B1",
+      "len": 2
+     },
+     {
+      "step": 4,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     },
+     {
+      "step": 5,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     },
+     {
+      "step": 6,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     },
+     {
+      "step": 7,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     },
+     {
+      "step": 9,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     },
+     {
+      "step": 10,
+      "midi": 30,
+      "name": "F#1",
+      "len": 2
+     },
+     {
+      "step": 12,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     }
+    ],
+    "used": 16
+   }
+  ],
+  "chords": [
+   {
+    "x": 112.6,
+    "name": "B"
+   },
+   {
+    "x": 121.9,
+    "name": "-"
+   }
+  ],
+  "ok": true,
+  "notes_seq": [
+   33,
+   35,
+   35,
+   35,
+   35,
+   35,
+   35,
+   35,
+   30,
+   35,
+   33,
+   35,
+   35,
+   35,
+   35,
+   35,
+   35,
+   35,
+   30,
+   35
+  ]
+ },
+ {
+  "id": "drifter",
+  "name": "Drifter",
+  "aka": "",
+  "label": "Harry Mudie",
+  "year": 1969,
+  "style": "reggae",
+  "bpm": [
+   65,
+   83
+  ],
+  "page": 16,
+  "sys": 2,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 33,
+      "name": "A1",
+      "len": 1
+     },
+     {
+      "step": 1,
+      "midi": 33,
+      "name": "A1",
+      "len": 1
+     },
+     {
+      "step": 2,
+      "midi": 40,
+      "name": "E2",
+      "len": 1
+     },
+     {
+      "step": 3,
+      "midi": 40,
+      "name": "E2",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 33,
+      "name": "A1",
+      "len": 1
+     },
+     {
+      "step": 5,
+      "midi": 33,
+      "name": "A1",
+      "len": 1
+     },
+     {
+      "step": 6,
+      "midi": 40,
+      "name": "E2",
+      "len": 1
+     },
+     {
+      "step": 7,
+      "midi": 40,
+      "name": "E2",
+      "len": 1
+     },
+     {
+      "step": 9,
+      "midi": 31,
+      "name": "G1",
+      "len": 1
+     },
+     {
+      "step": 10,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 11,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 12,
+      "midi": 31,
+      "name": "G1",
+      "len": 1
+     },
+     {
+      "step": 13,
+      "midi": 31,
+      "name": "G1",
+      "len": 1
+     },
+     {
+      "step": 14,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     }
+    ],
+    "used": 16.0
+   },
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 33,
+      "name": "A1",
+      "len": 1
+     },
+     {
+      "step": 1,
+      "midi": 33,
+      "name": "A1",
+      "len": 1
+     },
+     {
+      "step": 2,
+      "midi": 40,
+      "name": "E2",
+      "len": 1
+     },
+     {
+      "step": 3,
+      "midi": 40,
+      "name": "E2",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 33,
+      "name": "A1",
+      "len": 1
+     },
+     {
+      "step": 5,
+      "midi": 33,
+      "name": "A1",
+      "len": 1
+     },
+     {
+      "step": 6,
+      "midi": 40,
+      "name": "E2",
+      "len": 1
+     },
+     {
+      "step": 7,
+      "midi": 40,
+      "name": "E2",
+      "len": 1
+     },
+     {
+      "step": 9,
+      "midi": 33,
+      "name": "A1",
+      "len": 1
+     },
+     {
+      "step": 10,
+      "midi": 40,
+      "name": "E2",
+      "len": 1
+     },
+     {
+      "step": 11,
+      "midi": 40,
+      "name": "E2",
+      "len": 1
+     },
+     {
+      "step": 12,
+      "midi": 33,
+      "name": "A1",
+      "len": 1
+     },
+     {
+      "step": 13,
+      "midi": 33,
+      "name": "A1",
+      "len": 1
+     },
+     {
+      "step": 14,
+      "midi": 40,
+      "name": "E2",
+      "len": 1
+     }
+    ],
+    "used": 16.0
+   }
+  ],
+  "chords": [
+   {
+    "x": 217.1,
+    "name": "G"
+   },
+   {
+    "x": 327.6,
+    "name": "A"
+   },
+   {
+    "x": 335.9,
+    "name": "-"
+   }
+  ],
+  "ok": true,
+  "notes_seq": [
+   33,
+   33,
+   40,
+   40,
+   33,
+   33,
+   40,
+   40,
+   31,
+   38,
+   38,
+   31,
+   31,
+   38,
+   33,
+   33,
+   40,
+   40,
+   33,
+   33,
+   40,
+   40,
+   33,
+   40,
+   40,
+   33,
+   33,
+   40
+  ]
+ },
+ {
+  "id": "duck",
+  "name": "Duck",
+  "aka": "",
+  "label": "Jammy's",
+  "year": 1987,
+  "style": "digital",
+  "bpm": [
+   90,
+   100
+  ],
+  "page": 17,
+  "sys": 2,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 45,
+      "name": "A2",
+      "len": 2
+     },
+     {
+      "step": 2,
+      "midi": 45,
+      "name": "A2",
+      "len": 2
+     },
+     {
+      "step": 4,
+      "midi": 45,
+      "name": "A2",
+      "len": 2
+     },
+     {
+      "step": 6,
+      "midi": 40,
+      "name": "E2",
+      "len": 1
+     },
+     {
+      "step": 7,
+      "midi": 42,
+      "name": "F#2",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 45,
+      "name": "A2",
+      "len": 1
+     },
+     {
+      "step": 9,
+      "midi": 45,
+      "name": "A2",
+      "len": 1
+     },
+     {
+      "step": 10,
+      "midi": 42,
+      "name": "F#2",
+      "len": 2
+     },
+     {
+      "step": 12,
+      "midi": 40,
+      "name": "E2",
+      "len": 2
+     },
+     {
+      "step": 14,
+      "midi": 40,
+      "name": "E2",
+      "len": 1
+     },
+     {
+      "step": 15,
+      "midi": 42,
+      "name": "F#2",
+      "len": 1
+     }
+    ],
+    "used": 16.0
+   },
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 45,
+      "name": "A2",
+      "len": 2
+     },
+     {
+      "step": 2,
+      "midi": 45,
+      "name": "A2",
+      "len": 2
+     },
+     {
+      "step": 4,
+      "midi": 45,
+      "name": "A2",
+      "len": 2
+     },
+     {
+      "step": 6,
+      "midi": 40,
+      "name": "E2",
+      "len": 1
+     },
+     {
+      "step": 7,
+      "midi": 42,
+      "name": "F#2",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 45,
+      "name": "A2",
+      "len": 1
+     },
+     {
+      "step": 9,
+      "midi": 45,
+      "name": "A2",
+      "len": 1
+     },
+     {
+      "step": 10,
+      "midi": 42,
+      "name": "F#2",
+      "len": 2
+     },
+     {
+      "step": 12,
+      "midi": 40,
+      "name": "E2",
+      "len": 2
+     },
+     {
+      "step": 14,
+      "midi": 40,
+      "name": "E2",
+      "len": 1
+     },
+     {
+      "step": 15,
+      "midi": 42,
+      "name": "F#2",
+      "len": 1
+     }
+    ],
+    "used": 16.0
+   }
+  ],
+  "chords": [],
+  "ok": true,
+  "notes_seq": [
+   45,
+   45,
+   45,
+   40,
+   42,
+   45,
+   45,
+   42,
+   40,
+   40,
+   42,
+   45,
+   45,
+   45,
+   40,
+   42,
+   45,
+   45,
+   42,
+   40,
+   40,
+   42
+  ]
+ },
+ {
+  "id": "expo-train",
+  "name": "Expo Train",
+  "aka": "The Last Train",
+  "label": "Treasure Isle",
+  "year": 1967,
+  "style": "reggae",
+  "bpm": [
+   76,
+   90
+  ],
+  "page": 18,
+  "sys": 1,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 31,
+      "name": "G1",
+      "len": 1
+     },
+     {
+      "step": 1,
+      "midi": 31,
+      "name": "G1",
+      "len": 1
+     },
+     {
+      "step": 2,
+      "midi": 28,
+      "name": "E1",
+      "len": 1
+     },
+     {
+      "step": 3,
+      "midi": 31,
+      "name": "G1",
+      "len": 2
+     },
+     {
+      "step": 7,
+      "midi": 31,
+      "name": "G1",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 31,
+      "name": "G1",
+      "len": 1
+     },
+     {
+      "step": 9,
+      "midi": 31,
+      "name": "G1",
+      "len": 1
+     },
+     {
+      "step": 10,
+      "midi": 28,
+      "name": "E1",
+      "len": 1
+     },
+     {
+      "step": 11,
+      "midi": 31,
+      "name": "G1",
+      "len": 3.0
+     }
+    ],
+    "used": 16
+   },
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 36,
+      "name": "C2",
+      "len": 1
+     },
+     {
+      "step": 1,
+      "midi": 36,
+      "name": "C2",
+      "len": 1
+     },
+     {
+      "step": 2,
+      "midi": 31,
+      "name": "G1",
+      "len": 1
+     },
+     {
+      "step": 3,
+      "midi": 36,
+      "name": "C2",
+      "len": 2
+     },
+     {
+      "step": 7,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 9,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 10,
+      "midi": 42,
+      "name": "F#2",
+      "len": 1
+     },
+     {
+      "step": 11,
+      "midi": 45,
+      "name": "A2",
+      "len": 3.0
+     }
+    ],
+    "used": 16
+   }
+  ],
+  "chords": [],
+  "ok": true,
+  "notes_seq": [
+   31,
+   31,
+   28,
+   31,
+   31,
+   31,
+   31,
+   28,
+   31,
+   36,
+   36,
+   31,
+   36,
+   38,
+   38,
+   38,
+   42,
+   45
+  ]
+ },
+ {
+  "id": "far-east",
+  "name": "Far East",
+  "aka": "",
+  "label": "Treasure Isle",
+  "year": 1967,
+  "style": "reggae",
+  "bpm": [
+   65,
+   86
+  ],
+  "page": 19,
+  "sys": 1,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 1,
+      "midi": 36,
+      "name": "C2",
+      "len": 1
+     },
+     {
+      "step": 2,
+      "midi": 36,
+      "name": "C2",
+      "len": 1
+     },
+     {
+      "step": 3,
+      "midi": 36,
+      "name": "C2",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 36,
+      "name": "C2",
+      "len": 1
+     },
+     {
+      "step": 5,
+      "midi": 36,
+      "name": "C2",
+      "len": 1
+     },
+     {
+      "step": 6,
+      "midi": 36,
+      "name": "C2",
+      "len": 1
+     },
+     {
+      "step": 7,
+      "midi": 36,
+      "name": "C2",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 31,
+      "name": "G1",
+      "len": 2
+     },
+     {
+      "step": 10,
+      "midi": 31,
+      "name": "G1",
+      "len": 2
+     },
+     {
+      "step": 12,
+      "midi": 31,
+      "name": "G1",
+      "len": 2
+     },
+     {
+      "step": 14,
+      "midi": 31,
+      "name": "G1",
+      "len": 1
+     }
+    ],
+    "used": 16
+   },
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 36,
+      "name": "C2",
+      "len": 1
+     },
+     {
+      "step": 1,
+      "midi": 36,
+      "name": "C2",
+      "len": 1
+     },
+     {
+      "step": 2,
+      "midi": 36,
+      "name": "C2",
+      "len": 1
+     },
+     {
+      "step": 3,
+      "midi": 36,
+      "name": "C2",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 36,
+      "name": "C2",
+      "len": 1
+     },
+     {
+      "step": 5,
+      "midi": 36,
+      "name": "C2",
+      "len": 1
+     },
+     {
+      "step": 6,
+      "midi": 36,
+      "name": "C2",
+      "len": 1
+     },
+     {
+      "step": 7,
+      "midi": 31,
+      "name": "G1",
+      "len": 2
+     },
+     {
+      "step": 9,
+      "midi": 31,
+      "name": "G1",
+      "len": 2
+     },
+     {
+      "step": 11,
+      "midi": 31,
+      "name": "G1",
+      "len": 2
+     },
+     {
+      "step": 13,
+      "midi": 31,
+      "name": "G1",
+      "len": 3.0
+     }
+    ],
+    "used": 16
+   }
+  ],
+  "chords": [
+   {
+    "x": 114.6,
+    "name": "C"
+   },
+   {
+    "x": 236.5,
+    "name": "D"
+   },
+   {
+    "x": 246.8,
+    "name": "-"
+   },
+   {
+    "x": 329.1,
+    "name": "C"
+   },
+   {
+    "x": 451.0,
+    "name": "D"
+   },
+   {
+    "x": 461.3,
+    "name": "-"
+   }
+  ],
+  "ok": true,
+  "notes_seq": [
+   36,
+   36,
+   36,
+   36,
+   36,
+   36,
+   36,
+   31,
+   31,
+   31,
+   31,
+   36,
+   36,
+   36,
+   36,
+   36,
+   36,
+   36,
+   31,
+   31,
+   31,
+   31
+  ]
+ },
+ {
+  "id": "fattie-fattie",
+  "name": "Fattie Fattie",
+  "aka": "",
+  "label": "Studio One",
+  "year": 1967,
+  "style": "rocksteady",
+  "bpm": [
+   62,
+   88
+  ],
+  "page": 20,
+  "sys": 1,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 38,
+      "name": "D2",
+      "len": 2
+     },
+     {
+      "step": 2,
+      "midi": 45,
+      "name": "A2",
+      "len": 1
+     },
+     {
+      "step": 3,
+      "midi": 45,
+      "name": "A2",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 45,
+      "name": "A2",
+      "len": 1
+     },
+     {
+      "step": 5,
+      "midi": 45,
+      "name": "A2",
+      "len": 1
+     },
+     {
+      "step": 6,
+      "midi": 45,
+      "name": "A2",
+      "len": 2
+     },
+     {
+      "step": 8,
+      "midi": 35,
+      "name": "B1",
+      "len": 2
+     }
+    ],
+    "used": 16.0
+   },
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 40,
+      "name": "E2",
+      "len": 2
+     },
+     {
+      "step": 2,
+      "midi": 47,
+      "name": "B2",
+      "len": 1
+     },
+     {
+      "step": 3,
+      "midi": 47,
+      "name": "B2",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 47,
+      "name": "B2",
+      "len": 1
+     },
+     {
+      "step": 5,
+      "midi": 47,
+      "name": "B2",
+      "len": 1
+     },
+     {
+      "step": 6,
+      "midi": 47,
+      "name": "B2",
+      "len": 2
+     },
+     {
+      "step": 8,
+      "midi": 33,
+      "name": "A1",
+      "len": 2
+     }
+    ],
+    "used": 16.0
+   }
+  ],
+  "chords": [],
+  "ok": true,
+  "notes_seq": [
+   38,
+   45,
+   45,
+   45,
+   45,
+   45,
+   35,
+   40,
+   47,
+   47,
+   47,
+   47,
+   47,
+   33
+  ]
+ },
+ {
+  "id": "get-in-groove",
+  "name": "Get In The Groove",
+  "aka": "",
+  "label": "Studio One",
+  "year": 0,
+  "style": "reggae",
+  "bpm": [
+   82,
+   90
+  ],
+  "page": 21,
+  "sys": 0,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 36,
+      "name": "C2",
+      "len": 2
+     },
+     {
+      "step": 3,
+      "midi": 36,
+      "name": "C2",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 36,
+      "name": "C2",
+      "len": 1
+     },
+     {
+      "step": 5,
+      "midi": 40,
+      "name": "E2",
+      "len": 1
+     },
+     {
+      "step": 6,
+      "midi": 43,
+      "name": "G2",
+      "len": 2
+     },
+     {
+      "step": 8,
+      "midi": 38,
+      "name": "D2",
+      "len": 4
+     },
+     {
+      "step": 12,
+      "midi": 38,
+      "name": "D2",
+      "len": 2
+     },
+     {
+      "step": 14,
+      "midi": 38,
+      "name": "D2",
+      "len": 2
+     },
+     {
+      "step": 16,
+      "midi": 43,
+      "name": "G2",
+      "len": 1
+     }
+    ],
+    "used": 16
+   },
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 36,
+      "name": "C2",
+      "len": 2
+     },
+     {
+      "step": 3,
+      "midi": 36,
+      "name": "C2",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 36,
+      "name": "C2",
+      "len": 1
+     },
+     {
+      "step": 5,
+      "midi": 40,
+      "name": "E2",
+      "len": 1
+     },
+     {
+      "step": 6,
+      "midi": 43,
+      "name": "G2",
+      "len": 2
+     },
+     {
+      "step": 8,
+      "midi": 38,
+      "name": "D2",
+      "len": 4
+     },
+     {
+      "step": 12,
+      "midi": 38,
+      "name": "D2",
+      "len": 2
+     },
+     {
+      "step": 14,
+      "midi": 38,
+      "name": "D2",
+      "len": 2
+     },
+     {
+      "step": 16,
+      "midi": 43,
+      "name": "G2",
+      "len": 1
+     }
+    ],
+    "used": 16
+   }
+  ],
+  "chords": [
+   {
+    "x": 120.6,
+    "name": "C"
+   },
+   {
+    "x": 236.8,
+    "name": "D-"
+   },
+   {
+    "x": 336.6,
+    "name": "E-"
+   },
+   {
+    "x": 445.8,
+    "name": "D"
+   },
+   {
+    "x": 456.1,
+    "name": "-"
+   }
+  ],
+  "ok": true,
+  "notes_seq": [
+   36,
+   36,
+   36,
+   40,
+   43,
+   38,
+   38,
+   38,
+   43,
+   36,
+   36,
+   36,
+   40,
+   43,
+   38,
+   38,
+   38,
+   43
+  ]
+ },
+ {
+  "id": "head-to-toe",
+  "name": "Head To Toe",
+  "aka": "",
+  "label": "Jammy's",
+  "year": 1986,
+  "style": "rockers",
+  "bpm": [
+   70,
+   90
+  ],
+  "page": 22,
+  "sys": 0,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 29,
+      "name": "F1",
+      "len": 1
+     },
+     {
+      "step": 1,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     },
+     {
+      "step": 2,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     },
+     {
+      "step": 3,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 29,
+      "name": "F1",
+      "len": 1
+     },
+     {
+      "step": 5,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     },
+     {
+      "step": 6,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     },
+     {
+      "step": 7,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 39,
+      "name": "D#2",
+      "len": 2
+     },
+     {
+      "step": 10,
+      "midi": 38,
+      "name": "D2",
+      "len": 2
+     },
+     {
+      "step": 12,
+      "midi": 36,
+      "name": "C2",
+      "len": 2
+     },
+     {
+      "step": 14,
+      "midi": 36,
+      "name": "C2",
+      "len": 2
+     }
+    ],
+    "used": 16.0
+   }
+  ],
+  "chords": [
+   {
+    "x": 124.9,
+    "name": "B"
+   },
+   {
+    "x": 133.9,
+    "name": "b"
+   },
+   {
+    "x": 376.5,
+    "name": "C-"
+   }
+  ],
+  "ok": true,
+  "notes_seq": [
+   29,
+   34,
+   34,
+   34,
+   29,
+   34,
+   34,
+   34,
+   39,
+   38,
+   36,
+   36
+  ]
+ },
+ {
+  "id": "movie-star",
+  "name": "Movie Star",
+  "aka": "",
+  "label": "Studio One",
+  "year": 1970,
+  "style": "reggae",
+  "bpm": [
+   68,
+   84
+  ],
+  "page": 23,
+  "sys": 1,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 38,
+      "name": "D2",
+      "len": 2
+     },
+     {
+      "step": 3,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 43,
+      "name": "G2",
+      "len": 1
+     },
+     {
+      "step": 5,
+      "midi": 45,
+      "name": "A2",
+      "len": 1
+     },
+     {
+      "step": 6,
+      "midi": 43,
+      "name": "G2",
+      "len": 1
+     },
+     {
+      "step": 7,
+      "midi": 45,
+      "name": "A2",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 38,
+      "name": "D2",
+      "len": 2
+     },
+     {
+      "step": 11,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 12,
+      "midi": 43,
+      "name": "G2",
+      "len": 1
+     },
+     {
+      "step": 13,
+      "midi": 45,
+      "name": "A2",
+      "len": 1
+     },
+     {
+      "step": 14,
+      "midi": 43,
+      "name": "G2",
+      "len": 1
+     },
+     {
+      "step": 15,
+      "midi": 45,
+      "name": "A2",
+      "len": 1
+     }
+    ],
+    "used": 16.0
+   }
+  ],
+  "chords": [
+   {
+    "x": 88.9,
+    "name": "D"
+   },
+   {
+    "x": 99.2,
+    "name": "-"
+   },
+   {
+    "x": 319.8,
+    "name": "C-"
+   },
+   {
+    "x": 391.8,
+    "name": "D"
+   },
+   {
+    "x": 402.1,
+    "name": "-"
+   },
+   {
+    "x": 474.2,
+    "name": "C-"
+   }
+  ],
+  "ok": true,
+  "notes_seq": [
+   38,
+   38,
+   43,
+   45,
+   43,
+   45,
+   38,
+   38,
+   43,
+   45,
+   43,
+   45
+  ]
+ },
+ {
+  "id": "my-conversation",
+  "name": "My Conversation",
+  "aka": "",
+  "label": "Bunny Lee",
+  "year": 0,
+  "style": "rocksteady",
+  "bpm": [
+   68,
+   84
+  ],
+  "page": 24,
+  "sys": 0,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 30,
+      "name": "F#1",
+      "len": 2
+     },
+     {
+      "step": 3,
+      "midi": 37,
+      "name": "C#2",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 39,
+      "name": "D#2",
+      "len": 2
+     },
+     {
+      "step": 6,
+      "midi": 37,
+      "name": "C#2",
+      "len": 2
+     },
+     {
+      "step": 8,
+      "midi": 32,
+      "name": "G#1",
+      "len": 2
+     },
+     {
+      "step": 12,
+      "midi": 37,
+      "name": "C#2",
+      "len": 2
+     }
+    ],
+    "used": 16.0
+   }
+  ],
+  "chords": [],
+  "ok": true,
+  "notes_seq": [
+   30,
+   37,
+   39,
+   37,
+   32,
+   37
+  ]
+ },
+ {
+  "id": "my-jamaican-girl",
+  "name": "My Jamaican Girl",
+  "aka": "",
+  "label": "Beverleys",
+  "year": 1970,
+  "style": "reggae",
+  "bpm": [
+   60,
+   80
+  ],
+  "page": 25,
+  "sys": 1,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 39,
+      "name": "D#2",
+      "len": 2
+     },
+     {
+      "step": 2,
+      "midi": 36,
+      "name": "C2",
+      "len": 2
+     },
+     {
+      "step": 4,
+      "midi": 32,
+      "name": "G#1",
+      "len": 4
+     },
+     {
+      "step": 8,
+      "midi": 32,
+      "name": "G#1",
+      "len": 4
+     },
+     {
+      "step": 12,
+      "midi": 32,
+      "name": "G#1",
+      "len": 2
+     },
+     {
+      "step": 14,
+      "midi": 39,
+      "name": "D#2",
+      "len": 2
+     }
+    ],
+    "used": 16.0
+   },
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 41,
+      "name": "F2",
+      "len": 2
+     },
+     {
+      "step": 2,
+      "midi": 38,
+      "name": "D2",
+      "len": 2
+     },
+     {
+      "step": 4,
+      "midi": 34,
+      "name": "A#1",
+      "len": 4
+     },
+     {
+      "step": 8,
+      "midi": 34,
+      "name": "A#1",
+      "len": 4
+     },
+     {
+      "step": 12,
+      "midi": 34,
+      "name": "A#1",
+      "len": 2
+     },
+     {
+      "step": 14,
+      "midi": 41,
+      "name": "F2",
+      "len": 2
+     }
+    ],
+    "used": 16.0
+   }
+  ],
+  "chords": [
+   {
+    "x": 116.5,
+    "name": "A"
+   },
+   {
+    "x": 124.8,
+    "name": "b"
+   },
+   {
+    "x": 335.7,
+    "name": "Bb"
+   }
+  ],
+  "ok": true,
+  "notes_seq": [
+   39,
+   36,
+   32,
+   32,
+   32,
+   39,
+   41,
+   38,
+   34,
+   34,
+   34,
+   41
+  ]
+ },
+ {
+  "id": "pick-up-pieces",
+  "name": "Pick Up The Pieces",
+  "aka": "",
+  "label": "Studio One",
+  "year": 1967,
+  "style": "reggae",
+  "bpm": [
+   75,
+   95
+  ],
+  "page": 26,
+  "sys": 0,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 33,
+      "name": "A1",
+      "len": 2
+     },
+     {
+      "step": 2,
+      "midi": 37,
+      "name": "C#2",
+      "len": 1
+     },
+     {
+      "step": 3,
+      "midi": 45,
+      "name": "A2",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 42,
+      "name": "F#2",
+      "len": 1
+     },
+     {
+      "step": 5,
+      "midi": 40,
+      "name": "E2",
+      "len": 1
+     },
+     {
+      "step": 6,
+      "midi": 37,
+      "name": "C#2",
+      "len": 1
+     },
+     {
+      "step": 7,
+      "midi": 33,
+      "name": "A1",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 35,
+      "name": "B1",
+      "len": 2
+     },
+     {
+      "step": 10,
+      "midi": 42,
+      "name": "F#2",
+      "len": 1
+     },
+     {
+      "step": 11,
+      "midi": 47,
+      "name": "B2",
+      "len": 1
+     }
+    ],
+    "used": 12.0
+   },
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 33,
+      "name": "A1",
+      "len": 2
+     },
+     {
+      "step": 2,
+      "midi": 37,
+      "name": "C#2",
+      "len": 1
+     },
+     {
+      "step": 3,
+      "midi": 45,
+      "name": "A2",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 42,
+      "name": "F#2",
+      "len": 1
+     },
+     {
+      "step": 5,
+      "midi": 40,
+      "name": "E2",
+      "len": 1
+     },
+     {
+      "step": 6,
+      "midi": 37,
+      "name": "C#2",
+      "len": 1
+     },
+     {
+      "step": 7,
+      "midi": 33,
+      "name": "A1",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 35,
+      "name": "B1",
+      "len": 2
+     },
+     {
+      "step": 10,
+      "midi": 42,
+      "name": "F#2",
+      "len": 1
+     },
+     {
+      "step": 11,
+      "midi": 47,
+      "name": "B2",
+      "len": 1
+     }
+    ],
+    "used": 12.0
+   }
+  ],
+  "chords": [],
+  "ok": false,
+  "notes_seq": [
+   33,
+   37,
+   45,
+   42,
+   40,
+   37,
+   33,
+   35,
+   42,
+   47,
+   33,
+   37,
+   45,
+   42,
+   40,
+   37,
+   33,
+   35,
+   42,
+   47
+  ]
+ },
+ {
+  "id": "pressure-slide",
+  "name": "Pressure And Slide",
+  "aka": "",
+  "label": "Studio One",
+  "year": 1967,
+  "style": "onedrop",
+  "bpm": [
+   75,
+   85
+  ],
+  "page": 27,
+  "sys": 1,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 34,
+      "name": "A#1",
+      "len": 2
+     },
+     {
+      "step": 3,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     },
+     {
+      "step": 5,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     },
+     {
+      "step": 6,
+      "midi": 34,
+      "name": "A#1",
+      "len": 2
+     },
+     {
+      "step": 9,
+      "midi": 34,
+      "name": "A#1",
+      "len": 2
+     },
+     {
+      "step": 11,
+      "midi": 34,
+      "name": "A#1",
+      "len": 2
+     },
+     {
+      "step": 13,
+      "midi": 34,
+      "name": "A#1",
+      "len": 2
+     },
+     {
+      "step": 15,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     }
+    ],
+    "used": 16
+   },
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 39,
+      "name": "D#2",
+      "len": 2
+     },
+     {
+      "step": 3,
+      "midi": 39,
+      "name": "D#2",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 39,
+      "name": "D#2",
+      "len": 1
+     },
+     {
+      "step": 5,
+      "midi": 39,
+      "name": "D#2",
+      "len": 1
+     },
+     {
+      "step": 6,
+      "midi": 39,
+      "name": "D#2",
+      "len": 2
+     },
+     {
+      "step": 9,
+      "midi": 39,
+      "name": "D#2",
+      "len": 2
+     },
+     {
+      "step": 11,
+      "midi": 39,
+      "name": "D#2",
+      "len": 2
+     },
+     {
+      "step": 13,
+      "midi": 39,
+      "name": "D#2",
+      "len": 2
+     },
+     {
+      "step": 15,
+      "midi": 41,
+      "name": "F2",
+      "len": 1
+     }
+    ],
+    "used": 16
+   }
+  ],
+  "chords": [
+   {
+    "x": 90.4,
+    "name": "B"
+   },
+   {
+    "x": 99.4,
+    "name": "b"
+   },
+   {
+    "x": 323.5,
+    "name": "Eb"
+   }
+  ],
+  "ok": true,
+  "notes_seq": [
+   34,
+   34,
+   34,
+   34,
+   34,
+   34,
+   34,
+   34,
+   38,
+   39,
+   39,
+   39,
+   39,
+   39,
+   39,
+   39,
+   39,
+   41
+  ]
+ },
+ {
+  "id": "pretty-looks",
+  "name": "Pretty Looks",
+  "aka": "",
+  "label": "Studio One",
+  "year": 1968,
+  "style": "reggae",
+  "bpm": [
+   86,
+   90
+  ],
+  "page": 28,
+  "sys": 0,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 33,
+      "name": "A1",
+      "len": 1
+     },
+     {
+      "step": 3,
+      "midi": 33,
+      "name": "A1",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 33,
+      "name": "A1",
+      "len": 1
+     },
+     {
+      "step": 7,
+      "midi": 33,
+      "name": "A1",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 33,
+      "name": "A1",
+      "len": 1
+     },
+     {
+      "step": 11,
+      "midi": 33,
+      "name": "A1",
+      "len": 1
+     },
+     {
+      "step": 13,
+      "midi": 37,
+      "name": "C#2",
+      "len": 2
+     },
+     {
+      "step": 15,
+      "midi": 40,
+      "name": "E2",
+      "len": 1
+     }
+    ],
+    "used": 16
+   },
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     },
+     {
+      "step": 1,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     },
+     {
+      "step": 2,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     },
+     {
+      "step": 3,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     },
+     {
+      "step": 5,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     },
+     {
+      "step": 6,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     },
+     {
+      "step": 7,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     },
+     {
+      "step": 11,
+      "midi": 40,
+      "name": "E2",
+      "len": 1
+     },
+     {
+      "step": 13,
+      "midi": 38,
+      "name": "D2",
+      "len": 4
+     },
+     {
+      "step": 17,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     }
+    ],
+    "used": 16
+   }
+  ],
+  "chords": [
+   {
+    "x": 130.0,
+    "name": "A"
+   },
+   {
+    "x": 325.5,
+    "name": "B"
+   },
+   {
+    "x": 334.6,
+    "name": "-"
+   },
+   {
+    "x": 441.8,
+    "name": "E"
+   }
+  ],
+  "ok": true,
+  "notes_seq": [
+   33,
+   33,
+   33,
+   33,
+   33,
+   33,
+   37,
+   40,
+   35,
+   35,
+   35,
+   35,
+   35,
+   35,
+   35,
+   35,
+   35,
+   40,
+   38,
+   35
+  ]
+ },
+ {
+  "id": "punaany",
+  "name": "Punaany",
+  "aka": "",
+  "label": "Jammy's",
+  "year": 1987,
+  "style": "digital",
+  "bpm": [
+   80,
+   84
+  ],
+  "page": 29,
+  "sys": 0,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 31,
+      "name": "G1",
+      "len": 3
+     },
+     {
+      "step": 3,
+      "midi": 33,
+      "name": "A1",
+      "len": 2
+     },
+     {
+      "step": 5,
+      "midi": 33,
+      "name": "A1",
+      "len": 2
+     },
+     {
+      "step": 7,
+      "midi": 29,
+      "name": "F1",
+      "len": 2
+     },
+     {
+      "step": 9,
+      "midi": 31,
+      "name": "G1",
+      "len": 3
+     },
+     {
+      "step": 12,
+      "midi": 33,
+      "name": "A1",
+      "len": 2
+     },
+     {
+      "step": 14,
+      "midi": 33,
+      "name": "A1",
+      "len": 2
+     },
+     {
+      "step": 16,
+      "midi": 29,
+      "name": "F1",
+      "len": 1
+     }
+    ],
+    "used": 16
+   },
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 31,
+      "name": "G1",
+      "len": 3
+     },
+     {
+      "step": 3,
+      "midi": 33,
+      "name": "A1",
+      "len": 2
+     },
+     {
+      "step": 5,
+      "midi": 33,
+      "name": "A1",
+      "len": 2
+     },
+     {
+      "step": 7,
+      "midi": 29,
+      "name": "F1",
+      "len": 2
+     },
+     {
+      "step": 9,
+      "midi": 31,
+      "name": "G1",
+      "len": 3
+     },
+     {
+      "step": 12,
+      "midi": 38,
+      "name": "D2",
+      "len": 2
+     },
+     {
+      "step": 14,
+      "midi": 38,
+      "name": "D2",
+      "len": 2
+     },
+     {
+      "step": 16,
+      "midi": 29,
+      "name": "F1",
+      "len": 1
+     }
+    ],
+    "used": 16
+   }
+  ],
+  "chords": [
+   {
+    "x": 115.0,
+    "name": "G"
+   }
+  ],
+  "ok": true,
+  "notes_seq": [
+   31,
+   33,
+   33,
+   29,
+   31,
+   33,
+   33,
+   29,
+   31,
+   33,
+   33,
+   29,
+   31,
+   38,
+   38,
+   29
+  ]
+ },
+ {
+  "id": "queen-majesty",
+  "name": "Queen Majesty",
+  "aka": "",
+  "label": "Treasure Isle",
+  "year": 1967,
+  "style": "rocksteady",
+  "bpm": [
+   94,
+   100
+  ],
+  "page": 30,
+  "sys": 0,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 38,
+      "name": "D2",
+      "len": 4
+     },
+     {
+      "step": 4,
+      "midi": 38,
+      "name": "D2",
+      "len": 3
+     },
+     {
+      "step": 7,
+      "midi": 38,
+      "name": "D2",
+      "len": 2
+     },
+     {
+      "step": 9,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 10,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 11,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 12,
+      "midi": 38,
+      "name": "D2",
+      "len": 2
+     }
+    ],
+    "used": 16.0
+   },
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 31,
+      "name": "G1",
+      "len": 1
+     },
+     {
+      "step": 1,
+      "midi": 31,
+      "name": "G1",
+      "len": 1
+     },
+     {
+      "step": 2,
+      "midi": 31,
+      "name": "G1",
+      "len": 1
+     },
+     {
+      "step": 3,
+      "midi": 31,
+      "name": "G1",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 31,
+      "name": "G1",
+      "len": 1
+     },
+     {
+      "step": 5,
+      "midi": 31,
+      "name": "G1",
+      "len": 1
+     },
+     {
+      "step": 6,
+      "midi": 31,
+      "name": "G1",
+      "len": 1
+     },
+     {
+      "step": 7,
+      "midi": 31,
+      "name": "G1",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 31,
+      "name": "G1",
+      "len": 1
+     },
+     {
+      "step": 9,
+      "midi": 31,
+      "name": "G1",
+      "len": 1
+     },
+     {
+      "step": 10,
+      "midi": 29,
+      "name": "F1",
+      "len": 1
+     },
+     {
+      "step": 11,
+      "midi": 31,
+      "name": "G1",
+      "len": 3.0
+     }
+    ],
+    "used": 16
+   }
+  ],
+  "chords": [],
+  "ok": true,
+  "notes_seq": [
+   38,
+   38,
+   38,
+   38,
+   38,
+   38,
+   38,
+   31,
+   31,
+   31,
+   31,
+   31,
+   31,
+   31,
+   31,
+   31,
+   31,
+   29,
+   31
+  ]
+ },
+ {
+  "id": "real-rock",
+  "name": "Real Rock",
+  "aka": "",
+  "label": "Studio One",
+  "year": 1968,
+  "style": "onedrop",
+  "bpm": [
+   70,
+   90
+  ],
+  "page": 32,
+  "sys": 0,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 34,
+      "name": "A#1",
+      "len": 3
+     },
+     {
+      "step": 3,
+      "midi": 34,
+      "name": "A#1",
+      "len": 2
+     },
+     {
+      "step": 5,
+      "midi": 39,
+      "name": "D#2",
+      "len": 1
+     },
+     {
+      "step": 6,
+      "midi": 41,
+      "name": "F2",
+      "len": 1
+     },
+     {
+      "step": 7,
+      "midi": 41,
+      "name": "F2",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 41,
+      "name": "F2",
+      "len": 1
+     },
+     {
+      "step": 9,
+      "midi": 41,
+      "name": "F2",
+      "len": 1
+     },
+     {
+      "step": 10,
+      "midi": 41,
+      "name": "F2",
+      "len": 1
+     },
+     {
+      "step": 11,
+      "midi": 41,
+      "name": "F2",
+      "len": 1
+     },
+     {
+      "step": 12,
+      "midi": 41,
+      "name": "F2",
+      "len": 4.0
+     }
+    ],
+    "used": 16
+   },
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 34,
+      "name": "A#1",
+      "len": 3
+     },
+     {
+      "step": 3,
+      "midi": 34,
+      "name": "A#1",
+      "len": 2
+     },
+     {
+      "step": 5,
+      "midi": 39,
+      "name": "D#2",
+      "len": 1
+     },
+     {
+      "step": 6,
+      "midi": 41,
+      "name": "F2",
+      "len": 1
+     },
+     {
+      "step": 7,
+      "midi": 41,
+      "name": "F2",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 41,
+      "name": "F2",
+      "len": 1
+     },
+     {
+      "step": 9,
+      "midi": 41,
+      "name": "F2",
+      "len": 1
+     },
+     {
+      "step": 10,
+      "midi": 41,
+      "name": "F2",
+      "len": 1
+     },
+     {
+      "step": 11,
+      "midi": 41,
+      "name": "F2",
+      "len": 1
+     },
+     {
+      "step": 12,
+      "midi": 41,
+      "name": "F2",
+      "len": 4.0
+     }
+    ],
+    "used": 16
+   }
+  ],
+  "chords": [
+   {
+    "x": 141.0,
+    "name": "Bb"
+   },
+   {
+    "x": 212.0,
+    "name": "A"
+   },
+   {
+    "x": 220.3,
+    "name": "b"
+   },
+   {
+    "x": 350.7,
+    "name": "Bb"
+   },
+   {
+    "x": 420.5,
+    "name": "Ab"
+   }
+  ],
+  "ok": true,
+  "notes_seq": [
+   34,
+   34,
+   39,
+   41,
+   41,
+   41,
+   41,
+   41,
+   41,
+   41,
+   34,
+   34,
+   39,
+   41,
+   41,
+   41,
+   41,
+   41,
+   41,
+   41
+  ]
+ },
+ {
+  "id": "stalag",
+  "name": "Stalag",
+  "aka": "",
+  "label": "Techniques",
+  "year": 0,
+  "style": "reggae",
+  "bpm": [
+   78,
+   95
+  ],
+  "page": 33,
+  "sys": 1,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 36,
+      "name": "C2",
+      "len": 2
+     },
+     {
+      "step": 2,
+      "midi": 36,
+      "name": "C2",
+      "len": 2
+     },
+     {
+      "step": 7,
+      "midi": 43,
+      "name": "G2",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 46,
+      "name": "A#2",
+      "len": 1
+     },
+     {
+      "step": 9,
+      "midi": 43,
+      "name": "G2",
+      "len": 1
+     },
+     {
+      "step": 10,
+      "midi": 34,
+      "name": "A#1",
+      "len": 2
+     },
+     {
+      "step": 12,
+      "midi": 34,
+      "name": "A#1",
+      "len": 2
+     }
+    ],
+    "used": 16.0
+   },
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 36,
+      "name": "C2",
+      "len": 2
+     },
+     {
+      "step": 2,
+      "midi": 36,
+      "name": "C2",
+      "len": 2
+     },
+     {
+      "step": 7,
+      "midi": 43,
+      "name": "G2",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 46,
+      "name": "A#2",
+      "len": 1
+     },
+     {
+      "step": 9,
+      "midi": 43,
+      "name": "G2",
+      "len": 1
+     },
+     {
+      "step": 10,
+      "midi": 46,
+      "name": "A#2",
+      "len": 1
+     },
+     {
+      "step": 11,
+      "midi": 43,
+      "name": "G2",
+      "len": 1
+     },
+     {
+      "step": 12,
+      "midi": 34,
+      "name": "A#1",
+      "len": 2
+     }
+    ],
+    "used": 16.0
+   }
+  ],
+  "chords": [
+   {
+    "x": 103.6,
+    "name": "C"
+   },
+   {
+    "x": 195.2,
+    "name": "(B"
+   },
+   {
+    "x": 209.4,
+    "name": "¨)"
+   },
+   {
+    "x": 324.9,
+    "name": "C"
+   },
+   {
+    "x": 416.6,
+    "name": "(B"
+   },
+   {
+    "x": 430.8,
+    "name": "¨)"
+   }
+  ],
+  "ok": true,
+  "notes_seq": [
+   36,
+   36,
+   43,
+   46,
+   43,
+   34,
+   34,
+   36,
+   36,
+   43,
+   46,
+   43,
+   46,
+   43,
+   34
+  ]
+ },
+ {
+  "id": "stars",
+  "name": "Stars",
+  "aka": "",
+  "label": "Studio One",
+  "year": 0,
+  "style": "reggae",
+  "bpm": [
+   69,
+   80
+  ],
+  "page": 34,
+  "sys": 0,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 33,
+      "name": "A1",
+      "len": 1
+     },
+     {
+      "step": 1,
+      "midi": 33,
+      "name": "A1",
+      "len": 1
+     },
+     {
+      "step": 2,
+      "midi": 33,
+      "name": "A1",
+      "len": 1
+     },
+     {
+      "step": 3,
+      "midi": 28,
+      "name": "E1",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 33,
+      "name": "A1",
+      "len": 2
+     },
+     {
+      "step": 8,
+      "midi": 37,
+      "name": "C#2",
+      "len": 1
+     },
+     {
+      "step": 9,
+      "midi": 37,
+      "name": "C#2",
+      "len": 1
+     },
+     {
+      "step": 10,
+      "midi": 37,
+      "name": "C#2",
+      "len": 1
+     },
+     {
+      "step": 11,
+      "midi": 32,
+      "name": "G#1",
+      "len": 1
+     },
+     {
+      "step": 12,
+      "midi": 37,
+      "name": "C#2",
+      "len": 2
+     }
+    ],
+    "used": 16.0
+   },
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 1,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 2,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 3,
+      "midi": 33,
+      "name": "A1",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 38,
+      "name": "D2",
+      "len": 2
+     },
+     {
+      "step": 7,
+      "midi": 38,
+      "name": "D2",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 40,
+      "name": "E2",
+      "len": 1
+     },
+     {
+      "step": 9,
+      "midi": 28,
+      "name": "E1",
+      "len": 1
+     },
+     {
+      "step": 11,
+      "midi": 30,
+      "name": "F#1",
+      "len": 1
+     },
+     {
+      "step": 13,
+      "midi": 32,
+      "name": "G#1",
+      "len": 1
+     },
+     {
+      "step": 15,
+      "midi": 32,
+      "name": "G#1",
+      "len": 1
+     }
+    ],
+    "used": 16.0
+   }
+  ],
+  "chords": [
+   {
+    "x": 120.4,
+    "name": "A"
+   },
+   {
+    "x": 208.3,
+    "name": "C"
+   },
+   {
+    "x": 220.0,
+    "name": "#-"
+   },
+   {
+    "x": 314.4,
+    "name": "D"
+   },
+   {
+    "x": 419.3,
+    "name": "E"
+   }
+  ],
+  "ok": true,
+  "notes_seq": [
+   33,
+   33,
+   33,
+   28,
+   33,
+   37,
+   37,
+   37,
+   32,
+   37,
+   38,
+   38,
+   38,
+   33,
+   38,
+   38,
+   40,
+   28,
+   30,
+   32,
+   32
+  ]
+ },
+ {
+  "id": "swing-easy",
+  "name": "Swing Easy",
+  "aka": "",
+  "label": "Studio One",
+  "year": 1967,
+  "style": "onedrop",
+  "bpm": [
+   72,
+   92
+  ],
+  "page": 36,
+  "sys": 1,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 39,
+      "name": "D#2",
+      "len": 2
+     },
+     {
+      "step": 2,
+      "midi": 46,
+      "name": "A#2",
+      "len": 1
+     },
+     {
+      "step": 3,
+      "midi": 44,
+      "name": "G#2",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 46,
+      "name": "A#2",
+      "len": 1
+     },
+     {
+      "step": 5,
+      "midi": 44,
+      "name": "G#2",
+      "len": 1
+     },
+     {
+      "step": 6,
+      "midi": 42,
+      "name": "F#2",
+      "len": 1
+     },
+     {
+      "step": 7,
+      "midi": 39,
+      "name": "D#2",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 34,
+      "name": "A#1",
+      "len": 2
+     },
+     {
+      "step": 10,
+      "midi": 34,
+      "name": "A#1",
+      "len": 2
+     },
+     {
+      "step": 12,
+      "midi": 34,
+      "name": "A#1",
+      "len": 2
+     }
+    ],
+    "used": 16.0
+   },
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 44,
+      "name": "G#2",
+      "len": 2
+     },
+     {
+      "step": 2,
+      "midi": 46,
+      "name": "A#2",
+      "len": 1
+     },
+     {
+      "step": 3,
+      "midi": 44,
+      "name": "G#2",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 46,
+      "name": "A#2",
+      "len": 1
+     },
+     {
+      "step": 5,
+      "midi": 44,
+      "name": "G#2",
+      "len": 1
+     },
+     {
+      "step": 6,
+      "midi": 42,
+      "name": "F#2",
+      "len": 1
+     },
+     {
+      "step": 7,
+      "midi": 39,
+      "name": "D#2",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 34,
+      "name": "A#1",
+      "len": 2
+     },
+     {
+      "step": 10,
+      "midi": 34,
+      "name": "A#1",
+      "len": 2
+     },
+     {
+      "step": 12,
+      "midi": 34,
+      "name": "A#1",
+      "len": 2
+     }
+    ],
+    "used": 16.0
+   }
+  ],
+  "chords": [
+   {
+    "x": 129.7,
+    "name": "E"
+   },
+   {
+    "x": 140.4,
+    "name": "b-"
+   },
+   {
+    "x": 338.4,
+    "name": "A"
+   },
+   {
+    "x": 348.8,
+    "name": "b-"
+   },
+   {
+    "x": 453.7,
+    "name": "E"
+   },
+   {
+    "x": 464.4,
+    "name": "b-"
+   }
+  ],
+  "ok": true,
+  "notes_seq": [
+   39,
+   46,
+   44,
+   46,
+   44,
+   42,
+   39,
+   34,
+   34,
+   34,
+   44,
+   46,
+   44,
+   46,
+   44,
+   42,
+   39,
+   34,
+   34,
+   34
+  ]
+ },
+ {
+  "id": "take-a-ride",
+  "name": "Take A Ride",
+  "aka": "Truth & Rights",
+  "label": "Studio One",
+  "year": 0,
+  "style": "reggae",
+  "bpm": [
+   80,
+   90
+  ],
+  "page": 37,
+  "sys": 2,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 35,
+      "name": "B1",
+      "len": 4
+     },
+     {
+      "step": 4,
+      "midi": 35,
+      "name": "B1",
+      "len": 3
+     },
+     {
+      "step": 7,
+      "midi": 30,
+      "name": "F#1",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 35,
+      "name": "B1",
+      "len": 2
+     },
+     {
+      "step": 10,
+      "midi": 35,
+      "name": "B1",
+      "len": 2
+     },
+     {
+      "step": 14,
+      "midi": 30,
+      "name": "F#1",
+      "len": 1
+     },
+     {
+      "step": 15,
+      "midi": 35,
+      "name": "B1",
+      "len": 1
+     }
+    ],
+    "used": 16.0
+   },
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 35,
+      "name": "B1",
+      "len": 2
+     }
+    ],
+    "used": 16.0
+   }
+  ],
+  "chords": [
+   {
+    "x": 101.6,
+    "name": "B"
+   }
+  ],
+  "ok": true,
+  "notes_seq": [
+   35,
+   35,
+   30,
+   35,
+   35,
+   30,
+   35,
+   35
+  ]
+ },
+ {
+  "id": "tempo",
+  "name": "Tempo",
+  "aka": "",
+  "label": "Penthouse",
+  "year": 0,
+  "style": "digital",
+  "bpm": [
+   75,
+   82
+  ],
+  "page": 38,
+  "sys": 0,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 35,
+      "name": "B1",
+      "len": 2
+     },
+     {
+      "step": 2,
+      "midi": 35,
+      "name": "B1",
+      "len": 2
+     },
+     {
+      "step": 7,
+      "midi": 30,
+      "name": "F#1",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 31,
+      "name": "G1",
+      "len": 1
+     },
+     {
+      "step": 9,
+      "midi": 30,
+      "name": "F#1",
+      "len": 1
+     },
+     {
+      "step": 10,
+      "midi": 31,
+      "name": "G1",
+      "len": 2
+     },
+     {
+      "step": 12,
+      "midi": 31,
+      "name": "G1",
+      "len": 2
+     },
+     {
+      "step": 14,
+      "midi": 31,
+      "name": "G1",
+      "len": 1
+     },
+     {
+      "step": 15,
+      "midi": 33,
+      "name": "A1",
+      "len": 1
+     }
+    ],
+    "used": 16.0
+   },
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 35,
+      "name": "B1",
+      "len": 2
+     },
+     {
+      "step": 2,
+      "midi": 35,
+      "name": "B1",
+      "len": 2
+     },
+     {
+      "step": 7,
+      "midi": 30,
+      "name": "F#1",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 31,
+      "name": "G1",
+      "len": 1
+     },
+     {
+      "step": 9,
+      "midi": 30,
+      "name": "F#1",
+      "len": 1
+     },
+     {
+      "step": 10,
+      "midi": 31,
+      "name": "G1",
+      "len": 2
+     }
+    ],
+    "used": 12.0
+   }
+  ],
+  "chords": [
+   {
+    "x": 128.2,
+    "name": "B"
+   },
+   {
+    "x": 137.2,
+    "name": "-"
+   },
+   {
+    "x": 224.0,
+    "name": "G"
+   },
+   {
+    "x": 348.0,
+    "name": "B"
+   },
+   {
+    "x": 357.0,
+    "name": "-"
+   },
+   {
+    "x": 443.9,
+    "name": "G"
+   }
+  ],
+  "ok": false,
+  "notes_seq": [
+   35,
+   35,
+   30,
+   31,
+   30,
+   31,
+   31,
+   31,
+   33,
+   35,
+   35,
+   30,
+   31,
+   30,
+   31
+  ]
+ },
+ {
+  "id": "world-a-music",
+  "name": "World A Music",
+  "aka": "",
+  "label": "Taxi",
+  "year": 1983,
+  "style": "rockers",
+  "bpm": [
+   72,
+   84
+  ],
+  "page": 39,
+  "sys": 1,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 31,
+      "name": "G1",
+      "len": 4
+     },
+     {
+      "step": 6,
+      "midi": 38,
+      "name": "D2",
+      "len": 2
+     },
+     {
+      "step": 8,
+      "midi": 34,
+      "name": "A#1",
+      "len": 2
+     },
+     {
+      "step": 10,
+      "midi": 33,
+      "name": "A1",
+      "len": 2
+     }
+    ],
+    "used": 12.0
+   },
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 31,
+      "name": "G1",
+      "len": 4
+     },
+     {
+      "step": 4,
+      "midi": 34,
+      "name": "A#1",
+      "len": 2
+     },
+     {
+      "step": 6,
+      "midi": 33,
+      "name": "A1",
+      "len": 2
+     }
+    ],
+    "used": 8.0
+   }
+  ],
+  "chords": [
+   {
+    "x": 109.6,
+    "name": "G"
+   },
+   {
+    "x": 119.3,
+    "name": "-"
+   },
+   {
+    "x": 203.0,
+    "name": "F"
+   },
+   {
+    "x": 337.4,
+    "name": "G"
+   },
+   {
+    "x": 347.1,
+    "name": "-"
+   },
+   {
+    "x": 430.8,
+    "name": "F"
+   }
+  ],
+  "ok": false,
+  "notes_seq": [
+   31,
+   38,
+   34,
+   33,
+   31,
+   34,
+   33
+  ]
+ },
+ {
+  "id": "you-dont-care",
+  "name": "You Don't Care",
+  "aka": "Barbwire",
+  "label": "Treasure Isle",
+  "year": 1967,
+  "style": "rocksteady",
+  "bpm": [
+   65,
+   86
+  ],
+  "page": 40,
+  "sys": 0,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 39,
+      "name": "D#2",
+      "len": 2
+     },
+     {
+      "step": 2,
+      "midi": 46,
+      "name": "A#2",
+      "len": 1
+     },
+     {
+      "step": 3,
+      "midi": 46,
+      "name": "A#2",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 46,
+      "name": "A#2",
+      "len": 1
+     },
+     {
+      "step": 5,
+      "midi": 46,
+      "name": "A#2",
+      "len": 1
+     },
+     {
+      "step": 6,
+      "midi": 46,
+      "name": "A#2",
+      "len": 1
+     },
+     {
+      "step": 7,
+      "midi": 46,
+      "name": "A#2",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 34,
+      "name": "A#1",
+      "len": 2
+     },
+     {
+      "step": 10,
+      "midi": 34,
+      "name": "A#1",
+      "len": 2
+     },
+     {
+      "step": 12,
+      "midi": 34,
+      "name": "A#1",
+      "len": 2
+     }
+    ],
+    "used": 16.0
+   },
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 39,
+      "name": "D#2",
+      "len": 2
+     },
+     {
+      "step": 2,
+      "midi": 46,
+      "name": "A#2",
+      "len": 1
+     },
+     {
+      "step": 3,
+      "midi": 46,
+      "name": "A#2",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 46,
+      "name": "A#2",
+      "len": 1
+     },
+     {
+      "step": 5,
+      "midi": 46,
+      "name": "A#2",
+      "len": 1
+     },
+     {
+      "step": 6,
+      "midi": 46,
+      "name": "A#2",
+      "len": 1
+     },
+     {
+      "step": 7,
+      "midi": 46,
+      "name": "A#2",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 34,
+      "name": "A#1",
+      "len": 2
+     },
+     {
+      "step": 10,
+      "midi": 34,
+      "name": "A#1",
+      "len": 2
+     },
+     {
+      "step": 12,
+      "midi": 34,
+      "name": "A#1",
+      "len": 2
+     }
+    ],
+    "used": 16.0
+   }
+  ],
+  "chords": [],
+  "ok": true,
+  "notes_seq": [
+   39,
+   46,
+   46,
+   46,
+   46,
+   46,
+   46,
+   34,
+   34,
+   34,
+   39,
+   46,
+   46,
+   46,
+   46,
+   46,
+   46,
+   34,
+   34,
+   34
+  ]
+ },
+ {
+  "id": "youth-man",
+  "name": "Youth Man",
+  "aka": "Wicked Can't Run Away",
+  "label": "Glen Brown",
+  "year": 0,
+  "style": "reggae",
+  "bpm": [
+   65,
+   86
+  ],
+  "page": 41,
+  "sys": 1,
+  "bars": [
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 34,
+      "name": "A#1",
+      "len": 2
+     },
+     {
+      "step": 2,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     },
+     {
+      "step": 3,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 29,
+      "name": "F1",
+      "len": 2
+     },
+     {
+      "step": 6,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     },
+     {
+      "step": 7,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 34,
+      "name": "A#1",
+      "len": 1
+     },
+     {
+      "step": 9,
+      "midi": 29,
+      "name": "F1",
+      "len": 2
+     },
+     {
+      "step": 11,
+      "midi": 29,
+      "name": "F1",
+      "len": 1
+     },
+     {
+      "step": 12,
+      "midi": 34,
+      "name": "A#1",
+      "len": 4.0
+     }
+    ],
+    "used": 16
+   },
+   {
+    "steps": [
+     {
+      "step": 0,
+      "midi": 36,
+      "name": "C2",
+      "len": 2
+     },
+     {
+      "step": 2,
+      "midi": 36,
+      "name": "C2",
+      "len": 1
+     },
+     {
+      "step": 3,
+      "midi": 36,
+      "name": "C2",
+      "len": 1
+     },
+     {
+      "step": 4,
+      "midi": 29,
+      "name": "F1",
+      "len": 2
+     },
+     {
+      "step": 6,
+      "midi": 36,
+      "name": "C2",
+      "len": 1
+     },
+     {
+      "step": 7,
+      "midi": 36,
+      "name": "C2",
+      "len": 1
+     },
+     {
+      "step": 8,
+      "midi": 36,
+      "name": "C2",
+      "len": 1
+     },
+     {
+      "step": 9,
+      "midi": 29,
+      "name": "F1",
+      "len": 5.0
+     }
+    ],
+    "used": 16
+   }
+  ],
+  "chords": [],
+  "ok": true,
+  "notes_seq": [
+   34,
+   34,
+   34,
+   29,
+   34,
+   34,
+   34,
+   29,
+   29,
+   34,
+   36,
+   36,
+   36,
+   29,
+   36,
+   36,
+   36,
+   29
+  ]
+ }
+]

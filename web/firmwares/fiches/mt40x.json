@@ -60,12 +60,17 @@
   {
    "nom": "Swing",
    "texte": "Le swing façon MPC, de 0.5 (droit) à 0.75, appliqué à la batterie comme à la basse."
+  },
+  {
+   "nom": "La page Riddims",
+   "texte": "Le bouton « ♫ Riddims » de la page (à côté du sélecteur de firmware) ouvre les 38 riddims du « The Riddim Real Book (Tab) » : écoute maquettée, chargement dans le séquenceur (basse piste 3, batterie piste 4 en moteur DRUM, au tempo du livre) ou en motif de basse du MT-40X lorsque le firmware embarque la banque riddim."
   }
  ],
  "a_savoir": [
   "Sans échantillons du MT-40 embarqués, la batterie est une synthèse dédiée (kick, snare, hats fermée et ouverte) ; les pistes PCM restent libres pour un pack de samples.",
   "Le pattern ROCK est vérifié à l'oreille ; les cinq autres rythmes sont des brouillons éditables dans data/mt40_patterns.json.",
-  "Sur un vrai FM-1, le paquet s'installe comme tout firmware Felucca ; ici, il tourne sur la puce émulée par fm1-emu."
+  "Sur un vrai FM-1, le paquet s'installe comme tout firmware Felucca ; ici, il tourne sur la puce émulée par fm1-emu.",
+  "La page Riddims vient de l'émulateur (bloc « riddims » de web/index.html) : elle parle au firmware par le protocole éditeur dans l'USB émulée. Le bouton ♫ Riddims ne fait pas partie du panneau FM-1."
  ],
  "source": {
   "url": "https://github.com/altessproduction/MT-4OX"

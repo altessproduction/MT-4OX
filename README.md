@@ -63,6 +63,28 @@ Joakim Eriksson (MIT). L'éditeur web et l'installateur de Felucca restent
 accessibles sous [`web/editor.html`](web/editor.html) et
 [`web/index_pkg.html`](web/index_pkg.html).
 
+## La page Riddims
+
+Le bouton **« ♫ Riddims »** de la page (à côté du sélecteur de firmware) ouvre
+les **38 riddims du « The Riddim Real Book (Tab) »** — de *African Beat* à
+*Youth Man*, avec label, année, akas, accords et tempo du livre. Pour chacun :
+
+- **Écouter** — une maquette Web Audio de la page : batterie et basse
+  synthétisées, au tempo du livre, sans toucher au firmware ;
+- **Séquenceur** — la basse est écrite dans la piste 3 et la batterie dans la
+  piste 4 (moteur DRUM) du FM-1 émulé, par le protocole éditeur dans l'USB de
+  la puce ; LEN 16 ou 32 pas, DIV 1/16, tempo de la fourchette du livre. Puis
+  SEQ + PLAY sur le panneau ;
+- **Motif de basse** — le MT-40X prend la ligne comme accompagnement, transposé
+  par l'accord tenu au clavier, comme le mini-clavier basse du MT-40 (nécessite
+  un firmware avec la banque riddim ; sans elle, la basse va au séquenceur et
+  la page le dit).
+
+Les données (`window.RIDDB`) sont générées depuis le PDF par
+[`scripts/riddims_site.py`](scripts/riddims_site.py) — les notes de basse sont
+celles des tablatures du livre, les batteries suivent le style de chaque
+riddim (one drop, rockers, steppers, rocksteady, digital, dancehall).
+
 ## Les six rythmes
 
 | # | Nom | Mesure | Tempo conseillé | État |
