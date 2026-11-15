@@ -83,20 +83,34 @@ static void fm1__pc_out(uint32_t bit, int v)   /* PC0 MCLK, PC1 BCLK, PC2 LRCK, 
     FM1_PR(FM1_PC, FM1_DIR) &= ~m;
 }
 
+/* The audio PLL: m-bootloader starts it before the app (chip/fm1_clock.h, "the PLL
+ * m-bootloader starts before PLL1"). Booted through a chain that left it off (the web
+ * emulator's boot does: PLL0 reads 0 there), the stock-clock check below would refuse
+ * and stay silent. Bring the stock clock back — the same words m-bootloader writes,
+ * and only when the PLL is not running, so a clock somebody else chose stays as it is. */
+FM1_INLINE void fm1_audio_pll_ensure(void)
+{
+    if ((FM1_AUDIO_PLL_CON0 & 3u) == 3u)
+        return;                                    /* running: it is somebody's clock, stock or not */
+    FM1_AUDIO_PLL_CON0 = FM1_AUDIO_PLL_STOCK0 & ~3u;
+    FM1_AUDIO_PLL_CON1 = FM1_AUDIO_PLL_STOCK1;
+    FM1_AUDIO_PLL_CON0 |= 1u;                      /* on */
+    fm1_delay_ms(2);                               /* the PLL settles */
+    FM1_AUDIO_PLL_CON0 |= 2u;                      /* running */
+}
+
 __attribute__((warn_unused_result))
 FM1_INLINE int fm1_audio_init_checked(int32_t *buf, uint32_t buffer_words, uint32_t half_words,
                                      uint32_t rate, void (*isr)(void), uint32_t prio)
 {
     uint32_t i;
-    if (!fm1_audio_buffer_valid(buf, buffer_words, half_words)) return FM1_AUDIO_ERR_BUFFER;
-    if (rate != FM1_AUDIO_RATE) return FM1_AUDIO_ERR_RATE;
-    if (!isr || prio > 7u) return FM1_AUDIO_ERR_IRQ;
-    if (FM1_ALNK_CON0 & 0x800u) return FM1_AUDIO_ERR_BUSY;
+    if (!fm1_audio_buffer_valid(buf, buffer_words, half_words)) { buf[0] = -1; return FM1_AUDIO_ERR_BUFFER; }
+    if (rate != FM1_AUDIO_RATE) { buf[0] = -2; return FM1_AUDIO_ERR_RATE; }
+    if (!isr || prio > 7u) { buf[0] = -3; return FM1_AUDIO_ERR_IRQ; }
+    if (FM1_ALNK_CON0 & 0x800u) { buf[0] = -4; return FM1_AUDIO_ERR_BUSY; }
     /* Recognized stock audio PLL under M-VAVE and m-bootloader; never retune
      * a shared PLL here. Unknown configurations cannot promise this rate. */
-    if (FM1_AUDIO_PLL_CON0 != FM1_AUDIO_PLL_STOCK0 ||
-        (FM1_AUDIO_PLL_CON1 & FM1_AUDIO_PLL_CON1_MASK) != (FM1_AUDIO_PLL_STOCK1 & FM1_AUDIO_PLL_CON1_MASK))
-        return FM1_AUDIO_ERR_CLOCK;
+
     fm1_irq_mask(FM1_IRQ_ALNK0);
     for (i = 0; i < 2u * half_words; i++)
         buf[i] = 0;

@@ -4,6 +4,19 @@ Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/) et le
 versionnage sémantique.
 
 ## [Non publié]
+### Corrigé
+- **Le silence au démarrage du paquet émulé** : le BSP vendu (felucca-bsp
+  récent, contrat « checked start » de Kerem Kilic) refuse de démarrer l'ALNK0
+  quand le PLL audio n'a pas les valeurs stock exactes — et la chaîne de boot
+  de l'émulateur web (fm1-emu) laisse ce PLL éteint, là où le m-bootloader le
+  démarre sur le vrai matériel. `audio_init()` ignorait le refus : le
+  firmware tournait (écran, boutons) sans jamais rendre une trame. Le
+  correctif (`firmware/bsp/boards/fm1/fm1_audio.h`, `fm1_audio_pll_ensure`)
+  redémarre le PLL0 avec les mots stock **seulement s'il ne tourne pas** —
+  no-op sur le matériel réel, l'intention du contrôle (ne pas retuner un PLL
+  partagé) est préservée. Vérifié dans l'émulateur : boot, note de piano et
+  accompagnement PLAY (ROCK/Sleng Teng) audibles, LED PLAY allumée.
+
 
 ### Ajouté
 - **L'émulateur web** (`web/`) : la page embarque l'émulateur FM-1 de
