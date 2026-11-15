@@ -28,27 +28,51 @@ versionnage sémantique.
   *Riddim Real Book*), réponse 0x53 = 44 vérifiée dans l'émulateur.
 
 ## [Non publié]
+### Corrigé
+- **Le groove du Sleng Teng : les répétitions de note (l'effet « triolet ») sont
+  revenues.** L'ancienne transcription jouait des tenues (notes durées 2 à 3 pas)
+  qui écrasaient le galop de l'original. Recoupage sur le **MIDI de référence du
+  riddim** (`sleng_teng.mid`, 82,45 BPM, boucle d'une mesure) et la tablature de
+  Noel Davey : la basse est désormais **l'approche chromatique puis la
+  fondamentale RÉPÉTÉE en doubles-croches staccato** — trois groupes « C#-D-D-D »
+  par mesure (pas 0-3, 4-7, 8-11), paire quarte 43 au pas 12 / tierce 42 au pas
+  14 ; une mesure de 14 notes au lieu de deux mesures de tenues. La batterie
+  suit le même référence : **kick aux pas 0, 4, 6, 8 et 12** (temps 1, 2, 2&,
+  3, 4 — doublé sur la caisse claire 2 et 4), hats fermés en croches **plus des
+  hats fantômes doux sur les pas impairs** (nouvelle lane `hcg`, jouée à 40 % du
+  niveau — c'est le balancement du preset), plus de hat ouverte. Export MIDI :
+  les fantômes sortent à vélocité 36, les forts à 110/92. Le fichier exporté est
+  équivalent au MIDI de référence (pas + hauteurs de basse identiques, kick et
+  hats forts identiques — vérifié par relecture mido). Côté firmware,
+  `pat_ROCK` embarque la même transcription (28 événements de basse sur 2
+  mesures identiques, masques kick `0x11511151`, hats 1/16 `0xFFFFFFFF`, plus
+  de hat ouverte) et `mt40_host_test.c` verrouille le nouveau motif (56 basses
+  sur 2 boucles, 20 kicks, répétitions 38/38 aux pas 1-2, conclusion 43/42) —
+  ALL CHECKS PASSED. Le runtime WASM de l'émulateur (`web/runtime/fm1_web.wasm`)
+  devra être reconstruit pour que le bouton « Motif de basse » joue le galop —
+  l'écoute et les exports MIDI des pages, eux, utilisent les données de page.
+  Tests : `web/test_riddims.mjs` (mesure de 14 notes, pas 0-3/4-7/8-11/12/14,
+  kicks aux pas 0, 4, 6, 8, 12 avec la double frappe 6→8) et
+  `web/test_riddims_midi.mjs` (carte GM aux nouveaux pas, fantômes à vélocité
+  36 sur les pas impairs, aucun hat ouvert, un groupe C#-D-D-D par temps),
+  plus l'E2E Chromium `scripts/e2e_sleng.py` (39 cartes, écoutes réelles
+  mesurées, téléchargements, zéro erreur page).
+
 ### Ajouté
 - **Le classique Sleng Teng en dernier sur les deux pages Riddims** (la feuille
   de l'émulateur et [`web/riddims.html`](web/riddims.html)) : le preset
   « Rock » du MT-40 lui-même — Wayne Smith, « Under Mi Sleng Teng », Jammy's
   Records, 1985, 82 BPM — en 39ᵉ entrée, avec la transcription vérifiée du
-  firmware MT-40X (`pat_ROCK`, deux tablatures recoupées, dossier technique § 3
-  et annexe A) : basse en Ré (approche chromatique, fondamentale répétée, paire
-  quarte/tierce en conclusion) et batterie du preset d'origine (kick 1 et 3,
-  snare 2 et 4, hats en croches, hat ouverte au dernier 1/16) — transportée par
-  un champ `drm` propre au riddim, au lieu de la batterie générique du style
-  « digital ». « Motif de basse » sur ce riddim charge le preset ROCK de la
-  machine (alias `fw` 0, le riddim d'origine), et les exports MIDI sortent
+  firmware MT-40X (`pat_ROCK`) : basse en Ré (approche chromatique, fondamentale
+  répétée en doubles-croches, paire quarte/tierce en conclusion) et batterie du
+  preset d'origine — transportée par un champ `drm` propre au riddim, au lieu
+  de la batterie générique du style « digital ». « Motif de basse » sur ce
+  riddim charge le preset ROCK de la machine (alias `fw` 0, le riddim
+  d'origine), et les exports MIDI sortent
   `sleng-teng-riddim-82bpm.mid` / `sleng-teng-basse-82bpm.mid`. Les en-têtes
   des deux pages disent maintenant « les 38 du « The Riddim Real Book (Tab) »
   et le classique Sleng Teng (Jammy's, 1985) » ; le filtre Digital, la
   recherche « sleng » et l'a.k.a. « Under Mi Sleng Teng » le trouvent.
-  Tests : `web/test_riddims.mjs` (basse jouée = transcription du preset, kicks
-  aux pas 0 et 8 via `drm`) et `web/test_riddims_midi.mjs` (export 82 BPM,
-  carte GM aux pas du preset, 14 notes de basse, a.k.a., mesure 2), plus l'E2E
-  Chromium `scripts/e2e_sleng.py` (39 cartes, écoutes réelles mesurées,
-  téléchargements, zéro erreur page).
 - **Page Riddims dédiée avec export MIDI** (`web/riddims.html`, hors
   émulateur, en ligne sur /MT-4OX/riddims.html) : la même écoute que la page
   Riddims de l'émulateur — le synthé Web Audio et le CSS sont copiés du même

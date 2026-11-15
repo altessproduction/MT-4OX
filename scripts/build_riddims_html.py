@@ -104,7 +104,7 @@ a{color:var(--accent)}
     const STEP = PPQ / 4;             // 16 pas par mesure 4/4 : la double-croche
     const CH_BASS = 0, CH_DRUMS = 9;  // canal 1 (basse) et canal 10 (batterie GM), indexés à 0 dans les octets
     const PROG_BASS = 38;             // GM n° 39 « Synth Bass 1 » (le message compte à partir de 0)
-    const DRUM_NOTE = { k: 36, s: 38, hc: 42, ho: 46, rm: 37 };  // GM : grosse caisse, caisse claire, charley fermé, charley ouvert, rim (side stick)
+    const DRUM_NOTE = { k: 36, s: 38, hc: 42, hcg: 42, ho: 46, rm: 37 };  // GM : grosse caisse, caisse claire, charley fermé, charley fantôme (doux), charley ouvert, rim (side stick)
 
     const bpmOf = (r) => r.bpm[0] === r.bpm[1] ? r.bpm[0] : Math.round((r.bpm[0] + r.bpm[1]) / 2);
     const vlq = (n) => { const b = [n & 127]; for (n >>= 7; n > 0; n >>= 7) b.unshift((n & 127) | 128); return b; };
@@ -153,9 +153,10 @@ a{color:var(--accent)}
       const dr = r.drm || window.RIDDB.drums[r.st], out = [];
       for (let b = 0; b < r.bars.length; b++) {
         for (const [lane, n] of Object.entries(DRUM_NOTE)) {
-          for (const s of dr[lane][b] || []) {
+          for (const s of ((dr[lane] && dr[lane][b]) || [])) {
             const tick = (b * 16 + s) * STEP;
-            out.push({ tick, ord: 1, bytes: [0x90 | CH_DRUMS, n, s % 8 === 0 ? 110 : 92] });
+            const vel = lane === "hcg" ? 36 : (s % 8 === 0 ? 110 : 92);   // hcg : hats fantômes doux (Sleng Teng)
+            out.push({ tick, ord: 1, bytes: [0x90 | CH_DRUMS, n, vel] });
             out.push({ tick: tick + STEP, ord: 0, bytes: [0x80 | CH_DRUMS, n, 0] });
           }
         }

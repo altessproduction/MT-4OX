@@ -130,7 +130,7 @@ ok(progEv && progEv.d1 === 38 && progEv.tick === 0, "midi: basse — programme G
 const dr = RIDDB.drums[rid.st];
 const expDrum = [];
 for (let b = 0; b < rid.bars.length; b++) {
-  for (const [lane, n] of Object.entries(M.DRUM_NOTE)) for (const s of dr[lane][b] || []) expDrum.push({ tick: (b * 16 + s) * STEP, n, s });
+  for (const [lane, n] of Object.entries(M.DRUM_NOTE)) for (const s of ((dr[lane] && dr[lane][b]) || [])) expDrum.push({ tick: (b * 16 + s) * STEP, n, s });
 }
 const drumEvs = full.tracks[1].evs.filter((e) => e.kind === "ch" && e.ch === M.CH_DRUMS);
 const dOns = drumEvs.filter((e) => (e.status & 0xF0) === 0x90 && e.d2 > 0);
@@ -181,14 +181,18 @@ const sOns = (n) => sf.tracks[1].evs.filter((e) => e.kind === "ch" && e.ch === M
 ok(M.bpmOf(sleng) === 82, "midi sleng: tempo 82 BPM (Under Mi Sleng Teng)");
 ok(M.fname(sleng, "riddim") === `sleng-teng-riddim-82bpm.mid`, "midi sleng: nom de fichier");
 const tickSet = (arr) => [...new Set(arr.map((t) => `${t}`))].sort((a, b) => a - b).join(",");
-ok(sOns(36).length === 4 && tickSet(sOns(36)) === tickSet([0, 8, 16, 24].map((s) => s * M.STEP)),
-  `midi sleng: kick GM 36 aux pas 0, 8, 16, 24 (${sOns(36)})`);
-ok(sOns(38).length === 4 && tickSet(sOns(38)) === tickSet([4, 12, 20, 28].map((s) => s * M.STEP)),
-  "midi sleng: caisse claire GM 38 aux pas 4, 12, 20, 28");
-ok(sOns(42).length === 16 && tickSet(sOns(42)) === tickSet([0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30].map((s) => s * M.STEP)),
-  "midi sleng: charley fermé GM 42 en croches sur les deux mesures");
-ok(sOns(46).length === 2 && tickSet(sOns(46)) === tickSet([15, 31].map((s) => s * M.STEP)),
-  "midi sleng: charley ouvert GM 46 sur les pas 15 et 31");
+ok(sOns(36).length === 5 && tickSet(sOns(36)) === tickSet([0, 4, 6, 8, 12].map((s) => s * M.STEP)),
+  `midi sleng: kick GM 36 aux pas 0, 4, 6, 8, 12 — temps 1, 2, 2&, 3, 4 (${sOns(36)})`);
+ok(sOns(38).length === 2 && tickSet(sOns(38)) === tickSet([4, 12].map((s) => s * M.STEP)),
+  "midi sleng: caisse claire GM 38 aux pas 4 et 12 (kick doublé dessus)");
+ok(sOns(42).length === 16 && tickSet(sOns(42)) === tickSet([...Array(16).keys()].map((s) => s * M.STEP)),
+  "midi sleng: charley GM 42 sur les 16 pas (croches fortes + fantômes doux)");
+const ghostSteps = sf.tracks[1].evs.filter((e) => e.kind === "ch" && e.ch === M.CH_DRUMS &&
+  (e.status & 0xF0) === 0x90 && e.d1 === 42 && e.d2 === 36).map((e) => e.tick / M.STEP).sort((a, b) => a - b);
+ok(ghostSteps.join(",") === "1,3,5,7,9,11,13,15",
+  "midi sleng: les hats fantômes doux (vélocité 36) tombent sur les pas impairs");
+ok(sOns(46).length === 0,
+  "midi sleng: aucun charley ouvert (le MIDI de référence n'en a pas)");
 ok(!sf.tracks[1].evs.some((e) => e.kind === "ch" && e.ch === M.CH_DRUMS && e.d1 === 37),
   "midi sleng: aucun rim (le preset ROCK du MT-40 n'en a pas)");
 const sBassOns = sf.tracks[2].evs.filter((e) => e.kind === "ch" && e.ch === M.CH_BASS &&
@@ -197,8 +201,8 @@ ok(sBassOns.length === sleng.bars.flat().length,
   `midi sleng: ${sBassOns.length} notes de basse (les ${sleng.bars.flat().length} événements du preset)`);
 ok(sBassOns.map((e) => e.d1).join(",") === "37,38,38,38,37,38,38,38,37,38,38,38,43,42",
   "midi sleng: la ligne en Ré — approche 37, fondamentale 38, quarte 43, tierce 42");
-ok(sBassOns[0].tick === 0 && sBassOns[7].tick === 18 * M.STEP && sBassOns[7].d1 === 38,
-  "midi sleng: la mesure 2 (première note au pas 2) suit la mesure 1");
+ok(sBassOns[0].tick === 0 && sBassOns[4].tick === 4 * M.STEP && sBassOns[4].d1 === 37,
+  "midi sleng: un groupe C#-D-D-D par temps (le 2e groupe commence au pas 4)");
 
 /* --- 4. la page dédiée reste en phase avec le module de l'émulateur ------------- */
 const synthBlock = (src) => {

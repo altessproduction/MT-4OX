@@ -16,8 +16,11 @@
 //   3. les hauteurs jouées sur 2 mesures = celles des données,
 //   4. la batterie sonne toujours (starts d'oscillateurs).
 // Puis il joue « Sleng Teng » (le classique ajouté en dernier) et vérifie :
-//   5. sa basse en Ré (approche 37, fondamentale 38, quarte 43, tierce 42),
-//   6. sa batterie vient de r.drm (kick aux pas 0 et 8 — pas le style digital).
+//   5. sa basse en Ré : le galop du MIDI de référence — approche 37 puis la
+//      fondamentale 38 RÉPÉTÉE en doubles-croches (C#-D-D-D ×3), quarte 43 /
+//      tierce 42 en conclusion,
+//   6. sa batterie vient de r.drm (kick aux pas 0, 4, 6, 8, 12 — pas le style
+//      digital).
 
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -130,10 +133,14 @@ ok(sandbox.window.RIDDB.list[sandbox.window.RIDDB.list.length - 1].id === "sleng
 ok(sleng.fw === 0, "sleng: « Motif de basse » charge le preset ROCK (fw 0)");
 ok(sleng.bpm[0] === 82 && sleng.bpm[1] === 82, "sleng: 82 BPM (le tempo du morceau de Wayne Smith)");
 const expSleng0 = sleng.bars[0].map(([, m]) => m);
-ok(expSleng0.join(",") === "37,38,38,38,37,38,38",
-  `sleng: mesure 0 en Ré = [${expSleng0.join(",")}] (approche, fondamentale ×3)`);
-const lastSleng = sleng.bars[1].slice(-2).map(([, m]) => m);
-ok(lastSleng.join(",") === "43,42", "sleng: conclusion quarte (43) / tierce (42) en fin de mesure 2");
+ok(sleng.bars.length === 1 && expSleng0.length === 14 &&
+   expSleng0.join(",") === "37,38,38,38,37,38,38,38,37,38,38,38,43,42",
+  `sleng: une mesure de 14 notes = [${expSleng0.join(",")}] (C#-D-D-D ×3 puis F#/F)`);
+const stepsSleng = sleng.bars[0].map(([s]) => s);
+ok(stepsSleng.join(",") === "0,1,2,3,4,5,6,7,8,9,10,11,12,14",
+  "sleng: le galop en doubles-croches staccato (pas 0-3, 4-7, 8-11, puis 12 et 14)");
+const lastSleng = sleng.bars[0].slice(-2).map(([, m]) => m);
+ok(lastSleng.join(",") === "43,42", "sleng: conclusion quarte (43) / tierce (42) aux pas 12 et 14");
 
 sandbox.__bassCalls = []; sandbox.__kickCalls = [];
 synth.start(sleng, null);
@@ -145,11 +152,16 @@ const slengBass = sandbox.__bassCalls.map((c) => c.midi);
 ok(slengBass.slice(0, expSleng0.length).join(",") === expSleng0.join(","),
   "sleng: la basse jouée = la transcription vérifiée du preset ROCK");
 const kicks = sandbox.__kickCalls.map((c) => c.t);
-ok(kicks.length >= 5, `sleng: kick joué (${kicks.length} frappes sur ~43 pas)`);
-/* la première frappe peut être calée sur le temps courant du mock (Math.max
-   dans le planificateur) ; les suivantes partent des pas exacts du run. */
-const kicksAligned = kicks.slice(1).every((t, i) => Math.abs(t - kicks[1] - i * 8 * sdSleng) < 1e-9);
-ok(kicksAligned, "sleng: batterie drm — kick aux pas 0 et 8 (temps 1 et 3), pas le style digital");
+ok(kicks.length >= 10, `sleng: kick joué (${kicks.length} frappes sur ~43 pas)`);
+/* le kick du preset : pas 0, 4, 6, 8, 12 — écarts de 2 ou 4 pas entre frappes
+   consécutives (la double frappe 6→8 est la signature du groove). La première
+   frappe peut être calée sur le temps courant du mock (Math.max du
+   planificateur) : on part de la deuxième, qui est sur les pas exacts du run. */
+const gaps = kicks.slice(2).map((t, i) => (t - kicks[i + 1]) / sdSleng);
+const near = (g, n) => Math.abs(g - n) < 1e-9;
+ok(gaps.length > 0 && gaps.every((g) => near(g, 2) || near(g, 4)),
+  "sleng: batterie drm — kick aux pas 0, 4, 6, 8, 12 (écarts 2 ou 4 pas), pas le style digital");
+ok(gaps.some((g) => near(g, 2)), "sleng: la double frappe 6→8 du kick est bien là");
 
 ok(html.includes("et le classique Sleng Teng"),
   "sleng: l'en-tête de la page annonce le livre et le classique");

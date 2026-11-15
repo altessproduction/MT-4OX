@@ -40,20 +40,19 @@ const mt40_chord_shape_t mt40_shape_min  = { {0, 3, 7, -1}, 3 };
 const mt40_chord_shape_t mt40_shape_dom7 = { {0, 4, 7, 10}, 4 };
 
 static const mt40_bass_t bass_ROCK[] = {
-    {0, -1, 2},
-    {2, 0, 3},
-    {5, 0, 3},
-    {8, 0, 2},
-    {10, -1, 2},
-    {12, 0, 3},
-    {15, 0, 3},
-    {18, 0, 2},
-    {20, -1, 2},
-    {22, 0, 3},
-    {25, 0, 3},
-    {28, 0, 2},
-    {30, 5, 1},
-    {31, 4, 1},
+    /* Transcription recoupée sur le MIDI de référence du riddim (sleng_teng.mid,
+     * 82 BPM, boucle d'une mesure) et la tablature de Noel Davey : l'approche -1
+     * puis la fondamentale RÉPÉTÉE en doubles-croches staccato — trois groupes
+     * « C#-D-D-D » par mesure (pas 0-3, 4-7, 8-11), paire quarte (+5) au pas 12 /
+     * tierce (+4) au pas 14. Les deux mesures sont identiques (boucle 1 mesure). */
+    {0, -1, 1}, {1, 0, 1}, {2, 0, 1}, {3, 0, 1},
+    {4, -1, 1}, {5, 0, 1}, {6, 0, 1}, {7, 0, 1},
+    {8, -1, 1}, {9, 0, 1}, {10, 0, 1}, {11, 0, 1},
+    {12, 5, 1}, {14, 4, 1},
+    {16, -1, 1}, {17, 0, 1}, {18, 0, 1}, {19, 0, 1},
+    {20, -1, 1}, {21, 0, 1}, {22, 0, 1}, {23, 0, 1},
+    {24, -1, 1}, {25, 0, 1}, {26, 0, 1}, {27, 0, 1},
+    {28, 5, 1}, {30, 4, 1},
 };
 static const mt40_chord_t chords_ROCK[] = {
     {0, 4},
@@ -67,8 +66,8 @@ const mt40_pattern_t pat_ROCK = {
     2, 16,          /* bars, steps_per_bar */
     1,              /* verified: 1 = transcribed from sources, 0 = draft */
     82,              /* bpm_hint */
-    { 0x01010101u, 0x10101010u, 0x55555555u, 0x80008000u },   /* kick, snare, hat_cl, hat_op */
-    bass_ROCK, 14,
+    { 0x11511151u, 0x10101010u, 0xFFFFFFFFu, 0x00000000u },   /* kick (1, 2, 2&, 3, 4), snare (2, 4), hat 1/16 (fortes croches + fantômes), pas de hat ouverte */
+    bass_ROCK, 28,
     chords_ROCK, 4,
     0xf0000000u,         /* fill snare mask */
     0x80000000u,         /* fill open-hat mask */

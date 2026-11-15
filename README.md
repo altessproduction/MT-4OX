@@ -70,8 +70,10 @@ les **38 riddims du « The Riddim Real Book (Tab) »** — de *African Beat* à
 *Youth Man*, avec label, année, akas, accords et tempo du livre — et, en
 dernier, **le classique Sleng Teng** (Jammy's, 1985) : c'est le preset
 « Rock » du MT-40 lui-même, la transcription vérifiée du firmware MT-40X à
-82 BPM — « Écouter » joue sa batterie d'origine (kick 1 et 3, snare 2 et 4,
-hats en croches) et sa basse en Ré, et « Motif de basse » charge le preset
+82 BPM — « Écouter » joue sa batterie d'origine (kick 1, 2, 2&, 3 et 4,
+snare 2 et 4, hats en croches avec fantômes doux) et sa basse en Ré avec
+**les répétitions en doubles-croches de l'original** (le galop « C#-D-D-D »
+×3 du MIDI de référence du riddim), et « Motif de basse » charge le preset
 ROCK de la machine. Pour chacun :
 
 - **Écouter** — une maquette Web Audio de la page : batterie et basse
@@ -111,7 +113,7 @@ est relu par [`web/test_riddims_midi.mjs`](web/test_riddims_midi.mjs)
 
 | # | Nom | Mesure | Tempo conseillé | État |
 |---|-----------|--------|--------|------|
-| 1 | **ROCK** (Sleng Teng) | 4/4, 2 mesures | 82 | Vérifié sur deux tablatures croisées, à caler à l'oreille |
+| 1 | **ROCK** (Sleng Teng) | 4/4, 2 mesures | 82 | Vérifié sur le MIDI de référence du riddim et la tablature de Noel Davey |
 | 2 | POPS | 4/4, 2 mesures | 100 | Brouillon éditable |
 | 3 | SWING | 4/4, 2 mesures | 120 | Brouillon éditable |
 | 4 | SLOWROCK | 4/4, 2 mesures | 70 | Brouillon éditable |

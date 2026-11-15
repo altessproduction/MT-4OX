@@ -88,28 +88,35 @@ DRUMS = {
 
 # Le classique Sleng Teng, en dernier dans la liste : le preset « Rock » du MT-40
 # (Hiroko Okuda, 1981) qui a lancé le dancehall numérique — Wayne Smith, « Under Mi
-# Sleng Teng », Jammy's Records, 1985, 82 BPM. Transcription du firmware MT-40X
-# (mt40_patterns.c, pat_ROCK, « verified » : deux tablatures recoupées, dossier
-# technique § 3 et annexe A), racine de référence Ré (D2 = MIDI 38) :
-# approche -1 puis fondamentale ×3, trois cellules, paire quarte (+5) / tierce (+4).
-# Batterie : celle du preset (kick 1 et 3, snare 2 et 4, hats en croches, hat ouverte
-# sur le dernier 1/16) — pas la batterie générique « digital » : DRM_OVERRIDE la
-# transporte dans l'entrée. « fw » : côté firmware, « Motif de basse » charge le
-# preset ROCK (index 0 de la table des motifs) — le riddim d'origine lui-même.
+# Sleng Teng », Jammy's Records, 1985, 82 BPM. Transcription recoupée sur le MIDI de
+# référence du riddim (sleng_teng.mid : 82,45 BPM, 4/4, boucle d'une mesure) et la
+# tablature de Noel Davey, racine de référence Ré (D2 = MIDI 38) : l'approche
+# chromatique -1 PUIS LA FONDAMENTALE RÉPÉTÉE EN DOUBLES-CROCHES STACCATO — trois
+# groupes « C#-D-D-D » (pas 0-3, 4-7, 8-11), puis la paire quarte (+5) au pas 12 et
+# tierce (+4) au pas 14. C'est ce galop de Ré répétés (l'effet « triolet » entendu
+# sur l'enregistrement) qui fait le groove ; l'ancienne transcription en tenues
+# l'écrasait. Batterie : celle du MIDI de référence — kick aux pas 0, 4, 6, 8 et 12
+# (temps 1, 2, 2&, 3, 4 : doublé sur la caisse claire 2 et 4), hats fermés en
+# croches (pas pairs) + hats fantômes doux en double-croches (pas impairs, lane
+# « hcg », vélocité faible — le balancement du preset), pas de hat ouverte — pas la
+# batterie générique « digital » : DRM_OVERRIDE la transporte dans l'entrée.
+# « fw » : côté firmware, « Motif de basse » charge le preset ROCK (index 0 de la
+# table des motifs) — le riddim d'origine lui-même.
 SLENG_BASS_D2 = 38
 SLENG_BARS = [
-    # mesures 1 et 2 (pas, MIDI, durée en pas) : offsets du pat_ROCK + 38
-    [[0, SLENG_BASS_D2 - 1, 2], [2, SLENG_BASS_D2, 3], [5, SLENG_BASS_D2, 3],
-     [8, SLENG_BASS_D2, 2], [10, SLENG_BASS_D2 - 1, 2], [12, SLENG_BASS_D2, 3],
-     [15, SLENG_BASS_D2, 3]],
-    [[2, SLENG_BASS_D2, 2], [4, SLENG_BASS_D2 - 1, 2], [6, SLENG_BASS_D2, 3],
-     [9, SLENG_BASS_D2, 3], [12, SLENG_BASS_D2, 2], [14, SLENG_BASS_D2 + 5, 1],
-     [15, SLENG_BASS_D2 + 4, 1]],
+    # une mesure (pas, MIDI, durée en pas) : C#-D-D-D ×3 puis F#/F ; toutes les
+    # notes sont staccato (1 pas), le MIDI de référence boucle sur une mesure
+    [[0, SLENG_BASS_D2 - 1, 1], [1, SLENG_BASS_D2, 1], [2, SLENG_BASS_D2, 1],
+     [3, SLENG_BASS_D2, 1], [4, SLENG_BASS_D2 - 1, 1], [5, SLENG_BASS_D2, 1],
+     [6, SLENG_BASS_D2, 1], [7, SLENG_BASS_D2, 1], [8, SLENG_BASS_D2 - 1, 1],
+     [9, SLENG_BASS_D2, 1], [10, SLENG_BASS_D2, 1], [11, SLENG_BASS_D2, 1],
+     [12, SLENG_BASS_D2 + 5, 1], [14, SLENG_BASS_D2 + 4, 1]],
 ]
 DRM_OVERRIDE = {
-    "sleng-teng": dict(k=[[0, 8], [0, 8]], s=[[4, 12], [4, 12]],
-                       hc=[[0, 2, 4, 6, 8, 10, 12, 14], [0, 2, 4, 6, 8, 10, 12, 14]],
-                       ho=[[15], [15]], rm=[[], []]),
+    "sleng-teng": dict(k=[[0, 4, 6, 8, 12]], s=[[4, 12]],
+                       hc=[[0, 2, 4, 6, 8, 10, 12, 14]],
+                       hcg=[[1, 3, 5, 7, 9, 11, 13, 15]],
+                       ho=[[]], rm=[[]]),
 }
 FW_ALIAS = {"sleng-teng": 0}          # le preset ROCK de la table du firmware
 
@@ -182,7 +189,7 @@ def main():
         for bar in r["bars"]:
             assert bar and all(0 <= s[0] <= 15 and 24 <= s[1] <= 60 and 1 <= s[2] <= 8 for s in bar), (r["id"], bar)
         if "drm" in r:
-            for lane in ("k", "s", "hc", "ho", "rm"):
+            for lane in ("k", "s", "hc", "hcg", "ho", "rm"):
                 assert (len(r["drm"][lane]) == len(r["bars"]) and
                         all(0 <= s <= 15 for st in r["drm"][lane] for s in st)), (r["id"], lane)
     head = f"les {len(d)} du « {SRC_TITLE} » et le classique Sleng Teng (Jammy's, 1985)"

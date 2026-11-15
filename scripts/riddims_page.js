@@ -204,10 +204,10 @@
       const o = ac.createOscillator(); o.type = "triangle"; o.frequency.value = 185;
       o.connect(env(t, 0.001, 0.4, 0.11)); o.start(t); o.stop(t + 0.12);
     }
-    function hat(t, open) {
+    function hat(t, open, soft) {                        // soft = hat fantôme doux (Sleng Teng, pas impairs)
       const s = src(t), f = ac.createBiquadFilter(); f.type = "highpass"; f.frequency.value = 7200;
-      const dur = open ? 0.28 : 0.055;
-      s.connect(f); f.connect(env(t, 0.001, open ? 0.22 : 0.18, dur)); s.stop(t + dur + 0.02);
+      const dur = open ? 0.28 : (soft ? 0.04 : 0.055);
+      s.connect(f); f.connect(env(t, 0.001, open ? 0.22 : (soft ? 0.07 : 0.18), dur)); s.stop(t + dur + 0.02);
     }
     function rim(t) {
       const s = src(t), f = ac.createBiquadFilter(); f.type = "bandpass"; f.frequency.value = 3600; f.Q.value = 6;
@@ -239,11 +239,12 @@
       while (r.next < ac.currentTime + 0.18) {
         const bar = Math.floor(r.step / 16) % r.bars.length, st = r.step % 16;
         const dr = r.drm || D.drums[r.st];    // batterie propre au riddim (Sleng Teng), sinon celle du style
-        for (const lane of ["k", "s", "hc", "ho", "rm"]) {
-          if ((dr[lane][bar] || []).includes(st)) {
+        for (const lane of ["k", "s", "hc", "hcg", "ho", "rm"]) {
+          if (((dr[lane] && dr[lane][bar]) || []).includes(st)) {
             const t = Math.max(r.next, ac.currentTime);
             if (lane === "k") kick(t); else if (lane === "s") snare(t);
-            else if (lane === "hc") hat(t, false); else if (lane === "ho") hat(t, true); else rim(t);
+            else if (lane === "hc") hat(t, false); else if (lane === "hcg") hat(t, false, true);
+            else if (lane === "ho") hat(t, true); else rim(t);
           }
         }
         for (const [s, m, l] of r.bars[bar]) {          // événement [pas, note MIDI, durée en pas]

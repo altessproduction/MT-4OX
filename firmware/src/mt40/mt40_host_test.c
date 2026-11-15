@@ -91,16 +91,24 @@ int main(void)
         printf(" %d", bass_seen[i]);
     printf("\n");
 
-    /* invariants */
-    if (ev_bass != 28) { printf("  FAIL: expected 28 bass notes over 2 loops\n"); ok = 0; }
-    if (ev_drum[MT40_KICK] != 8)  { printf("  FAIL: expected 8 kicks\n"); ok = 0; }
+    /* invariants (motif du MIDI de référence : C#-D-D-D ×3 + F#/F par mesure,
+     * kick 1, 2, 2&, 3, 4 — hats sur les 16 pas, pas de hat ouverte) */
+    if (ev_bass != 56) { printf("  FAIL: expected 56 bass notes over 2 loops (28 par boucle)\n"); ok = 0; }
+    if (ev_drum[MT40_KICK] != 20)  { printf("  FAIL: expected 20 kicks (5 par mesure)\n"); ok = 0; }
     if (ev_drum[MT40_SNARE] != 8) { printf("  FAIL: expected 8 snares\n"); ok = 0; }
-    if (ev_drum[MT40_HAT_CL] != 32) { printf("  FAIL: expected 32 closed hats\n"); ok = 0; }
-    if (ev_drum[MT40_HAT_OP] != 4)  { printf("  FAIL: expected 4 open hats\n"); ok = 0; }
+    if (ev_drum[MT40_HAT_CL] != 64) { printf("  FAIL: expected 64 closed hats (16 par mesure)\n"); ok = 0; }
+    if (ev_drum[MT40_HAT_OP] != 0)  { printf("  FAIL: expected 0 open hats\n"); ok = 0; }
     if (ev_chord != 8) { printf("  FAIL: expected 8 chord stabs\n"); ok = 0; }
-    /* the iconic motif: approach note one semitone under the root (D2=38 -> 37) */
+    /* le motif iconique : l'approche une demi-ton sous la fondamentale (D2=38 -> 37)
+     * puis les TROIS répétitions de la fondamentale — le galop du Sleng Teng */
     if (bass_seen[0] != 37 || bass_seen[1] != 38) {
         printf("  FAIL: motif must open on 37, 38 (C#2, D2)\n"); ok = 0;
+    }
+    if (bass_seen[2] != 38 || bass_seen[3] != 38) {
+        printf("  FAIL: la fondamentale doit être RÉPÉTÉE (38, 38 aux pas 1 et 2)\n"); ok = 0;
+    }
+    if (bass_seen[12] != 43 || bass_seen[13] != 42) {
+        printf("  FAIL: conclusion quarte 43 / tierce 42 aux pas 12 et 14\n"); ok = 0;
     }
 
     /* 2. fill: press FILL in the middle of bar 1; the fill takes over the end
@@ -116,9 +124,10 @@ int main(void)
     printf("\nWith FILL pressed mid bar 1 (over 2 bars): snare %d, hat_op %d\n",
            ev_drum[MT40_SNARE], ev_drum[MT40_HAT_OP]);
     /* over 2 bars with the fill: base snares at 4, 12, 20 (28 replaced by the
-     * fill) + the 4-step fill roll 28..31 = 7; open hats: base 15 + fill 31 = 2 */
+     * fill) + the 4-step fill roll 28..31 = 7; open hats: plus de hat ouverte de
+     * base (le MIDI de référence n'en a pas), seulement celle du fill 31 = 1 */
     if (ev_drum[MT40_SNARE] != 7) { printf("  FAIL: fill did not roll the snare\n"); ok = 0; }
-    if (ev_drum[MT40_HAT_OP] != 2) { printf("  FAIL: fill hat_op missing\n"); ok = 0; }
+    if (ev_drum[MT40_HAT_OP] != 1) { printf("  FAIL: fill hat_op missing\n"); ok = 0; }
 
     /* 3. audio render: synth + drums mixed, bounded, no NaN */
     g_drums = mt40_drums_new(SR);
