@@ -29,6 +29,22 @@ versionnage sémantique.
 
 ## [Non publié]
 ### Corrigé
+- **L'émulateur web rendait le silence chez certains utilisateurs** alors que le
+  même paquet v0.1.2 sonnait dans les tests : la page imposait
+  `sampleRate: 44100` à son contexte audio, et sur une configuration où le
+  navigateur crée le contexte mais ne rend rien sur une fréquence imposée
+  (le cas observé sous Firefox), tout le firmware émulé — comme FM-1+VA —
+  restait muet, tandis que la page Riddims, elle, sonnait (son propre contexte
+  n'impose rien). La chaîne audio est désormais **éprouvée et réparée** :
+  sonde du graphe au démarrage (note inaudible à -60 dB) avec repli à la
+  fréquence de l'appareil si le contexte imposé ne rend rien ; contexte repris
+  à tout geste (pointerdown/touche/toucher, en plus du retour d'onglet) ;
+  garde-fou qui reconstruit la chaîne sur un contexte neuf si la machine rend
+  (touche tenue ou PLAY vert) sans qu'aucun échantillon ne sorte pendant 1,2 s
+  (une fois par session, flash sauvegardée avant). Vérifié par intégration
+  (Chromium) : note audible avant incident, muiterie simulée, garde-fou
+  déclenché, note audible après réparation (RMS 0.021), zéro erreur page ;
+  état exposé par `window.__audioState`.
 - **La page Riddims : l'« Écouter » ne jouait que la batterie** — le
   destructuring de l'ordonnanceur de l'écoute sautait le premier champ des
   événements `[pas, note MIDI, durée]` : `[, s, m, l]` mettait la note dans

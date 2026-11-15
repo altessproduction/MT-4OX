@@ -2368,6 +2368,7 @@ class EmuFirmware {
     }
     if (m.type !== "frame" || m.seq !== this.running?.seq) return;   // la machine en marche, même si un démarrage a échoué
     this.usb = m.usb;
+    this.playing = !!m.playing;      // le worklet rend des échantillons (diagnostic du son)
     if (m.lcd) { this.lcd = m.lcd; this.lcdNew = true; }
     if (m.leds) { this.leds = m.leds; this.green = m.green || 0; }
     if (m.halted && !this.halted) this.onHalt?.();
@@ -6296,25 +6297,64 @@ function buildPanel(fw) {
 
   let last = 0;
   function frame(t) {
-    if (t - last > 12) { last = t; fw.draw(); panel.lights(); }   // à chaque image de l'écran (60 par seconde)
+    if (t - last > 12) { last = t; fw.draw(); panel.lights(); watchAudio(); }   // à chaque image de l'écran (60 par seconde)
     requestAnimationFrame(frame);
   }
   const fontReady = document.fonts && document.fonts.load ? document.fonts.load('600 16px "Barlow Semi Condensed"').catch(() => {}) : Promise.resolve();
   fontReady.finally(() => requestAnimationFrame(frame));
 
+  // ---- le son : un contexte éprouvé. Le cœur émulé vit à 44 100 Hz, mais certains navigateurs créent
+  // le contexte et rendent le silence sur une fréquence imposée — on sonde donc le graphe (une note
+  // inaudible à -60 dB) et, sans rendu prouvé, on repart à la fréquence de l'appareil.
+  const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+  async function probeCtx(a) {
+    try {
+      if (a.state !== "running") await Promise.race([a.resume(), wait(700)]);
+      if (a.state !== "running") return false;
+      const o = a.createOscillator(), g = a.createGain(), an = a.createAnalyser();
+      an.fftSize = 512;
+      o.frequency.value = 440; g.gain.value = 0.001;
+      o.connect(g); g.connect(an); an.connect(a.destination);
+      o.start();
+      let peak = 0;
+      const d = new Float32Array(an.fftSize);
+      for (let k = 0; k < 3; k++) {
+        an.getFloatTimeDomainData(d);
+        for (let i = 0; i < d.length; i++) { const v = Math.abs(d[i]); if (v > peak) peak = v; }
+        await wait(30);
+      }
+      try { o.stop(); } catch { /* déjà mort */ }
+      o.disconnect(); g.disconnect(); an.disconnect();
+      return peak > 1e-4;
+    } catch { return false; }
+  }
+  async function audioCtx(with441) {   // with441 : demande 44 100 Hz, éprouvé par la sonde — sinon la fréquence de l'appareil
+    if (!with441) return new AudioContext({ latencyHint: "interactive" });
+    let a = null;
+    try { a = new AudioContext({ sampleRate: 44100, latencyHint: "interactive" }); }
+    catch { return new AudioContext({ latencyHint: "interactive" }); }
+    a.forced441 = true;
+    if (await probeCtx(a)) return a;
+    try { await a.close(); } catch { /* rien */ }
+    return new AudioContext({ latencyHint: "interactive" });
+  }
+  async function vaChain(a) {          // le nœud du moteur FM-1+VA (allumage et réparations)
+    const src = $("engine-src").textContent;
+    try { await a.audioWorklet.addModule(URL.createObjectURL(new Blob([src], { type: "text/javascript" }))); }
+    catch (e1) { console.warn("worklet from blob:", e1 && e1.message); await a.audioWorklet.addModule("engine.js"); }
+    const node = new AudioWorkletNode(a, "fm1va", { numberOfInputs: 0, numberOfOutputs: 1, outputChannelCount: [2] });
+    const an = a.createAnalyser();
+    an.fftSize = 2048;
+    node.connect(an); an.connect(a.destination);
+    return { node, an };
+  }
   async function switchOn() {
     const go = $("go");
     go.disabled = true; go.lastChild.textContent = "Démarrage…";
     try {
       try { if (navigator.audioSession) navigator.audioSession.type = "playback"; } catch { /* older Safari */ }
-      try { ac = new AudioContext({ sampleRate: 44100, latencyHint: "interactive" }); } catch { ac = new AudioContext({ latencyHint: "interactive" }); }
-      const src = $("engine-src").textContent;
-      try { await ac.audioWorklet.addModule(URL.createObjectURL(new Blob([src], { type: "text/javascript" }))); }
-      catch (e1) { console.warn("worklet from blob:", e1 && e1.message); await ac.audioWorklet.addModule("engine.js"); }
-      const node = new AudioWorkletNode(ac, "fm1va", { numberOfInputs: 0, numberOfOutputs: 1, outputChannelCount: [2] });
-      const an = ac.createAnalyser();
-      an.fftSize = 2048;
-      node.connect(an); an.connect(ac.destination);
+      ac = await audioCtx(true);
+      const { node, an } = await vaChain(ac);
       await ac.resume();
       va.attach(node, an);
       va.power();
@@ -6333,6 +6373,59 @@ function buildPanel(fw) {
     }
   }
   $("go").addEventListener("click", switchOn);
+  // le contexte repris à tout geste : une interruption (appel, casque branché, mise en veille) ou une
+  // politique d'autoplay stricte ne doit pas laisser la machine muette pour toujours
+  const wake = () => { if (ac && ac.state !== "running") ac.resume().catch(() => {}); };
+  document.addEventListener("pointerdown", wake, true);
+  document.addEventListener("keydown", wake, true);
+  document.addEventListener("touchstart", wake, true);
+  // ---- garde-fou du son : la machine rend (une touche tenue ou PLAY vert) mais le niveau de sortie reste
+  // nul — on refait la chaîne audio à la fréquence de l'appareil, une fois par session
+  let muteSince = 0, audioRepaired = false;
+  const adBuf = new Float32Array(2048);
+  function watchAudio() {
+    if (!ac || audioRepaired || !current || !current.on) { muteSince = 0; return; }
+    try {
+      const an = current === va ? vaAn : current.an;
+      if (!an) return;
+      an.getFloatTimeDomainData(adBuf);
+      let peak = 0;
+      for (let i = 0; i < adBuf.length; i++) { const v = Math.abs(adBuf[i]); if (v > peak) peak = v; }
+      if (peak > 1e-3) { muteSince = 0; return; }
+      const active = (current.down && current.down.size > 0) || (current.kind === "emu" && (current.green || 0) > 0.2);
+      if (!active) { muteSince = 0; return; }
+      const t = performance.now();
+      if (!muteSince) muteSince = t;
+      if (t - muteSince < 1200) return;
+      muteSince = 0;
+      audioRepaired = true;
+      rebuildAudio();
+    } catch { muteSince = 0; }               // un garde-fou ne doit jamais arrêter l'affichage
+  }
+  async function rebuildAudio() {      // la chaîne muette : contexte neuf à la fréquence de l'appareil, moteurs repris
+    status.textContent = "Le son restait muet : nouvelle chaîne audio à la fréquence de l'appareil…";
+    try {
+      const na = new AudioContext({ latencyHint: "interactive" });
+      const { node, an } = await vaChain(na);
+      await na.resume();
+      const old = ac, oldNode = vaNode;
+      ac = na;
+      if (vaLive) vaOut(false);
+      try { oldNode.disconnect(); } catch { /* rien */ }
+      va.attach(node, an);
+      vaNode = node; vaAn = an;
+      const prev = current;
+      if (prev === va) vaOut(true);
+      else if (prev === emu) { const e = prev.entry; await prev.stop(); prev.node = null; prev.an = null; await prev.attach(na, await loadWasm()); await prev.boot(e); }
+      else if (prev.kind === "natif") { const e = prev.entry; await prev.stop(); prev.node = null; await prev.boot(na); }
+      try { await old.close(); } catch { /* rien */ }
+      status.textContent = "";
+    } catch (err) {
+      status.textContent = "La réparation du son a échoué : " + (err && err.message ? err.message : err);
+    }
+  }
+  Object.defineProperty(window, "__audioState", { get: () => ({ state: ac && ac.state, sr: ac && ac.sampleRate, forced441: !!(ac && ac.forced441), repaired: audioRepaired, current: current ? current.kind : null }) });
+  window.__rebuildAudio = () => rebuildAudio();   // pour les tests
 
   // MIDI (manual 11): every input and output the browser offers, SysEx included when allowed (DX7 patches);
   // FM-1+VA hears and sends only while it is the engine playing

@@ -28,6 +28,19 @@ MT-40X l'utilise tel quel, avec les seules différences ci-dessous (fichier `web
      éditeur `0x52`/`0x53`), le MT-40X joue la ligne comme motif
      d'accompagnement transposé par l'accord tenu au clavier ; sans banque, la
      basse va au séquenceur (piste 3) et la page le dit.
+5. **La chaîne audio, éprouvée et réparée** (`switchOn` et la boucle d'affiche) :
+   le contexte audio demandé à 44 100 Hz (la fréquence du cœur émulé) est
+   **sondé** au démarrage (une note inaudible à -60 dB à travers le graphe) —
+   si le navigateur crée le contexte mais rend le silence sur une fréquence
+   imposée, la page repart à la fréquence de l'appareil. Le contexte est en
+   plus **repris à tout geste** (pointerdown, touche, toucher) : une
+   interruption du système ou une politique d'autoplay stricte ne laisse plus
+   la machine muette pour toujours. Enfin un **garde-fou** mesure la sortie :
+   si la machine rend (touche tenue ou PLAY vert) et que le niveau reste nul
+   pendant 1,2 s, la chaîne audio est reconstruite sur un contexte neuf à la
+   fréquence de l'appareil (une fois par session ; moteurs repris, flash
+   sauvegardée avant). État visible pour les tests : `window.__audioState`
+   (état, fréquence, sonde, réparation), et `window.__rebuildAudio()`.
 
 Tout le reste — le panneau, le clavier, le Duo, les sauvegardes, le MIDI —
 est le code d'origine, sans modification.
