@@ -85,6 +85,21 @@ Les données (`window.RIDDB`) sont générées depuis le PDF par
 celles des tablatures du livre, les batteries suivent le style de chaque
 riddim (one drop, rockers, steppers, rocksteady, digital, dancehall).
 
+La **[page Riddims dédiée](https://altessproduction.github.io/MT-4OX/riddims.html)**
+([`web/riddims.html`](web/riddims.html), hors émulateur) reprend la même écoute
+— le synthé et les styles de la page sont copiés du même module, la copie est
+vérifiée par test — et ajoute l'**export MIDI** : pour chaque riddim,
+« Riddim MIDI » télécharge le fichier complet (batterie sur le canal 10 en
+carte General MIDI : grosse caisse 36, caisse claire 38, charley 42/46, rim 37 ;
+basse sur le canal 1, programme « Synth Bass 1 ») et « Basse MIDI » la seule
+ligne de basse, telle que tablée dans le livre. Standard MIDI File format 1,
+480 PPQ, tempo du livre (milieu de la fourchette), une passe des mesures —
+à importer tel quel dans n'importe quel DAW (Ableton Live, FL Studio, Reaper,
+Logic, GarageBand, Bitwig, Cubase…). La page est régénérée par
+[`scripts/build_riddims_html.py`](scripts/build_riddims_html.py) et son export
+est relu par [`web/test_riddims_midi.mjs`](web/test_riddims_midi.mjs)
+(`node web/test_riddims_midi.mjs`).
+
 ## Les six rythmes
 
 | # | Nom | Mesure | Tempo conseillé | État |

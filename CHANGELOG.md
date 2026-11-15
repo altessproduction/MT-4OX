@@ -28,6 +28,28 @@ versionnage sémantique.
   *Riddim Real Book*), réponse 0x53 = 44 vérifiée dans l'émulateur.
 
 ## [Non publié]
+### Ajouté
+- **Page Riddims dédiée avec export MIDI** (`web/riddims.html`, hors
+  émulateur, en ligne sur /MT-4OX/riddims.html) : la même écoute que la page
+  Riddims de l'émulateur — le synthé Web Audio et le CSS sont copiés du même
+  module `scripts/riddims_page.js` par `scripts/build_riddims_html.py`, copie
+  vérifiée par test — plus deux téléchargements par riddim : « Riddim MIDI »
+  (batterie sur le canal 10 en carte General MIDI — grosse caisse 36, caisse
+  claire 38, charley fermé 42, ouvert 46, rim 37 — et basse sur le canal 1,
+  programme GM « Synth Bass 1 ») et « Basse MIDI » (la seule ligne de basse,
+  telle que tablée dans le livre). Standard MIDI File format 1, 480 PPQ, un
+  pas = PPQ/4 tics, tempo du livre (milieu de la fourchette), signature 4/4,
+  une passe des mesures du riddim ; vélocités temps forts/ordinaires comme au
+  séquenceur. S'importe tel quel dans n'importe quel DAW. Le pied de la page
+  Riddims de l'émulateur renvoie vers la page dédiée.
+  `web/test_riddims_midi.mjs` (`node web/test_riddims_midi.mjs`) relit les
+  38 × 2 fichiers générés avec un parseur SMF (en-têtes, longueurs de chunks,
+  tempo, tics et hauteurs des notes, carte GM, fin de piste) et vérifie que
+  la page dédiée reste en phase avec le module de l'émulateur (blocs synth et
+  CSS identiques) ; fichiers Stalag contrôlés aussi par libmagic (SMF format
+  1, 3 et 2 pistes) et par un essai Chromium réel (38 cartes, écoute,
+  téléchargements, zéro erreur page).
+
 ### Corrigé
 - **L'émulateur web rendait le silence chez certains utilisateurs** alors que le
   même paquet v0.1.2 sonnait dans les tests : la page imposait

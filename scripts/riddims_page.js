@@ -92,7 +92,9 @@
         <b>Séquenceur</b> : la basse va sur la piste 3 et la batterie sur la piste 4 (moteur DRUM) du FM-1 émulé ;
         appuie ensuite sur SEQ puis PLAY. <b>Motif de basse</b> : le MT-40X joue la ligne comme accompagnement,
         transposée par l'accord tenu au clavier (firmware avec banque riddim). <b>Écouter</b> : maquette de la page,
-        batterie et basse synthétisées ici même.
+        batterie et basse synthétisées ici même. <b>Export MIDI</b> : la
+        <a href="riddims.html">page Riddims dédiée</a> télécharge le riddim ou la
+        ligne de basse en fichier MIDI à importer dans ton DAW.
       </div>
     </div>`;
   document.body.append(openBtn, sheet);
@@ -158,6 +160,11 @@
   render();
 
   /* ------------------------------------------------- écoute : le synthé de la page */
+  /* Le synthé ci-dessous est copié tel quel dans web/riddims.html (la page
+     Riddims dédiée) par scripts/build_riddims_html.py ; node
+     web/test_riddims_midi.mjs vérifie que les deux copies restent identiques —
+     ne le modifier qu'ici, puis relancer les deux scripts. */
+  /* synth:begin */
   const synth = (() => {
     let ac = null, out = null, noise = null;
     let run = null;                                       // {rid, t0, step, next, timer}
@@ -260,6 +267,7 @@
     }
     return { start, stop, get playingId() { return playingId; } };
   })();
+  /* synth:end */
   function toggleListen(r, el) {
     if (synth.playingId === r.id) { synth.stop(); say("Écoute arrêtée."); }
     else { synth.start(r, el); say(`« ${r.n} » en écoute — ${fmtBpm(r)}.`); }
