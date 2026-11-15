@@ -172,6 +172,34 @@ ok(M.fname(rid, "riddim") === `stalag-riddim-${M.bpmOf(rid)}bpm.mid` &&
    M.fname(rid, "basse") === `stalag-basse-${M.bpmOf(rid)}bpm.mid`,
   `midi: noms de fichiers (${M.fname(rid, "riddim")})`);
 
+/* --- 3 bis. Sleng Teng : le classique, sa batterie propre (drm) et 82 BPM ------- */
+const sleng = RIDDB.list.find((r) => r.id === "sleng-teng");
+if (!sleng) { console.error("sleng-teng absent des données RIDDB"); process.exit(2); }
+const sf = parseSMF(arr(M.riddimMidi(sleng)));
+const sOns = (n) => sf.tracks[1].evs.filter((e) => e.kind === "ch" && e.ch === M.CH_DRUMS &&
+  (e.status & 0xF0) === 0x90 && e.d2 > 0 && e.d1 === n).map((e) => e.tick).sort((a, b) => a - b);
+ok(M.bpmOf(sleng) === 82, "midi sleng: tempo 82 BPM (Under Mi Sleng Teng)");
+ok(M.fname(sleng, "riddim") === `sleng-teng-riddim-82bpm.mid`, "midi sleng: nom de fichier");
+const tickSet = (arr) => [...new Set(arr.map((t) => `${t}`))].sort((a, b) => a - b).join(",");
+ok(sOns(36).length === 4 && tickSet(sOns(36)) === tickSet([0, 8, 16, 24].map((s) => s * M.STEP)),
+  `midi sleng: kick GM 36 aux pas 0, 8, 16, 24 (${sOns(36)})`);
+ok(sOns(38).length === 4 && tickSet(sOns(38)) === tickSet([4, 12, 20, 28].map((s) => s * M.STEP)),
+  "midi sleng: caisse claire GM 38 aux pas 4, 12, 20, 28");
+ok(sOns(42).length === 16 && tickSet(sOns(42)) === tickSet([0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30].map((s) => s * M.STEP)),
+  "midi sleng: charley fermé GM 42 en croches sur les deux mesures");
+ok(sOns(46).length === 2 && tickSet(sOns(46)) === tickSet([15, 31].map((s) => s * M.STEP)),
+  "midi sleng: charley ouvert GM 46 sur les pas 15 et 31");
+ok(!sf.tracks[1].evs.some((e) => e.kind === "ch" && e.ch === M.CH_DRUMS && e.d1 === 37),
+  "midi sleng: aucun rim (le preset ROCK du MT-40 n'en a pas)");
+const sBassOns = sf.tracks[2].evs.filter((e) => e.kind === "ch" && e.ch === M.CH_BASS &&
+  (e.status & 0xF0) === 0x90 && e.d2 > 0);
+ok(sBassOns.length === sleng.bars.flat().length,
+  `midi sleng: ${sBassOns.length} notes de basse (les ${sleng.bars.flat().length} événements du preset)`);
+ok(sBassOns.map((e) => e.d1).join(",") === "37,38,38,38,37,38,38,38,37,38,38,38,43,42",
+  "midi sleng: la ligne en Ré — approche 37, fondamentale 38, quarte 43, tierce 42");
+ok(sBassOns[0].tick === 0 && sBassOns[7].tick === 18 * M.STEP && sBassOns[7].d1 === 38,
+  "midi sleng: la mesure 2 (première note au pas 2) suit la mesure 1");
+
 /* --- 4. la page dédiée reste en phase avec le module de l'émulateur ------------- */
 const synthBlock = (src) => {
   const a = src.indexOf("/* synth:begin"), b = src.indexOf("/* synth:end");

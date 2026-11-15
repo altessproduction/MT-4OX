@@ -67,7 +67,12 @@ accessibles sous [`web/editor.html`](web/editor.html) et
 
 Le bouton **« ♫ Riddims »** de la page (à côté du sélecteur de firmware) ouvre
 les **38 riddims du « The Riddim Real Book (Tab) »** — de *African Beat* à
-*Youth Man*, avec label, année, akas, accords et tempo du livre. Pour chacun :
+*Youth Man*, avec label, année, akas, accords et tempo du livre — et, en
+dernier, **le classique Sleng Teng** (Jammy's, 1985) : c'est le preset
+« Rock » du MT-40 lui-même, la transcription vérifiée du firmware MT-40X à
+82 BPM — « Écouter » joue sa batterie d'origine (kick 1 et 3, snare 2 et 4,
+hats en croches) et sa basse en Ré, et « Motif de basse » charge le preset
+ROCK de la machine. Pour chacun :
 
 - **Écouter** — une maquette Web Audio de la page : batterie et basse
   synthétisées, au tempo du livre, sans toucher au firmware ;
@@ -83,7 +88,8 @@ les **38 riddims du « The Riddim Real Book (Tab) »** — de *African Beat* à
 Les données (`window.RIDDB`) sont générées depuis le PDF par
 [`scripts/riddims_site.py`](scripts/riddims_site.py) — les notes de basse sont
 celles des tablatures du livre, les batteries suivent le style de chaque
-riddim (one drop, rockers, steppers, rocksteady, digital, dancehall).
+riddim (one drop, rockers, steppers, rocksteady, digital, dancehall) ; le
+Sleng Teng embarque sa propre batterie (`drm`), celle du preset d'origine.
 
 La **[page Riddims dédiée](https://altessproduction.github.io/MT-4OX/riddims.html)**
 ([`web/riddims.html`](web/riddims.html), hors émulateur) reprend la même écoute
@@ -92,13 +98,14 @@ vérifiée par test — et ajoute l'**export MIDI** : pour chaque riddim,
 « Riddim MIDI » télécharge le fichier complet (batterie sur le canal 10 en
 carte General MIDI : grosse caisse 36, caisse claire 38, charley 42/46, rim 37 ;
 basse sur le canal 1, programme « Synth Bass 1 ») et « Basse MIDI » la seule
-ligne de basse, telle que tablée dans le livre. Standard MIDI File format 1,
-480 PPQ, tempo du livre (milieu de la fourchette), une passe des mesures —
+ligne de basse, telle quelle. Standard MIDI File format 1,
+480 PPQ, tempo du riddim (le milieu de la fourchette du livre ; 82 BPM pour le
+Sleng Teng), une passe des mesures —
 à importer tel quel dans n'importe quel DAW (Ableton Live, FL Studio, Reaper,
 Logic, GarageBand, Bitwig, Cubase…). La page est régénérée par
 [`scripts/build_riddims_html.py`](scripts/build_riddims_html.py) et son export
 est relu par [`web/test_riddims_midi.mjs`](web/test_riddims_midi.mjs)
-(`node web/test_riddims_midi.mjs`).
+(`node web/test_riddims_midi.mjs`), qui vérifie aussi la grille du Sleng Teng.
 
 ## Les six rythmes
 

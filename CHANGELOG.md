@@ -29,6 +29,26 @@ versionnage sémantique.
 
 ## [Non publié]
 ### Ajouté
+- **Le classique Sleng Teng en dernier sur les deux pages Riddims** (la feuille
+  de l'émulateur et [`web/riddims.html`](web/riddims.html)) : le preset
+  « Rock » du MT-40 lui-même — Wayne Smith, « Under Mi Sleng Teng », Jammy's
+  Records, 1985, 82 BPM — en 39ᵉ entrée, avec la transcription vérifiée du
+  firmware MT-40X (`pat_ROCK`, deux tablatures recoupées, dossier technique § 3
+  et annexe A) : basse en Ré (approche chromatique, fondamentale répétée, paire
+  quarte/tierce en conclusion) et batterie du preset d'origine (kick 1 et 3,
+  snare 2 et 4, hats en croches, hat ouverte au dernier 1/16) — transportée par
+  un champ `drm` propre au riddim, au lieu de la batterie générique du style
+  « digital ». « Motif de basse » sur ce riddim charge le preset ROCK de la
+  machine (alias `fw` 0, le riddim d'origine), et les exports MIDI sortent
+  `sleng-teng-riddim-82bpm.mid` / `sleng-teng-basse-82bpm.mid`. Les en-têtes
+  des deux pages disent maintenant « les 38 du « The Riddim Real Book (Tab) »
+  et le classique Sleng Teng (Jammy's, 1985) » ; le filtre Digital, la
+  recherche « sleng » et l'a.k.a. « Under Mi Sleng Teng » le trouvent.
+  Tests : `web/test_riddims.mjs` (basse jouée = transcription du preset, kicks
+  aux pas 0 et 8 via `drm`) et `web/test_riddims_midi.mjs` (export 82 BPM,
+  carte GM aux pas du preset, 14 notes de basse, a.k.a., mesure 2), plus l'E2E
+  Chromium `scripts/e2e_sleng.py` (39 cartes, écoutes réelles mesurées,
+  téléchargements, zéro erreur page).
 - **Page Riddims dédiée avec export MIDI** (`web/riddims.html`, hors
   émulateur, en ligne sur /MT-4OX/riddims.html) : la même écoute que la page
   Riddims de l'émulateur — le synthé Web Audio et le CSS sont copiés du même

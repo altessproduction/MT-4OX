@@ -15,6 +15,9 @@
 //   2. les premiers appels correspondent aux événements de la mesure 0,
 //   3. les hauteurs jouées sur 2 mesures = celles des données,
 //   4. la batterie sonne toujours (starts d'oscillateurs).
+// Puis il joue « Sleng Teng » (le classique ajouté en dernier) et vérifie :
+//   5. sa basse en Ré (approche 37, fondamentale 38, quarte 43, tierce 42),
+//   6. sa batterie vient de r.drm (kick aux pas 0 et 8 — pas le style digital).
 
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -37,10 +40,13 @@ const s1 = block.indexOf("function toggleListen");
 if (s0 < 0 || s1 < 0 || s1 <= s0) { console.error("IIFE synth introuvable"); process.exit(2); }
 let synthSrc = block.slice(s0, s1);
 
-/* --- instrumentation : bassNote journalise ses appels ------------------------ */
+/* --- instrumentation : bassNote et kick journalisent leurs appels -------------- */
 const BASS_MARK = "function bassNote(t, midi, dur) {";
 if (!synthSrc.includes(BASS_MARK)) { console.error("bassNote introuvable"); process.exit(2); }
 synthSrc = synthSrc.replace(BASS_MARK, BASS_MARK + " __bassCalls.push({t, midi, dur});");
+const KICK_MARK = "function kick(t) {";
+if (!synthSrc.includes(KICK_MARK)) { console.error("kick introuvable"); process.exit(2); }
+synthSrc = synthSrc.replace(KICK_MARK, KICK_MARK + " __kickCalls.push({t});");
 
 /* --- données réelles (web/riddims.js → window.RIDDB) ------------------------- */
 const dataSrc = readFileSync(join(HERE, "riddims.js"), "utf8");
@@ -76,6 +82,7 @@ const sandbox = {
   clearInterval: () => {},
   Math, Promise,
   __bassCalls: [],
+  __kickCalls: [],
 };
 const synth = vm.runInNewContext(`
   "use strict";
@@ -114,6 +121,38 @@ if (bassCalls.length) {
 } else {
   ok(false, "riddims: durée du premier appel (aucun appel de basse)");
 }
+
+/* --- lecture : Sleng Teng (le classique, en dernier ; basse en Ré, batterie drm) */
+const sleng = sandbox.window.RIDDB.list.find((r) => r.id === "sleng-teng");
+if (!sleng) { console.error("sleng-teng absent des données RIDDB"); process.exit(2); }
+ok(sandbox.window.RIDDB.list[sandbox.window.RIDDB.list.length - 1].id === "sleng-teng",
+  "sleng: en dernier dans la liste (39 riddims)");
+ok(sleng.fw === 0, "sleng: « Motif de basse » charge le preset ROCK (fw 0)");
+ok(sleng.bpm[0] === 82 && sleng.bpm[1] === 82, "sleng: 82 BPM (le tempo du morceau de Wayne Smith)");
+const expSleng0 = sleng.bars[0].map(([, m]) => m);
+ok(expSleng0.join(",") === "37,38,38,38,37,38,38",
+  `sleng: mesure 0 en Ré = [${expSleng0.join(",")}] (approche, fondamentale ×3)`);
+const lastSleng = sleng.bars[1].slice(-2).map(([, m]) => m);
+ok(lastSleng.join(",") === "43,42", "sleng: conclusion quarte (43) / tierce (42) en fin de mesure 2");
+
+sandbox.__bassCalls = []; sandbox.__kickCalls = [];
+synth.start(sleng, null);
+const sdSleng = 60 / 82 / 4;
+for (let i = 0; i < 80; i++) { ac.currentTime += 0.1; timers[0] && timers[0](); }
+synth.stop();
+
+const slengBass = sandbox.__bassCalls.map((c) => c.midi);
+ok(slengBass.slice(0, expSleng0.length).join(",") === expSleng0.join(","),
+  "sleng: la basse jouée = la transcription vérifiée du preset ROCK");
+const kicks = sandbox.__kickCalls.map((c) => c.t);
+ok(kicks.length >= 5, `sleng: kick joué (${kicks.length} frappes sur ~43 pas)`);
+/* la première frappe peut être calée sur le temps courant du mock (Math.max
+   dans le planificateur) ; les suivantes partent des pas exacts du run. */
+const kicksAligned = kicks.slice(1).every((t, i) => Math.abs(t - kicks[1] - i * 8 * sdSleng) < 1e-9);
+ok(kicksAligned, "sleng: batterie drm — kick aux pas 0 et 8 (temps 1 et 3), pas le style digital");
+
+ok(html.includes("et le classique Sleng Teng"),
+  "sleng: l'en-tête de la page annonce le livre et le classique");
 
 console.log(failed === 0 ? "\nRÉSULTAT : la basse EST entendue dans l'écoute." : "\nRÉSULTAT : ÉCHEC — la basse ne joue pas.");
 process.exit(failed === 0 ? 0 : 1);

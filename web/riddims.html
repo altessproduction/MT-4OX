@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Les riddims du Riddim Real Book pour le MT-40X : écoute Web Audio (batterie et basse) et export MIDI — riddim complet ou ligne de basse — à importer dans n'importe quel DAW.">
+<meta name="description" content="Les riddims du Riddim Real Book et le classique Sleng Teng pour le MT-40X : écoute Web Audio (batterie et basse) et export MIDI — riddim complet ou ligne de basse — à importer dans n'importe quel DAW.">
 <meta name="theme-color" content="#2b7865">
 <title>Riddims — MT-40X</title>
 <link rel="icon" href="assets/icone.png">
@@ -67,7 +67,7 @@ a{color:var(--accent)}
   <div class="hd-in">
     <div>
       <h1>&#9835; Riddims</h1>
-      <p class="sub"><span id="rid-count">Les riddims</span> du « The Riddim Real Book (Tab) » — écoute et export MIDI pour ton DAW.</p>
+      <p class="sub"><span id="rid-count">Les riddims</span> — écoute et export MIDI pour ton DAW.</p>
     </div>
     <a class="rid-btn" href="index.html">&#9654; Ouvrir l'émulateur MT-40X</a>
   </div>
@@ -81,10 +81,10 @@ a{color:var(--accent)}
   <div class="rid-list"></div>
 </main>
 <footer class="ft">
-  <b>Export MIDI</b> — Standard MIDI File format 1, 480 PPQ, tempo du livre (milieu de la fourchette), une passe
-  des mesures du riddim. La piste batterie joue sur le canal 10, carte General MIDI : grosse caisse 36, caisse
+  <b>Export MIDI</b> — Standard MIDI File format 1, 480 PPQ, tempo du riddim (le milieu de la fourchette du
+  livre), une passe des mesures du riddim. La piste batterie joue sur le canal 10, carte General MIDI : grosse caisse 36, caisse
   claire 38, charley fermé 42, charley ouvert 46, rim 37 (side stick). La piste basse joue sur le canal 1,
-  programme GM « Synth Bass 1 », la ligne telle que tablée dans le livre. Ces fichiers s'importent tels quels
+  programme GM « Synth Bass 1 », la ligne de basse du riddim, telle quelle. Ces fichiers s'importent tels quels
   dans n'importe quel DAW (Ableton Live, FL Studio, Reaper, Logic, GarageBand, Bitwig, Cubase…). L'écoute
   ci-dessus est la même maquette Web Audio que la page Riddims de l'<a href="index.html">émulateur MT-40X</a>.
 </footer>
@@ -155,8 +155,8 @@ a{color:var(--accent)}
       return out;
     }
 
-    function drumEvents(r) {                             // la batterie du style, mesure par mesure comme à l'écoute
-      const dr = window.RIDDB.drums[r.st], out = [];
+    function drumEvents(r) {                             // la batterie du riddim (propre, p. ex. Sleng Teng, sinon celle du style), mesure par mesure comme à l'écoute
+      const dr = r.drm || window.RIDDB.drums[r.st], out = [];
       for (let b = 0; b < r.bars.length; b++) {
         for (const [lane, n] of Object.entries(DRUM_NOTE)) {
           for (const s of dr[lane][b] || []) {
@@ -285,7 +285,7 @@ const synth = (() => {
       const sd = stepDur(r.bpm);
       while (r.next < ac.currentTime + 0.18) {
         const bar = Math.floor(r.step / 16) % r.bars.length, st = r.step % 16;
-        const dr = D.drums[r.st];
+        const dr = r.drm || D.drums[r.st];    // batterie propre au riddim (Sleng Teng), sinon celle du style
         for (const lane of ["k", "s", "hc", "ho", "rm"]) {
           if ((dr[lane][bar] || []).includes(st)) {
             const t = Math.max(r.next, ac.currentTime);
@@ -302,7 +302,7 @@ const synth = (() => {
     function start(r, el) {
       ctx();
       stop();
-      run = { rid: r.id, st: r.st, bars: r.bars, bpm: r.bpm[0] === r.bpm[1] ? r.bpm[0] : Math.round((r.bpm[0] + r.bpm[1]) / 2),
+      run = { rid: r.id, st: r.st, bars: r.bars, drm: r.drm, bpm: r.bpm[0] === r.bpm[1] ? r.bpm[0] : Math.round((r.bpm[0] + r.bpm[1]) / 2),
         step: 0, next: ac.currentTime + 0.06 };
       if (el) { el.classList.add("play"); playingId = r.id; }
       run.timer = setInterval(tick, 30);
@@ -371,7 +371,9 @@ const synth = (() => {
   filtersEl.replaceChildren(mkChip("tous", "Tous"),
     ...Object.keys(D.styles).map((k) => mkChip(k, D.styles[k])));
   searchEl.addEventListener("input", render);
-  document.getElementById("rid-count").textContent = `${D.list.length} riddims`;
+  document.getElementById("rid-count").textContent = D.head
+    ? D.head.charAt(0).toUpperCase() + D.head.slice(1)
+    : "Les " + D.list.length + " riddims du « " + D.src + " »";
   render();
   say(`${D.list.length} riddims — « Écouter » joue batterie et basse ici même ; les boutons MIDI téléchargent des fichiers pour ton DAW.`);
 })();

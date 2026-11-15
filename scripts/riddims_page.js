@@ -1,7 +1,8 @@
 "use strict";
 /* ============================================================= ==================
    Page Riddims — Altess Production, GPL-3.0.
-   Les 38 riddims du « The Riddim Real Book (Tab) », pour l'émulateur MT-40X :
+   Les 38 riddims du « The Riddim Real Book (Tab) » plus le classique Sleng Teng
+   (le preset « Rock » du MT-40), pour l'émulateur MT-40X :
    - Écouter : un petit synthé Web Audio de la page (batterie + basse du riddim),
    - Séquenceur : la basse et la batterie sont écrites dans les pistes 3 et 4 du
      FM-1 émulé, par le protocole éditeur (SysEx dans l'USB de la puce émulée),
@@ -79,7 +80,7 @@
   sheet.innerHTML = `
     <div class="rid-panel" role="dialog" aria-label="Riddims">
       <div class="rid-head">
-        <h2>Riddims</h2><small>les ${D.list.length} du « ${D.src} »</small>
+        <h2>Riddims</h2><small>${D.head || ("les " + D.list.length + " du « " + D.src + " »")}</small>
         <button class="rid-close" type="button" aria-label="Fermer">&#215;</button>
       </div>
       <div class="rid-tools">
@@ -237,7 +238,7 @@
       const sd = stepDur(r.bpm);
       while (r.next < ac.currentTime + 0.18) {
         const bar = Math.floor(r.step / 16) % r.bars.length, st = r.step % 16;
-        const dr = D.drums[r.st];
+        const dr = r.drm || D.drums[r.st];    // batterie propre au riddim (Sleng Teng), sinon celle du style
         for (const lane of ["k", "s", "hc", "ho", "rm"]) {
           if ((dr[lane][bar] || []).includes(st)) {
             const t = Math.max(r.next, ac.currentTime);
@@ -254,7 +255,7 @@
     function start(r, el) {
       ctx();
       stop();
-      run = { rid: r.id, st: r.st, bars: r.bars, bpm: r.bpm[0] === r.bpm[1] ? r.bpm[0] : Math.round((r.bpm[0] + r.bpm[1]) / 2),
+      run = { rid: r.id, st: r.st, bars: r.bars, drm: r.drm, bpm: r.bpm[0] === r.bpm[1] ? r.bpm[0] : Math.round((r.bpm[0] + r.bpm[1]) / 2),
         step: 0, next: ac.currentTime + 0.06 };
       if (el) { el.classList.add("play"); playingId = r.id; }
       run.timer = setInterval(tick, 30);
@@ -388,7 +389,7 @@
     return out;
   }
   function drumSteps(r) {
-    const nb = r.bars.length, dr = D.drums[r.st], out = [];
+    const nb = r.bars.length, dr = r.drm || D.drums[r.st], out = [];
     for (let idx = 0; idx < nb * 16; idx++) {
       const bar = Math.floor(idx / 16), st = idx % 16;
       let hit = 0, acc = 0;
@@ -447,13 +448,16 @@
     synth.stop();
     const emu = await host();
     if (!emu) { say("Le firmware MT-40X ne démarre pas — ouvre le sélecteur de firmware et lance MT-40X.", true); return; }
-    const idx = N_RSTYLE + D.list.indexOf(r);              // les 6 rythmes du MT-40, puis la banque
+    const idx = r.fw !== undefined ? r.fw : N_RSTYLE + D.list.indexOf(r);  // les 6 rythmes du MT-40 puis la banque ; Sleng Teng = le preset ROCK (0)
     try {
       const a = await link.send(emu, RIDB_INFO, [], 700);  // la banque riddim du firmware ?
       const count = a[a.length - 1];                       // (l'écho de la commande peut précéder)
       if (idx >= count) throw new Error("banque du firmware plus courte que la liste");
       await link.send(emu, RIDB_SET, [idx]);
-      say(`« ${r.n} » en motif de basse du MT-40X (${count - N_RSTYLE} riddims en banque). ` +
+      const src = r.fw !== undefined
+        ? "le preset « Rock » du MT-40 — le motif d'origine du riddim"
+        : `la banque du firmware (${count - N_RSTYLE} riddims)`;
+      say(`« ${r.n} » en motif de basse du MT-40X — ${src}. ` +
         "Tiens un accord au clavier : la ligne transpose comme sur le MT-40. PLAY lance le tout.");
     } catch (err) {
       say("Ce firmware n'a pas la banque riddim — la basse va au séquenceur (piste 3), sans transposition d'accord.",
