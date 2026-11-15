@@ -12,18 +12,17 @@ The build makes three files in `build/`:
 
 ## Get the source
 
-Two parts are git submodules: six engines (`firmware/engines/`, [Felucca-Engines](https://github.com/hugelton/Felucca-Engines),
-MIT) and the hardware layer (`firmware/bsp/`, [felucca-bsp](https://github.com/hugelton/felucca-bsp), MPL-2.0), so clone
-with `--recurse-submodules`:
-
 ```
-git clone --recurse-submodules https://github.com/hugelton/Felucca.git
+git clone https://github.com/altessproduction/MT-4OX.git
 ```
 
-In a clone made without it, run `git submodule update --init` once. GitHub's "Download ZIP" and the source archives
-it adds to a release leave `firmware/engines/` and `firmware/bsp/` empty; each release also has
-`felucca-X.Y.Z-source.tar.gz`, the whole source with the submodules' files in it. The build stops with
-"firmware/engines is empty" or "firmware/bsp is empty" when they are missing.
+MT-40X is a fork of [Felucca](https://github.com/hugelton/Felucca) (GPL-3.0).
+Upstream Felucca keeps its six engines (`firmware/engines/`,
+[Felucca-Engines](https://github.com/hugelton/Felucca-Engines), MIT) and its
+hardware layer (`firmware/bsp/`, [felucca-bsp](https://github.com/hugelton/felucca-bsp),
+MPL-2.0) as git submodules; this fork **vendors both trees directly**, so a
+plain clone (or a "Download ZIP") builds as-is and no `git submodule` step is
+needed. Their licence texts stay in `LICENSES/` and in the trees themselves.
 
 ## Prerequisites (macOS)
 
