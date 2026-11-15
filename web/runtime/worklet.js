@@ -46,14 +46,17 @@ function jitImports(exports, stats) {
 
 // How much a quantum may emulate, in the emulator's run budget (cpu0's instructions, at most
 // one per cycle): while the firmware boots, 20 ms of emulated time, so a boot is quick (there is
-// no audio to keep yet); once audio plays, 1.5 quanta, so a firmware that stalls or falls silent
+// no audio to keep yet); once audio plays, 2 quanta (Altess : 1.5 n'y suffisait pas — le MT-40X et ses
+// moteurs de batterie et de basse utilisent ~92 % du cœur en lecture ; une machine un peu plus lente
+// dépassait le plafond et le son saccadait), so a firmware that stalls or falls silent
 // does not hold the audio thread for 20 ms each quantum. The pace (fm1_ahead) needs one quantum
 // when it may run a whole DMA half buffer ahead; fm1_render raises the cap by the rest of the half
 // buffer when ahead is less (?ahead=256 with 512-frame halves). Without the pace (?ahead=0) a
 // quantum may have to run a whole half buffer's time, so it keeps 20 ms.
-const AHEAD_FRAMES = 1024;
+const AHEAD_FRAMES = 2048;   // (Altess : 46 ms d'avance au lieu de 23 — absorbe les à-coups du navigateur
+                             // et les machines deux fois plus lentes, sans latence gênante pour un groovebox)
 function budgets(mhz, frames) {
-  return { boot: mhz * 1e6 * 0.02, play: mhz * 1e6 * 1.5 * frames / sampleRate };
+  return { boot: mhz * 1e6 * 0.02, play: mhz * 1e6 * 2 * frames / sampleRate };
 }
 
 // the wall clock, for how long each quantum's emulation takes (where an AudioWorklet has no
@@ -235,6 +238,10 @@ class Fm1 extends AudioWorkletProcessor {
     const { l, r } = this.views;
     out[0].set(l);
     if (out[1]) out[1].set(r);
+    if (have < n) {                     // rendu partiel (cœur en retard) : le reste du tampon est périmé —
+      out[0].fill(0, have);             // le taire plutôt que le rejouer en boucle (bourdonnement à bas
+      if (out[1]) out[1].fill(0, have); // niveau entendu quand le cœur ne suit pas le temps réel)
+    }
     const usbN = x.fm1_usb_take ? x.fm1_usb_take() : 0;   // ce que le FM-1 a envoyé par l'USB (fm1emu_usb.py)
     if (usbN) this.port.postMessage({ type: "usb", seq: this.seq, bytes: new Uint8Array(x.memory.buffer, x.fm1_usb_buf(), usbN).slice() });
     if (have > 0 && !this.playing) {

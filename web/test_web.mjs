@@ -1631,7 +1631,8 @@ async function packages() {
   const logical = py(`import sys; raw = open(sys.argv[1], "rb").read()
 sys.stdout.buffer.write(b"".join(raw[i * 48:i * 48 + 47] for i in range(20)) + raw[960:])`, pkg);
   ok(eq(logicalImage(raw), logical), "fm1pkg.js logicalImage");
-  ok(/^FM-1_9\d\d$/.test(productOf(raw)), "fm1pkg.js productOf");
+  // (Altess : ce fork renomme le produit — FM-1_23456 — le format reste FM-1_<chiffres>)
+  ok(/^FM-1_\d+$/.test(productOf(raw)), "fm1pkg.js productOf");
 }
 
 /* ------------------------------------------------- update protocol (fm1ota.js) --- */

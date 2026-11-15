@@ -2373,6 +2373,11 @@ class EmuFirmware {
     if (m.type !== "frame" || m.seq !== this.running?.seq) return;   // la machine en marche, même si un démarrage a échoué
     this.usb = m.usb;
     this.playing = !!m.playing;      // le worklet rend des échantillons (diagnostic du son)
+    // la charge du cœur : temps mural passé à émuler sur l'intervalle (quanta × 128 trames), peut dépasser
+    // 1 — au-delà, la lecture saccade ; short : quanta en sous-régime ; jit.failed : repli interpréteur
+    this.emuLoad = m.quanta ? m.busy / (m.quanta * 128 / (this.node?.context.sampleRate || 44100) * 1000) : 0;
+    this.emuShort = m.short;
+    this.emuJit = m.jit;
     if (m.lcd) { this.lcd = m.lcd; this.lcdNew = true; }
     if (m.leds) { this.leds = m.leds; this.green = m.green || 0; }
     if (m.halted && !this.halted) this.onHalt?.();
@@ -6301,7 +6306,7 @@ function buildPanel(fw) {
 
   let last = 0;
   function frame(t) {
-    if (t - last > 12) { last = t; fw.draw(); panel.lights(); watchAudio(); }   // à chaque image de l'écran (60 par seconde)
+    if (t - last > 12) { last = t; fw.draw(); panel.lights(); watchAudio(); watchLoad(); }   // à chaque image de l'écran (60 par seconde)
     requestAnimationFrame(frame);
   }
   const fontReady = document.fonts && document.fonts.load ? document.fonts.load('600 16px "Barlow Semi Condensed"').catch(() => {}) : Promise.resolve();
@@ -6406,6 +6411,28 @@ function buildPanel(fw) {
       rebuildAudio();
     } catch { muteSince = 0; }               // un garde-fou ne doit jamais arrêter l'affichage
   }
+  // ---- avertissement de charge : si la puce émulée consomme plus de temps qu'il n'en passe en
+  // lecture (charge > 108 % pendant 2 s), le dire — le son peut saccader sur cette machine
+  let slowSince = 0, slowShown = 0;
+  function watchLoad() {
+    const e = current;
+    if (!e || e.kind !== "emu" || !e.on || !e.playing) { slowSince = 0; return; }
+    const load = e.emuLoad || 0;
+    const t = performance.now();
+    if (load < 1.08) {
+      slowSince = 0;
+      if (slowShown && load < 0.95) { slowShown = 0; if (status.textContent.startsWith("La puce émulée")) status.textContent = ""; }
+      return;
+    }
+    if (!slowSince) slowSince = t;
+    if (t - slowSince < 2000) return;
+    slowSince = t;
+    if (slowShown < 3) {
+      slowShown++;
+      status.textContent = "La puce émulée peine sur cette machine (charge " + Math.round(load * 100) +
+        " %) : le son peut saccader. Chrome ou Edge sur ordinateur restent les plus fluides.";
+    }
+  }
   async function rebuildAudio() {      // la chaîne muette : contexte neuf à la fréquence de l'appareil, moteurs repris
     status.textContent = "Le son restait muet : nouvelle chaîne audio à la fréquence de l'appareil…";
     try {
@@ -6428,7 +6455,9 @@ function buildPanel(fw) {
       status.textContent = "La réparation du son a échoué : " + (err && err.message ? err.message : err);
     }
   }
-  Object.defineProperty(window, "__audioState", { get: () => ({ state: ac && ac.state, sr: ac && ac.sampleRate, forced441: !!(ac && ac.forced441), repaired: audioRepaired, current: current ? current.kind : null }) });
+  Object.defineProperty(window, "__audioState", { get: () => ({ state: ac && ac.state, sr: ac && ac.sampleRate, forced441: !!(ac && ac.forced441), repaired: audioRepaired, current: current ? current.kind : null,
+    load: current && current.kind === "emu" ? current.emuLoad ?? null : null,
+    short: current && current.kind === "emu" ? current.emuShort ?? null : null }) });
   window.__rebuildAudio = () => rebuildAudio();   // pour les tests
 
   // MIDI (manual 11): every input and output the browser offers, SysEx included when allowed (DX7 patches);

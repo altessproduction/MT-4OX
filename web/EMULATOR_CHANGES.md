@@ -52,5 +52,20 @@ MT-40X l'utilise tel quel, avec les seules différences ci-dessous (fichier `web
    une page restée en cache ne peut plus marier un vieux worklet et un cœur
    neuf, ou l'inverse — l'écran se dessinait et le son manquait.
 
+7. **Le cœur en retard : du silence propre, un coussin et un avertissement**
+   (runtime/worklet.js et la page) : le MT-40X utilise ~92 % du cœur émulé en
+   lecture (moteurs batterie et basse) — sur une machine un peu plus lente, le
+   cœur dépassait le plafond de 1,5 quantum, le tampon audio se vidait et le
+   reste périmé du tampon était rejoué en boucle : le bourdonnement à bas
+   niveau entendu après le chargement d'un riddim. Trois remèdes : la partie
+   périmée d'un rendu partiel est **taire** (silence au lieu du bourdonnement),
+   l'avance du cœur passe de 23 à **46 ms** et le plafond de lecture de 1,5 à
+   **2 quanta** (absorbe les à-coups du navigateur et les machines deux fois
+   plus lentes). Et la charge du cœur est **mesurée et affichée** : au-delà de
+   108 % pendant 2 s en lecture, la ligne de statut prévient (« La puce émulée
+   peine sur cette machine (charge N %)… »). État pour les tests :
+   `window.__audioState` ajoute `load` (charge du cœur, 1 = temps réel) et
+   `short` (quanta en sous-régime depuis le démarrage).
+
 Tout le reste — le panneau, le clavier, le Duo, les sauvegardes, le MIDI —
 est le code d'origine, sans modification.
