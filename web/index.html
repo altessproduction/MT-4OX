@@ -2247,7 +2247,11 @@ class EmuFirmware {
     if (!this.mod) this.mod = await import("./runtime/persistence.js");
     if (!this.saveStore) this.saveStore = new this.mod.SaveStore();
     this.wasm = wasm;
-    if (this.moduleOf !== ac) { await ac.audioWorklet.addModule("runtime/worklet.js"); this.moduleOf = ac; }
+    if (this.moduleOf !== ac) {   // relu sur le serveur : une page restée en cache ne doit pas
+      // marier un vieux worklet et un cœur neuf (ou l'inverse) — l'écran se dessine, le son manque
+      const src = await (await fetch("runtime/worklet.js", { cache: "reload" })).text();
+      await ac.audioWorklet.addModule(URL.createObjectURL(new Blob([src], { type: "text/javascript" })));
+      this.moduleOf = ac; }
     if (!this.node) {
       this.node = new AudioWorkletNode(ac, "fm1", { numberOfInputs: 0, outputChannelCount: [2] });
       this.node.port.onmessage = (e) => this.onWorklet(e);
@@ -6497,7 +6501,7 @@ function buildPanel(fw) {
     if (!wasm) {
       if (typeof WebAssembly !== "object") throw new Error("WebAssembly absent");
       new WebAssembly.Module(new Uint8Array([0, 97, 115, 109, 1, 0, 0, 0]));   // refusé là où le WebAssembly est interdit
-      const r = await fetch("runtime/fm1_web.wasm");
+      const r = await fetch("runtime/fm1_web.wasm", { cache: "reload" });   // jamais du cache : voir attach
       if (!r.ok) throw new Error("cœur d'émulation indisponible (" + r.status + ")");
       wasm = await r.arrayBuffer();
     }

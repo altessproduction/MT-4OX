@@ -42,5 +42,15 @@ MT-40X l'utilise tel quel, avec les seules différences ci-dessous (fichier `web
    sauvegardée avant). État visible pour les tests : `window.__audioState`
    (état, fréquence, sonde, réparation), et `window.__rebuildAudio()`.
 
+6. **Le cœur émulé à jour et relu sur le serveur** : le couple
+   `runtime/worklet.js` + `runtime/fm1_web.wasm` est resynchronisé sur la
+   source de référence (worklet à l'interface JIT récente, helpers importés
+   de la table, sélecteur de puce flash `uc25hq80`) — l'ancien, dépareillé
+   avec le paquet MT-40X, bootait l'écran sans jamais lancer l'audio du
+   firmware. Et ces deux fichiers sont **relus sur le serveur** à chaque
+   visite (`fetch …, { cache: "reload" }`, le worklet ajouté en blob URL) :
+   une page restée en cache ne peut plus marier un vieux worklet et un cœur
+   neuf, ou l'inverse — l'écran se dessinait et le son manquait.
+
 Tout le reste — le panneau, le clavier, le Duo, les sauvegardes, le MIDI —
 est le code d'origine, sans modification.
