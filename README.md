@@ -138,7 +138,7 @@ Le build produit le paquet `.fwsc` installable (application + loader de mise
 - **Installateur web** : ouvrez l'installateur de Felucca
   (<https://hugelton.github.io/Felucca/webapp/installer/>) en Chrome/Edge et
   chargez votre `.fwsc` local (copie locale du site + `localhost`), ou
-- **Ligne de commande** : `python3 tools/fm1_install.py build/MT-40X-v0.1.0-FM-1_23456.fwsc`.
+- **Ligne de commande** : `python3 tools/fm1_install.py build/MT-40X-v0.1.2-FM-1_23456.fwsc`.
 
 > **Avertissement** : installer un firmware non officiel se fait à vos risques.
 > Si l'installation échoue, la restauration passe par
