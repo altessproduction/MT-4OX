@@ -1,12 +1,6 @@
 <div align="center">
 
-```
- __  __  ___   ____  ___  ____
-|  \/  |/ _ \ / ___|/ _ \/ ___|
-| |\/| | (_) | |  _| (_) \___ \
-| |  | |\__,_| |_|  \___/|___) |
-|_|  |_|       MT-40 clone pour le M-VAVE FM-1
-```
+<img src="assets/affiche_mt40x.png" alt="MT-40X — le Casio MT-40 renaît dans le M-VAVE FM-1" width="520">
 
 # MT-40X
 

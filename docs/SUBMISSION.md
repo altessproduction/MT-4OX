@@ -12,8 +12,9 @@ Il récapitule ce que le Hub exige et où chaque pièce se trouve.
 | Une release GitHub avec le `.fwsc` en pièce jointe | Release **v0.1.0-alpha** : `MT-40X-v0.1.0-FM-1_23456.fwsc` |
 | Les sources à l'étiquette de la release | L'étiquette `v0.1.0-alpha` pointe sur ce dépôt complet |
 | Le loader de mise à jour dans le paquet | Le `.fwsc` contient `flash.bin` + `ota.bin` (le loader Felucca) — c'est le format `fm1pkg_make.py` |
-| `fmhub.json` à la racine | [`fmhub.json`](../fmhub.json) (`what`, `author`, `kinds`, `image`, `color`) |
-| Image carrée 240..1024 px, <= 300 Ko | [`docs/card.png`](card.png) (512 x 512) |
+| `fmhub.json` à la racine | [`fmhub.json`](../fmhub.json) (`what`, `author`, `kinds`, `play`, `image`, `color`) |
+| Image carrée 240..1024 px, <= 300 Ko | [`docs/card.jpg`](card.jpg) (1024 x 1024 — l'affiche rétro du dépôt, JPEG 266 Ko) |
+| Lien « play » (émulateur en ligne) | `play` : <https://altessproduction.github.io/MT-4OX/> — l'émulateur FM-1 démarre sur MT-40X |
 | Testé sur un vrai FM-1 | **À faire par vous** — voir la liste ci-dessous |
 
 ## 2. Avant d'envoyer : le test sur matériel (obligatoire)
@@ -46,9 +47,10 @@ sur un vrai FM-1 :
 
 Le paquet `.fwsc` tourne tel quel dans l'émulateur en ligne du dépôt
 (<https://altessproduction.github.io/MT-4OX/>) : la page démarre sur MT-40X, la
-puce AC791N est émulée par fm1-emu (Joakim Eriksson, MIT), et « Ouvrir un
-.fwsc… » charge n'importe quel paquet local. C'est le test de boot et
-d'interface sans FM-1 — il ne remplace pas le test sur matériel exigé au-dessus.
+puce AC791N est émulée par [fm1-emu](https://github.com/joakimeriksson/fm1-emu)
+(Joakim Eriksson, MIT), et « Ouvrir un .fwsc… » charge n'importe quel paquet
+local. C'est le test de boot et d'interface sans FM-1 — il ne remplace pas le
+test sur matériel exigé au-dessus.
 
 ## 5. Après l'envoi
 

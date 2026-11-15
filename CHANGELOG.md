@@ -3,16 +3,27 @@
 Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/) et le
 versionnage sémantique.
 
-## [Unreleased]
+## [Non publié]
 
 ### Ajouté
-- **L'émulateur web** : le site (<https://altessproduction.github.io/MT-4OX/>)
-  embarque l'émulateur FM-1+VA de Ninjathune-Human avec MT-40X préchargé — le
-  firmware y tourne tel quel sur la puce émulée par fm1-emu (Joakim Eriksson,
-  MIT), sans installation ; « Ouvrir un .fwsc… » charge n'importe quel paquet.
-  Les fichiers sont dans `web/` (les seuls changements faits à l'émulateur sont
-  listés dans `web/EMULATOR_CHANGES.md`), et l'action GitHub `Site`
-  (`.github/workflows/pages.yml`) publie le dossier.
+- **L'émulateur web** (`web/`) : la page embarque l'émulateur FM-1 de
+  [Ninjathune-Human](https://github.com/Ninjathune-Human/Fm1) (page GPL-3.0,
+  moteur `engine.js` MIT, cœur [fm1-emu](https://github.com/joakimeriksson/fm1-emu)
+  de Joakim Eriksson, MIT) et démarre sur MT-40X : le firmware y tourne tel
+  quel sur la puce émulée, sans installation ; « Ouvrir un .fwsc… » charge
+  n'importe quel paquet. Le paquet `.fwsc` est préchargé dans
+  `web/firmwares/` (catalogue et fiche à côté), les seules retouches à la
+  page d'origine sont listées dans `web/EMULATOR_CHANGES.md`, et l'action
+  GitHub `Site` (`.github/workflows/pages.yml`) publie le dossier sur
+  <https://altessproduction.github.io/MT-4OX/> (lien `play` du `fmhub.json`).
+- L'affiche rétro MT-40X en entête du `README.md`
+  (`assets/affiche_mt40x.png`).
+
+### Modifié
+- La carte du Firmware Hub est désormais l'affiche rétro elle-même :
+  `docs/card.jpg` (1024 x 1024, JPEG 266 Ko — dans les limites du Hub :
+  carré 240..1024 px, <= 300 Ko) ; `fmhub.json` pointe dessus et le champ
+  `what` est ramené sous les 300 caractères exigés.
 
 ## [0.1.0-alpha] - 2026-11-15
 
