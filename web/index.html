@@ -7279,7 +7279,7 @@ window.RIDDB = {"gen":"2026-11-15","src":"The Riddim Real Book (Tab)","styles":{
   /* ---------------------------------------------------------------- constantes */
   const HDR = [0x7D, 0x46, 0x4C];               // SysEx : F0 7D 46 4C <cmd> ... F7
   const ED_INFO = 1, ED_GET = 2, ED_SET = 3, ED_TRACK = 27, ED_TRACK_STEP = 30, ED_TRACK_PARAM = 31;
-  const RIDB_INFO = 0x51, RIDB_SET = 0x50;      // commandes de la banque riddim du MT-40X
+  const RIDB_INFO = 0x53, RIDB_SET = 0x52;      // commandes de la banque riddim du MT-40X (82/83 : libres après les palettes)
   const P_SLEN = 29, P_SDIV = 28, P_SGATE = 32; // paramètres de piste (vérifiés sur le firmware : LEN 16, DIV 2 = 1/16, GATE 64)
   const G_BPM = 0, G_ENGSEL = 20;               // paramètres globaux
   const ENG_DRUM = 10;                          // NENGINES : 0 ANALOG … 10 DRUM (protocole)
@@ -7508,8 +7508,8 @@ window.RIDDB = {"gen":"2026-11-15","src":"The Riddim Real Book (Tab)","styles":{
     function start(r, el) {
       ctx();
       stop();
-      run = { rid: r.id, bpm: r.bpm[0] === r.bpm[1] ? r.bpm[0] : Math.round((r.bpm[0] + r.bpm[1]) / 2),
-        bars: r.bars, step: 0, next: ac.currentTime + 0.06 };
+      run = { rid: r.id, st: r.st, bars: r.bars, bpm: r.bpm[0] === r.bpm[1] ? r.bpm[0] : Math.round((r.bpm[0] + r.bpm[1]) / 2),
+        step: 0, next: ac.currentTime + 0.06 };
       if (el) { el.classList.add("play"); playingId = r.id; }
       run.timer = setInterval(tick, 30);
     }
@@ -7703,7 +7703,7 @@ window.RIDDB = {"gen":"2026-11-15","src":"The Riddim Real Book (Tab)","styles":{
     const idx = N_RSTYLE + D.list.indexOf(r);              // les 6 rythmes du MT-40, puis la banque
     try {
       const a = await link.send(emu, RIDB_INFO, [], 700);  // la banque riddim du firmware ?
-      const count = a[0];
+      const count = a[a.length - 1];                       // (l'écho de la commande peut précéder)
       if (idx >= count) throw new Error("banque du firmware plus courte que la liste");
       await link.send(emu, RIDB_SET, [idx]);
       say(`« ${r.n} » en motif de basse du MT-40X (${count - N_RSTYLE} riddims en banque). ` +

@@ -62,6 +62,10 @@ typedef struct {
     /* variation B (alternative arrangement), masks override the base drums */
     uint32_t       varb_hatop_mask;   /* extra open-hat steps (0 = none) */
     const char    *attribution;
+    /* the riddim bank (mt40_riddims.c): each bar's chord root as semitones from
+     * the first bar's, so a two-chord riddim transposes bar by bar (NULL: none,
+     * bars long). The bass offsets and the stabs take it on top of root_midi. */
+    const int8_t  *shift;
 } mt40_pattern_t;
 
 /* A keyboard timbre slot: the MT-40 "stairwave" emulated by a pulse wave with

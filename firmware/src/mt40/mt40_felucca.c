@@ -32,6 +32,7 @@
 #define MT40_ON_DEVICE 1
 #include "mt40_types.h"
 #include "mt40_patterns.c"
+#include "mt40_riddims.c"          /* la banque des 38 riddims du Riddim Real Book */
 #include "mt40_engine.c"
 #include "mt40_voice.c"
 #include "mt40_drums.c"
@@ -144,6 +145,22 @@ static void mt40_perf_key(int idx)
         mt40_rhythm = (uint8_t)i;
         mt40.pat = mt40_patterns[mt40_rhythm];   /* live, like the MT-40's buttons */
     }
+}
+
+/* the editor's riddim-bank commands (0x50 set, 0x51 info): the web page loads
+ * a riddim as the accompaniment motif, like the OCT+/OCT- black keys do */
+int mt40_ridb_count(void)
+{
+    return (int)mt40_npatterns;
+}
+
+int mt40_ridb_set(int idx)
+{
+    if (idx < 0 || idx >= (int)mt40_npatterns)
+        return 0;
+    mt40_rhythm = (uint8_t)idx;
+    mt40.pat = mt40_patterns[mt40_rhythm];   /* live, like the MT-40's buttons */
+    return 1;
 }
 
 /* one CTL block: transport, tempo, chord, engine events, render, mix */

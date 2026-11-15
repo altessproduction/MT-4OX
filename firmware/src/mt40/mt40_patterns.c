@@ -62,7 +62,7 @@ static const mt40_chord_t chords_ROCK[] = {
     {22, 4},
 };
 
-static const mt40_pattern_t pat_ROCK = {
+const mt40_pattern_t pat_ROCK = {
     "ROCK", "Rock / Sleng Teng",
     2, 16,          /* bars, steps_per_bar */
     1,              /* verified: 1 = transcribed from sources, 0 = draft */
@@ -88,7 +88,7 @@ static const mt40_chord_t chords_POPS[] = {
     {16, 8},
 };
 
-static const mt40_pattern_t pat_POPS = {
+const mt40_pattern_t pat_POPS = {
     "POPS", "Pops (draft)",
     2, 16,          /* bars, steps_per_bar */
     0,              /* verified: 1 = transcribed from sources, 0 = draft */
@@ -119,7 +119,7 @@ static const mt40_chord_t chords_SWING[] = {
     {24, 6},
 };
 
-static const mt40_pattern_t pat_SWING = {
+const mt40_pattern_t pat_SWING = {
     "SWING", "Swing (draft)",
     2, 16,          /* bars, steps_per_bar */
     0,              /* verified: 1 = transcribed from sources, 0 = draft */
@@ -144,7 +144,7 @@ static const mt40_chord_t chords_SLOWROCK[] = {
     {16, 12},
 };
 
-static const mt40_pattern_t pat_SLOWROCK = {
+const mt40_pattern_t pat_SLOWROCK = {
     "SLOWROCK", "Slow Rock (draft)",
     2, 16,          /* bars, steps_per_bar */
     0,              /* verified: 1 = transcribed from sources, 0 = draft */
@@ -174,7 +174,7 @@ static const mt40_chord_t chords_SAMBA[] = {
     {24, 4},
 };
 
-static const mt40_pattern_t pat_SAMBA = {
+const mt40_pattern_t pat_SAMBA = {
     "SAMBA", "Samba (draft)",
     2, 16,          /* bars, steps_per_bar */
     0,              /* verified: 1 = transcribed from sources, 0 = draft */
@@ -203,7 +203,7 @@ static const mt40_chord_t chords_WALTZ[] = {
     {20, 4},
 };
 
-static const mt40_pattern_t pat_WALTZ = {
+const mt40_pattern_t pat_WALTZ = {
     "WALTZ", "Waltz (draft, 3/4)",
     2, 12,          /* bars, steps_per_bar */
     0,              /* verified: 1 = transcribed from sources, 0 = draft */
@@ -217,14 +217,5 @@ static const mt40_pattern_t pat_WALTZ = {
     "Ebauche editable: a caler a l'oreille sur le preset du MT-40"
 };
 
-static const mt40_pattern_t *const mt40_pattern_table[6] = {
-    &pat_ROCK,
-    &pat_POPS,
-    &pat_SWING,
-    &pat_SLOWROCK,
-    &pat_SAMBA,
-    &pat_WALTZ
-};
-const mt40_pattern_t *const *mt40_patterns = mt40_pattern_table;
-const uint8_t mt40_npatterns = 6;
+/* the pattern table (six presets + the riddim bank) lives in mt40_riddims.c */
 

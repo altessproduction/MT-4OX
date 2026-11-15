@@ -9,6 +9,7 @@
 
 /* All six MT-40 rhythms, in the MT-40 button order:
  * ROCK (Sleng Teng), POPS, SWING, SLOWROCK, SAMBA, WALTZ. */
+extern const mt40_pattern_t pat_ROCK, pat_POPS, pat_SWING, pat_SLOWROCK, pat_SAMBA, pat_WALTZ;
 extern const mt40_pattern_t *const *mt40_patterns;
 extern const uint8_t mt40_npatterns;
 

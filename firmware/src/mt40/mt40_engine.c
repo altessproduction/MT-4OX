@@ -116,6 +116,9 @@ static void fire_step(mt40_engine_t *e, int step)
     const mt40_pattern_t *p = e->pat;
     int fill = e->fill_active;
     int i;
+    /* the riddim bank: a two-chord pattern moves the chord root bar by bar */
+    const uint8_t bar = (uint8_t)(step / (p->steps_per_bar ? p->steps_per_bar : 16u));
+    const int sh = (p->shift) ? p->shift[bar] : 0;
 
     /* drums */
     for (i = 0; i < (int)MT40_NDRUMS; i++) {
@@ -127,7 +130,7 @@ static void fire_step(mt40_engine_t *e, int step)
     for (i = 0; i < p->nbass; i++) {
         const mt40_bass_t *b = &p->bass[i];
         if (b->step == step) {
-            int note = (int)e->root_midi + b->off;
+            int note = (int)e->root_midi + b->off + sh;
             if (note < 0) note = 0;
             if (note > 127) note = 127;
             e->on_bass(e->user, note, b->len);
@@ -138,7 +141,7 @@ static void fire_step(mt40_engine_t *e, int step)
     for (i = 0; i < p->nchords; i++) {
         const mt40_chord_t *c = &p->chords[i];
         if (c->step == step && e->chord_shape)
-            e->on_chord(e->user, (int)e->root_midi, e->chord_shape->iv,
+            e->on_chord(e->user, (int)e->root_midi + sh, e->chord_shape->iv,
                         e->chord_shape->n);
     }
 }

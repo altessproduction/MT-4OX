@@ -446,6 +446,19 @@ static void ed_handle(const uint8_t *f, uint32_t n)   /* f: the bytes between F0
     if (ed_learn_handle(cmd, a, na)) { ed_send(); return; }
     if (ed_palette_handle(cmd, a, na)) { ed_send(); return; }
     switch (cmd) {
+#if FELUCCA_MT40
+    case 0x52:                                             /* riddim bank (82): motif = index -> index, ok (82/83: past the palette's 80/81) */
+        if (na != 1u || !mt40_ridb_set((int)a[0]))
+            return;
+        ed_b(0x52);
+        ed_b(a[0]);
+        ed_b(1u);
+        break;
+    case 0x53:                                             /* riddim bank (83): count */
+        ed_b(0x53);
+        ed_b(mt40_ridb_count());
+        break;
+#endif
     case ED_MOTION: {
         track_t *t = &trk[a[0]]; uint32_t rc = 0;
         if (na > 1u && a[1] >= 7u) {
@@ -480,7 +493,7 @@ static void ed_handle(const uint8_t *f, uint32_t n)   /* f: the bytes between F0
         ed_b(0x42); ed_b(1); ed_b(3); /* bounded full-backup read + restore */
         ed_b(0x46); ed_b(1); ed_b(FM6_NFACTORY); ed_b(0);   /* FM6 patches: cmds 68..71 (no bank since 1.0.3) */
         ed_b(0x53); ed_b(1); ed_b(3);   /* live sync: bit 0 WATCH while on keeps the shadow, bit 1 no RELOAD echo */
-        ed_b(0x50); ed_b(1); ed_b(3);   /* FM6 patches v2: bit 0 no bank (SLOT F1..F8, 8 OWN), bit 1 user preset
+        ed_b(0x52); ed_b(1); ed_b(3);   /* FM6 patches v2: bit 0 no bank (SLOT F1..F8, 8 OWN), bit 1 user preset
                                          * patches (FM6 target 3, backup id 9) */
         ed_b(0x4E); ed_b(1); ed_b(ED_MENU_N);   /* MENU settings: cmds 72, 73; the items MENU_DESC offers */
         ed_b(0x52); ed_b(1); ed_b(4);   /* RATCH: a step's ratchet (1..4 hits) after its chance */

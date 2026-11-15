@@ -25,7 +25,7 @@ MT-40X l'utilise tel quel, avec les seules différences ci-dessous (fichier `web
      (SysEx `F0 7D 46 4C …` dans l'USB de la puce) : LEN 16 ou 32 pas, DIV 1/16,
      tempo de la fourchette du livre ; puis SEQ + PLAY sur le panneau ;
    - **Motif de basse** : si le firmware embarque la banque riddim (commandes
-     éditeur `0x50`/`0x51`), le MT-40X joue la ligne comme motif
+     éditeur `0x52`/`0x53`), le MT-40X joue la ligne comme motif
      d'accompagnement transposé par l'accord tenu au clavier ; sans banque, la
      basse va au séquenceur (piste 3) et la page le dit.
 
